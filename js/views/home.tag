@@ -20,7 +20,7 @@
     <!--06.Testimonial Area End -->
 
     <!--07.Contact Area Start -->
-    <contact-area></contact-area>
+    <div data-is="contact-area" class="contact_area section_padding"></div>
     <!--07.Contact Area End -->
 
     <script>

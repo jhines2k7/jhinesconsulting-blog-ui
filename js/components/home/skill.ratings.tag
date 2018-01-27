@@ -24,7 +24,7 @@
                 <span class="fill" data-percentage={ viewModel.communicationRating }></span>
             </div>
             <div class="skill_title">
-                <span>COMMUNICATION</span>
+                <span>COMMUNICATION</span> (I can always be a better listener...)
             </div>
         </div>
     </div>
@@ -90,9 +90,9 @@
 
                     this.currentView = state.currentView;
 
-                    this.viewModel.problemDecompositionRating = 80;
-                    this.viewModel.systemsDecompositionRating = 85;
-                    this.viewModel.communicationRating = 85;
+                    this.viewModel.problemDecompositionRating = 93;
+                    this.viewModel.systemsDecompositionRating = 96;
+                    this.viewModel.communicationRating = 90;
 
                     this.update();
                 }
