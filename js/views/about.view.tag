@@ -211,7 +211,7 @@ sorry bed sudden manner edeed fat now feebly face doen</span>
                 callback: (data, envelope) => {
                     let state = reduce(eventStore.events);
 
-                    if(state.currentView !== 'blog') {
+                    if(state.currentView !== 'about') {
                         this.unmount();
                     }
                 }
