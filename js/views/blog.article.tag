@@ -1,4 +1,4 @@
-<article>
+<blog-article>
     <!--02.InnerPage Area Start-->
     <inner-page></inner-page>
     <!--02.InnerPage Area End-->
@@ -149,4 +149,32 @@
         </div>
     </div>
     <!--03.BlogPage Area End-->
-</article>
+
+    <script>
+        import postal from 'postal/lib/postal.lodash'
+        import reduce from '../reducer'
+        import EventStore from '../eventStore'
+
+        let eventStore = null;
+
+        this.on('mount', () => {
+            eventStore = new EventStore();
+        });
+
+        let subscribe = (channel, topic) => {
+            return postal.subscribe({
+                channel: channel,
+                topic: topic,
+                callback: (data, envelope) => {
+                    let state = reduce(eventStore.events);
+
+                    if(state.currentView !== 'article') {
+                        this.unmount();
+                    }
+                }
+            });
+        };
+
+        subscribe('routing', 'app.update.currentView');
+    </script>
+</blog-article>

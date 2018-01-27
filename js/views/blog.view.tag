@@ -13,21 +13,21 @@
                             <h3>Man travels around the world in 80 awesome selfie</h3>
                             <span class="blog_meta">Rubel Hossen / 22 December, 2017</span>
                             <p>Markab did increasing occasional toem itsn dificulty far espem sorry bed sudden manner edeed fat now feebly face do with that beme applaue ded or favourite dashwoods therefore distu ained perce end knowl etract yet delight written an farther his general bred at dare rose lose good and make.</p>
-                            <a href="single_blog.html" class="custom_btn">Read more</a>
+                            <a href="#/blog/1" class="custom_btn">Read more</a>
                         </div>
                         <div class="single_blog">
                             <img src="assets/img/blog2.jpg" alt="">
                             <h3>Man travels around the world in 80 awesome selfie</h3>
                             <span class="blog_meta">Rubel Hossen / 22 December, 2017</span>
                             <p>Markab did increasing occasional toem itsn dificulty far espem sorry bed sudden manner edeed fat now feebly face do with that beme applaue ded or favourite dashwoods therefore distu ained perce end knowl etract yet delight written an farther his general bred at dare rose lose good and make.</p>
-                            <a href="single_blog.html" class="custom_btn">Read more</a>
+                            <a href="#/blog/2" class="custom_btn">Read more</a>
                         </div>
                         <div class="single_blog">
                             <img src="assets/img/blog3.jpg" alt="">
                             <h3>Man travels around the world in 80 awesome selfie</h3>
                             <span class="blog_meta">Rubel Hossen / 22 December, 2017</span>
                             <p>Markab did increasing occasional toem itsn dificulty far espem sorry bed sudden manner edeed fat now feebly face do with that beme applaue ded or favourite dashwoods therefore distu ained perce end knowl etract yet delight written an farther his general bred at dare rose lose good and make.</p>
-                            <a href="single_blog.html" class="custom_btn">Read more</a>
+                            <a href="#/blog/2" class="custom_btn">Read more</a>
                         </div>
                     </div>
                     <div class="text-left">

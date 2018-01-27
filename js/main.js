@@ -12,6 +12,7 @@ import './components/work.area'
 import './views/blog.view'
 import './views/about.view'
 import './views/contact.view'
+import './views/blog.article'
 import './components/inner.page'
 
 import Storage from './storage'
@@ -113,23 +114,23 @@ let contact = () => {
     }]);
 };
 
-let viewArticle = (id) => {
+let blogArticle = (id) => {
     'use strict';
 
-    let viewArticle = document.createElement('view-article');
+    let article = document.createElement('blog-article');
 
     let footer = document.getElementsByTagName('site-footer')[0];
 
     let body = document.getElementsByTagName('body')[0];
 
-    body.insertBefore(viewArticle, footer);
+    body.insertBefore(article, footer);
 
-    riot.mount('view-article');
+    riot.mount('blog-article');
 
     eventStore.add(eventStore.events, [{
         channel: 'routing',
         topic: 'app.update.currentView',
-        data: 'viewArticle'
+        data: 'article'
     }, {
         channel: 'routing',
         topic: 'app.update.innerPage',
@@ -150,7 +151,7 @@ Storage.get().then( (events) => {
         '/blog': blog,
         '/about': about,
         '/contact': contact,
-        '/blog/:id': viewArticle,
+        '/blog/:id': blogArticle,
     });
 
     router.configure({

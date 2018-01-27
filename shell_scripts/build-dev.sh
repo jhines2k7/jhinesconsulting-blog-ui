@@ -3,15 +3,11 @@
 if [ -d dist ]; then
     rm -rf dist
     mkdir dist
-else
-    mkdir dist
 fi
 
 # clean the .tmp directory
 if [ -d .tmp ]; then
     rm -rf .tmp
-    mkdir .tmp
-else
     mkdir .tmp
 fi
 
