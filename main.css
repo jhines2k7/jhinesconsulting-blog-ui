@@ -176,25 +176,6 @@ a {
     background-color: #F8F8F8;
 }
 
-.active-view {
-    background: #1c48f3 none repeat scroll 0 0;
-    bottom: -5px;
-    content: "";
-    height: 3px;
-    left: 0;
-    opacity: 0.2;
-    position: absolute;
-    -webkit-transform: scale(0, 1);
-    transform: scale(0, 1);
-    -webkit-transform-origin: 0 0 0;
-    transform-origin: 0 0 0;
-    -webkit-transition: all 0.3s linear 0s;
-    transition: all 0.3s linear 0s;
-    visibility: hidden;
-    width: 50%;
-}
-
-
 /*====/========        ===== ==/====/
 end Reset css 
 ====/========        =======/====/*/
