@@ -113,8 +113,8 @@
 
         this.on('mount', () => {
             eventStore = new EventStore();
-            // preloader
-            $('.preloader,.pace').fadeOut(1500);
+
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
         });
 
         let subscribe = (channel, topic) => {

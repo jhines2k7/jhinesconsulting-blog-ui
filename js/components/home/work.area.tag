@@ -12,14 +12,13 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <ul class="isotope_menu">
-                            <li class="active" data-name="*"><a href="#">All</a></li>
                             <li data-name=".branding"><a href="#">Data Integration</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="isotope">
                     <div class="single_work_wraper branding">
-                        <a href="work.html" class="single_work">
+                        <a href="#/projects/1" class="single_work">
                             <img src="assets/img/work1.jpg" alt="">
                             <div class="hover_content">
                                 <div>

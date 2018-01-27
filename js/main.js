@@ -14,6 +14,7 @@ import './views/blog'
 import './views/about'
 import './views/contact'
 import './views/blog.article'
+import './views/project.detail'
 import './components/inner.page'
 import './components/contact/contact.form'
 import './components/contact/contact.map'
@@ -141,6 +142,30 @@ let blogArticle = (id) => {
     }]);
 };
 
+let projectDetail = (id) => {
+    'use strict';
+
+    let projectDetail = document.createElement('project-detail');
+
+    let footer = document.getElementsByTagName('site-footer')[0];
+
+    let body = document.getElementsByTagName('body')[0];
+
+    body.insertBefore(projectDetail, footer);
+
+    riot.mount('project-detail');
+
+    eventStore.add(eventStore.events, [{
+        channel: 'routing',
+        topic: 'app.update.currentView',
+        data: 'projectDetail'
+    }, {
+        channel: 'routing',
+        topic: 'app.update.innerPage',
+        data: 'Project Title Here'
+    }]);
+};
+
 let renderHeaderAndFooter = () => {
     riot.mount('site-header');
     riot.mount('site-footer');
@@ -155,6 +180,7 @@ Storage.get().then( (events) => {
         '/about': about,
         '/contact': contact,
         '/blog/:id': blogArticle,
+        '/projects/:id': projectDetail,
     });
 
     router.configure({
