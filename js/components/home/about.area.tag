@@ -10,65 +10,11 @@
                         </div>
                         <div class="about_content">
                             <p>Markab did increasing occasional toem its difficulty far especially known ama tiled but sorry bed sudden manner edeed fat now feebly face doen with emme need of wife paid that beme applauded or favourite dashwoods therefore up distrusts explained. </p>
-                            <div class="progress_bar_wraper">
-                                <div class="single_skill">
-                                    <div id="bar1" class="barfiller">
-                                        <span class="tip"></span>
-                                        <span class="fill" data-percentage="80"></span>
-                                    </div>
-                                    <div class="skill_title">
-                                        <span>UI/UX DESIGN</span>
-                                    </div>
-                                </div>
-                                <div class="single_skill">
-                                    <div id="bar2" class="barfiller">
-                                        <span class="tip"></span>
-                                        <span class="fill" data-percentage="85"></span>
-                                    </div>
-                                    <div class="skill_title">
-                                        <span>GRAPHIC DESIGN</span>
-                                    </div>
-                                </div>
-                                <div class="single_skill">
-                                    <div id="bar3" class="barfiller">
-                                        <span class="tip"></span>
-                                        <span class="fill" data-percentage="80"></span>
-                                    </div>
-                                    <div class="skill_title">
-                                        <span>MEDIA MARKETING</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <skill-ratings></skill-ratings>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        this.on('mount', () => {
-            //waypoint
-            if ($.fn.waypoint) {
-                $('.progress_bar_wraper').waypoint(function() {
-                    var progressColor = "#1C48F3";
-                    //progressbar
-                    $('#bar1').barfiller({
-                        barColor: progressColor
-                    });
-                    $('#bar2').barfiller({
-                        barColor: progressColor
-                    });
-                    $(' #bar3').barfiller({
-                        barColor: progressColor
-                    });
-                    $(' #bar4').barfiller({
-                        barColor: progressColor
-                    });
-                }, {
-                    offset: '75%'
-                });
-            }
-        });
-    </script>
 </about-area>

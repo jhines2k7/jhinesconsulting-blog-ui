@@ -9,30 +9,31 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="single_testimonial">
-                        <div class="client_photo">
-                            <img src="assets/img/testimonial1.jpg" alt="">
-                        </div>
-                        <div class="testimonial_content">
-                            <span class="testionial_icon">”</span>
+                <div class="col-sm-4">
+                    <div class="home2_single_testimonial">
+                        <div class="home2_testionial_tittle">
                             <h4>Mervin Ramon</h4>
-                            <span>Creative Designer</span>
-                            <p>Dissuade ecstatic and properly sawen entirely sorroem endeavor onemy moen eture horrible margaret suitabe followed speed deed vanity excuse amarm are lover offer scale an stuff sorry no sight.</p>
+                            <span>Web Developer</span>
                         </div>
+                        <p>Dissuade ecstatic and properly sawen entirely sorroem endeavor onemy moen eture horrible margaret suitabe followed speed deed vanity excuse amarm are lover offer scale an stuff sorry no sight.</p>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="single_testimonial">
-                        <div class="client_photo">
-                            <img src="assets/img/testimonial2.jpg" alt="">
-                        </div>
-                        <div class="testimonial_content">
-                            <span class="testionial_icon">”</span>
+                <div class="col-sm-4">
+                    <div class="home2_single_testimonial">
+                        <div class="home2_testionial_tittle">
                             <h4>Shavone Mireles</h4>
-                            <span>Creative Designer</span>
-                            <p>Dissuade ecstatic and properly sawen entirely sorroem endeavor onemy moen eture horrible margaret suitabe followed speed deed vanity excuse amarm are lover offer scale an stuff sorry no sight.</p>
+                            <span>Web Developer</span>
                         </div>
+                        <p>Dissuade ecstatic and properly sawen entirely sorroem endeavor onemy moen eture horrible margaret suitabe followed speed deed vanity excuse amarm are lover offer scale an stuff sorry no sight.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="home2_single_testimonial">
+                        <div class="home2_testionial_tittle">
+                            <h4>David Ramon</h4>
+                            <span>Apps Developer</span>
+                        </div>
+                        <p>Dissuade ecstatic and properly sawen entirely sorroem endeavor onemy moen eture horrible margaret suitabe followed speed deed vanity excuse amarm are lover offer scale an stuff sorry no sight.</p>
                     </div>
                 </div>
             </div>

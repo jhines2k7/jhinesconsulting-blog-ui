@@ -18,35 +18,7 @@
                     <div class="about_wraper home2_about_wraper">
                         <div class="about_content">
                             <p>Markab did increasing occasional toem itsn dificulty far especially known ama tiled bue sorry bed sudden manner edeed fat now feebly face doen with emme need of wife paid that beme applauded or favourite dashwoods therefore up distrusts explained perce end knowledge certainly day sweetness.</p>
-                            <div class="progress_bar_wraper">
-                                <div class="single_skill">
-                                    <div id="bar1" class="barfiller">
-                                        <span class="tip"></span>
-                                        <span class="fill" data-percentage="80"></span>
-                                    </div>
-                                    <div class="skill_title">
-                                        <span>UI/UX DESIGN</span>
-                                    </div>
-                                </div>
-                                <div class="single_skill">
-                                    <div id="bar2" class="barfiller">
-                                        <span class="tip"></span>
-                                        <span class="fill" data-percentage="85"></span>
-                                    </div>
-                                    <div class="skill_title">
-                                        <span>GRAPHIC DESIGN</span>
-                                    </div>
-                                </div>
-                                <div class="single_skill">
-                                    <div id="bar3" class="barfiller">
-                                        <span class="tip"></span>
-                                        <span class="fill" data-percentage="80"></span>
-                                    </div>
-                                    <div class="skill_title">
-                                        <span>MEDIA MARKETING</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <skill-ratings></skill-ratings>
                         </div>
                     </div>
                 </div>
