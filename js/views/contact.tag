@@ -36,14 +36,13 @@
     </div>
     <!--03.ContactPage Area End-->
     <!--08.ContactMap Start -->
-    <div class="map" id="googleMap"></div>
+    <contact-map></contact-map>
     <!--08.ContactMap end -->
 
     <script>
         import postal from 'postal/lib/postal.lodash'
         import reduce from '../reducer'
         import EventStore from '../eventStore'
-        import initialize from '../initializeMap'
 
         this.viewModel = {};
 
@@ -51,10 +50,6 @@
 
         this.on('mount', () => {
             eventStore = new EventStore();
-            google.maps.event.addDomListener(window, 'load', initialize);
-
-            // preloader
-            $('.preloader,.pace').fadeOut(1500);
         });
 
         let subscribe = (channel, topic) => {

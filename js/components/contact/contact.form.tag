@@ -21,9 +21,9 @@
 
     <script>
         import postal from 'postal/lib/postal.lodash'
-        import reduce from '../reducer'
-        import EventStore from '../eventStore'
-        import initialize from '../initializeMap'
+        import reduce from '../../reducer'
+        import EventStore from '../../eventStore'
+        import initialize from '../../initializeMap'
 
         this.viewModel = {};
 

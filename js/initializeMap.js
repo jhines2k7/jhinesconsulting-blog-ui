@@ -89,5 +89,6 @@ export default function initialize() {
         animation: google.maps.Animation.BOUNCE,
 
     });
+
     marker.setMap(map);
 }
