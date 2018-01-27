@@ -1,5 +1,6 @@
 import './views/home.view'
 import './components/top.nav'
+import './components/site.header'
 
 import Storage from './storage'
 import {Router} from 'director/build/director'
