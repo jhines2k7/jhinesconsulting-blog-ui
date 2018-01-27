@@ -35,17 +35,5 @@
         this.on('mount', () => {
             eventStore = new EventStore();
         });
-
-        subscribe = (channel, topic) => {
-            return postal.subscribe({
-                channel: channel,
-                topic: topic,
-                callback: function(data, envelope) {                    
-
-                }.bind(this)
-            });
-        };
-
-        this.subscribe('routing', 'admin.update.currentView');
     </script>
 </top-nav>
