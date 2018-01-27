@@ -58,6 +58,26 @@ let blog = () => {
     }]);
 };
 
+let about = () => {
+    'use strict';
+
+    let about = document.createElement('about');
+
+    let footer = document.getElementsByTagName('site-footer')[0];
+
+    let body = document.getElementsByTagName('body')[0];
+
+    body.insertBefore(about, footer);
+
+    riot.mount('about');
+
+    eventStore.add(eventStore.events, [{
+        channel: 'routing',
+        topic: 'app.update.currentView',
+        data: 'about'
+    }]);
+};
+
 let renderHeaderAndFooter = () => {
     riot.mount('site-header');
     riot.mount('site-footer');
@@ -68,7 +88,8 @@ Storage.get().then( (events) => {
 
     let router = Router({
         '/': home,
-        '/blog': blog
+        '/blog': blog,
+        '/about': about
     });
 
     router.configure({
