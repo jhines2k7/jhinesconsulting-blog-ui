@@ -6,6 +6,10 @@ export default function reduce(events) {
             state.currentView = event.data;
         }
 
+        if(event.topic === 'app.update.innerPage') {
+            state.pageTitle = event.data;
+        }
+
         return state;
     }, {
         currentView: 'home',
@@ -14,6 +18,7 @@ export default function reduce(events) {
             name: '',
             email: '',
             message: ''
-        }
+        },
+        pageTitle: ''
     })
 }

@@ -58,6 +58,10 @@ let blog = () => {
         channel: 'routing',
         topic: 'app.update.currentView',
         data: 'blog'
+    }, {
+        channel: 'routing',
+        topic: 'app.update.innerPage',
+        data: 'Blog'
     }]);
 };
 
@@ -78,6 +82,10 @@ let about = () => {
         channel: 'routing',
         topic: 'app.update.currentView',
         data: 'about'
+    }, {
+        channel: 'routing',
+        topic: 'app.update.innerPage',
+        data: 'About Me'
     }]);
 };
 
@@ -98,6 +106,10 @@ let contact = () => {
         channel: 'routing',
         topic: 'app.update.currentView',
         data: 'contact'
+    }, {
+        channel: 'routing',
+        topic: 'app.update.innerPage',
+        data: 'Contact Me'
     }]);
 };
 
@@ -118,6 +130,10 @@ let viewArticle = (id) => {
         channel: 'routing',
         topic: 'app.update.currentView',
         data: 'viewArticle'
+    }, {
+        channel: 'routing',
+        topic: 'app.update.innerPage',
+        data: 'Blog Article Title Here'
     }]);
 };
 
