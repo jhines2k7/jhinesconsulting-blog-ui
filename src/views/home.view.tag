@@ -47,13 +47,13 @@
                 channel: channel,
                 topic: topic,
                 callback: function(data, envelope) {
-                    let state = reduce(eventStore.events);
-                                        
-                    if(state.currentView !== 'home') {
-                        this.unmount();
-                    } else {
-                        this.update(this.viewModel);
-                    }
+//                    let state = reduce(eventStore.events);
+//
+//                    if(state.currentView !== 'home') {
+//                        this.unmount();
+//                    } else {
+//                        this.update(this.viewModel);
+//                    }
                 }.bind(this)
             });
         };

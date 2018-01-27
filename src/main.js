@@ -1,6 +1,14 @@
 import './views/home.view'
 import './components/top.nav'
 import './components/site.header'
+import './components/about.area'
+import './components/contact.area'
+import './components/service.area'
+import './components/site.footer'
+import './components/testimonial.area'
+import './components/top.nav'
+import './components/welcome.area'
+import './components/work.area'
 
 import Storage from './storage'
 import {Router} from 'director/build/director'
@@ -11,11 +19,6 @@ let eventStore = null;
 
 let home = () => {
     'use strict';
-
-    if(document.getElementsByTagName('top-nav').length === 0) {
-        document.body.appendChild(document.createElement('top-nav'));
-        riot.mount('top-nav');
-    }
 
     document.body.appendChild(document.createElement('home'));
     riot.mount('home');
