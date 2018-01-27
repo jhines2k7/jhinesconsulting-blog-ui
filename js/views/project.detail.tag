@@ -1,6 +1,6 @@
 <project-detail>
     <!--02.InnerPage Area Start-->
-    <inner-page></inner-page>
+    <div data-is="inner-page" class="inner_page_area background_ofwhite"></div>
     <!--02.InnerPage Area End-->
     <!--03.WorkPage Area Start-->
     <div class="work_page_area section_padding">

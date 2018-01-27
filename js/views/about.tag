@@ -1,6 +1,6 @@
 <about>
     <!--02.InnerPage Area Start-->
-    <inner-page></inner-page>
+    <div data-is="inner-page" class="inner_page_area background_ofwhite"></div>
     <!--02.InnerPage Area End-->
     <!--03.About Area Start -->
     <div class="about_area section_padding home2_about_area about_page_area">

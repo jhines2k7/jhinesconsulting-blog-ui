@@ -96,7 +96,8 @@ let about = () => {
 let contact = () => {
     'use strict';
 
-    let contact = document.createElement('contact');
+    let contact = document.createElement('div');
+    contact.setAttribute('data-is', 'contact');
 
     let footer = document.getElementsByTagName('site-footer')[0];
 

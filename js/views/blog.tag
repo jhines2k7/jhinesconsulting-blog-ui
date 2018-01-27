@@ -1,6 +1,6 @@
 <blog>
     <!--02.InnerPage Area Start-->
-    <inner-page></inner-page>
+    <div data-is="inner-page" class="inner_page_area background_ofwhite"></div>
     <!--02.InnerPage Area End-->
     <!--03.BlogPage Area Start-->
     <div class="blog_page_area">

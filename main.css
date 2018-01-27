@@ -204,6 +204,10 @@ header area css
     z-index: 1;
 }
 
+.header_area a img {
+    max-width: 40%;
+}
+
 @media only screen and (min-width:768px) {
     .main_menu > li {
         display: inline-block;
@@ -1836,7 +1840,7 @@ BlogPage  css
 }
 
 .inner_page_area {
-    padding: 70px 0 75px;
+    padding: 166px 0 75px;
 }
 
 .inner_page_area h1 {
