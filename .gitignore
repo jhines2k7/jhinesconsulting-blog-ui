@@ -1,4 +1,5 @@
 dist/
+.tmp/
 .idea/
 jhines-consulting-blog.iml
 node_modules/
