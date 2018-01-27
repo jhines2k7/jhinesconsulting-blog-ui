@@ -9,6 +9,7 @@ import './components/testimonial.area'
 import './components/top.nav'
 import './components/welcome.area'
 import './components/work.area'
+import './views/blog.view'
 
 import Storage from './storage'
 import {Router} from 'director/build/director'
@@ -27,8 +28,21 @@ let home = () => {
 
     eventStore.add(eventStore.events, [{
         channel: 'routing',
-        topic: 'blog.update.currentView',
+        topic: 'app.update.currentView',
         data: 'home'
+    }]);
+};
+
+let blog = () => {
+    'use strict';
+
+    document.body.appendChild(document.createElement('blog'));
+    riot.mount('blog');
+
+    eventStore.add(eventStore.events, [{
+        channel: 'routing',
+        topic: 'app.update.currentView',
+        data: 'blog'
     }]);
 };
 
@@ -36,7 +50,8 @@ Storage.get().then( (events) => {
     eventStore = new EventStore(events);
 
     let router = Router({
-        '/': home
+        '/': home,
+        '/blog': blog
     });
 
     router.init();

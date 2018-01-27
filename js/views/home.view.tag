@@ -43,11 +43,15 @@
                 channel: channel,
                 topic: topic,
                 callback: (data, envelope) => {
-                    console.log("Inside subscribe method of home view");
+                    let state = reduce(eventStore.events);
+
+                    if(state.currentView !== 'home') {
+                        this.unmount();
+                    }
                 }
             });
         };
 
-        subscribe('routing', 'blog.update.currentView');
+        subscribe('routing', 'app.update.currentView');
     </script>
 </home> 
