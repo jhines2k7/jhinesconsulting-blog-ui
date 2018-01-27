@@ -43,6 +43,7 @@
         import postal from 'postal/lib/postal.lodash'
         import reduce from '../reducer'
         import EventStore from '../eventStore'
+        import initialize from '../initializeMap'
 
         this.viewModel = {};
 
@@ -50,6 +51,7 @@
 
         this.on('mount', () => {
             eventStore = new EventStore();
+            google.maps.event.addDomListener(window, 'load', initialize);
         });
 
         let subscribe = (channel, topic) => {
