@@ -2,14 +2,16 @@
 # clean the dist directory
 if [ -d dist ]; then
   rm -rf dist
-  mkdir dist
 fi
+
+mkdir dist
 
 # clean the .tmp directory
 if [ -d .tmp ]; then
   rm -rf .tmp
-  mkdir .tmp
 fi
+
+mkdir .tmp
 
 cp js/*.js .tmp
 
