@@ -36,13 +36,14 @@
     </div>
     <!--03.ContactPage Area End-->
     <!--08.ContactMap Start -->
-    <contact-map></contact-map>
+    <div class="map" id="googleMap"></div>
     <!--08.ContactMap end -->
 
     <script>
         import postal from 'postal/lib/postal.lodash'
         import reduce from '../reducer'
         import EventStore from '../eventStore'
+        import initialize from '../initializeMap'
 
         this.viewModel = {};
 
@@ -51,6 +52,8 @@
         this.on('mount', () => {
             eventStore = new EventStore();
             document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+            initialize();
         });
 
         let subscribe = (channel, topic) => {

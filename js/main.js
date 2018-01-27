@@ -17,7 +17,6 @@ import './views/blog.article'
 import './views/project.detail'
 import './components/inner.page'
 import './components/contact/contact.form'
-import './components/contact/contact.map'
 
 import Storage from './storage'
 import {Router} from 'director/build/director'
