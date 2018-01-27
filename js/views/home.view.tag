@@ -1,10 +1,6 @@
 <home>
-    <!--01.Header Area Start -->
-    <site-header></site-header>
-    <!--01.Header Area End-->
-
     <!--02.Welcome Area Start -->
-    <welcome-area><</welcome-area>
+    <welcome-area></welcome-area>
     <!--02.Welcome Area End -->
 
     <!--03.About Area Start -->
@@ -50,7 +46,7 @@
                     console.log("Inside subscribe method of home view");
                 }
             });
-        }
+        };
 
         subscribe('routing', 'blog.update.currentView');
     </script>

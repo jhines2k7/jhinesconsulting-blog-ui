@@ -20,6 +20,8 @@ let eventStore = null;
 let home = () => {
     'use strict';
 
+    riot.mount('site-header');
+
     document.body.appendChild(document.createElement('home'));
     riot.mount('home');
 
