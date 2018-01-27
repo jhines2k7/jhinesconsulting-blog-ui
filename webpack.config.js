@@ -2,11 +2,12 @@ const path = require('path');
 const webpack = require("webpack");
 
 module.exports = {
-    context: path.resolve(__dirname, "src"),
-    entry: './main.js',
+    entry: {
+        'bundle.js': './.tmp/main.js'
+    },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: 'bundle.js'
+        filename: '[name]'
     },
     module: {
         noParse: /node_modules\/localforage\/dist\/localforage.js/,
