@@ -36,21 +36,14 @@
             eventStore = new EventStore();
         });
 
-        subscribe(channel, topic) {
-            let subscription = postal.subscribe({
+        subscribe = (channel, topic) => {
+            return postal.subscribe({
                 channel: channel,
                 topic: topic,
                 callback: function(data, envelope) {                    
-                    let state = reduce(eventStore.events);
-
-                    if(state.currentView === 'login') {
-                        this.unmount();
-                    }
 
                 }.bind(this)
             });
-
-            return subscription;
         };
 
         this.subscribe('routing', 'admin.update.currentView');
