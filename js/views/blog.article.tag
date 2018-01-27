@@ -159,6 +159,9 @@
 
         this.on('mount', () => {
             eventStore = new EventStore();
+
+            // preloader
+            $('.preloader,.pace').fadeOut(1500);
         });
 
         let subscribe = (channel, topic) => {

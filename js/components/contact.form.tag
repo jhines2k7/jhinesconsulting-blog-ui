@@ -14,8 +14,30 @@
                 <textarea name="message" placeholder="Message here"></textarea>
             </div>
             <div class="form_btn">
-                <button type="submit" class="custom_btn">Submit Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                <button type="submit" class="custom_btn">Submit<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
             </div>
         </form>
     </div>
+
+    <script>
+        import postal from 'postal/lib/postal.lodash'
+        import reduce from '../reducer'
+        import EventStore from '../eventStore'
+        import initialize from '../initializeMap'
+
+        this.viewModel = {};
+
+        let eventStore = null;
+
+        this.on('mount', () => {
+            eventStore = new EventStore();
+
+            //Form Focus
+            var forminput = $(".contact_form form .input,.contact_form form .textarea");
+            forminput.on("focusin", function() {
+                forminput.removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
 </contact-form>

@@ -52,6 +52,8 @@
         this.on('mount', () => {
             eventStore = new EventStore();
             google.maps.event.addDomListener(window, 'load', initialize);
+            // preloader
+            $('.preloader,.pace').fadeOut(1500);
         });
 
         let subscribe = (channel, topic) => {
