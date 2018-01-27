@@ -12,6 +12,7 @@ import './components/work.area'
 import './views/blog.view'
 import './views/about.view'
 import './views/contact.view'
+import './components/inner.page'
 
 import Storage from './storage'
 import {Router} from 'director/build/director'
@@ -100,6 +101,26 @@ let contact = () => {
     }]);
 };
 
+let viewArticle = (id) => {
+    'use strict';
+
+    let viewArticle = document.createElement('view-article');
+
+    let footer = document.getElementsByTagName('site-footer')[0];
+
+    let body = document.getElementsByTagName('body')[0];
+
+    body.insertBefore(viewArticle, footer);
+
+    riot.mount('view-article');
+
+    eventStore.add(eventStore.events, [{
+        channel: 'routing',
+        topic: 'app.update.currentView',
+        data: 'viewArticle'
+    }]);
+};
+
 let renderHeaderAndFooter = () => {
     riot.mount('site-header');
     riot.mount('site-footer');
@@ -112,7 +133,8 @@ Storage.get().then( (events) => {
         '/': home,
         '/blog': blog,
         '/about': about,
-        '/contact': contact
+        '/contact': contact,
+        '/blog/:id': viewArticle,
     });
 
     router.configure({

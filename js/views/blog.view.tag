@@ -1,17 +1,6 @@
 <blog>
     <!--02.InnerPage Area Start-->
-    <div class="inner_page_area background_ofwhite">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h1>Blog Post</h1>
-                    <div class="inner_link">
-                        <span>Home  -  </span><a href="#">blog</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <inner-page></inner-page>
     <!--02.InnerPage Area End-->
     <!--03.BlogPage Area Start-->
     <div class="blog_page_area">

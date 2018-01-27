@@ -1,17 +1,6 @@
 <about>
     <!--02.InnerPage Area Start-->
-    <div class="inner_page_area background_ofwhite">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h1>About Me</h1>
-                    <div class="inner_link">
-                        <span>Home -  </span><a href="#">about</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <inner-page></inner-page>
     <!--02.InnerPage Area End-->
     <!--03.About Area Start -->
     <div class="about_area section_padding home2_about_area about_page_area">
