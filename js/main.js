@@ -22,6 +22,12 @@ let home = () => {
 
     document.body.appendChild(document.createElement('home'));
     riot.mount('home');
+
+    eventStore.add(eventStore.events, [{
+        channel: 'routing',
+        topic: 'blog.update.currentView',
+        data: 'home'
+    }]);
 };
 
 Storage.get().then( (events) => {

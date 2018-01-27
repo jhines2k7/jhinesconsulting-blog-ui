@@ -41,5 +41,17 @@
         this.on('mount', () => {
             eventStore = new EventStore();            
         });
+
+        let subscribe = (channel, topic) => {
+            return postal.subscribe({
+                channel: channel,
+                topic: topic,
+                callback: (data, envelope) => {
+                    console.log("Inside subscribe method of home view");
+                }
+            });
+        }
+
+        subscribe('routing', 'blog.update.currentView');
     </script>
 </home> 

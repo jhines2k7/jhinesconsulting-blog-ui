@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 # clean the dist directory
 if [ -d dist ]; then
-  rm -rf dist
+    rm -rf dist
+    mkdir dist
+else
+    mkdir dist
 fi
-
-mkdir dist
 
 # clean the .tmp directory
 if [ -d .tmp ]; then
-  rm -rf .tmp
+    rm -rf .tmp
+    mkdir .tmp
+else
+    mkdir .tmp
 fi
-
-mkdir .tmp
 
 cp js/*.js .tmp
 
