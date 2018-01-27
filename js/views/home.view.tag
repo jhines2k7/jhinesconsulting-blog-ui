@@ -23,8 +23,6 @@
     <contact-area></contact-area>
     <!--07.Contact Area End -->
 
-    <!--08.Footer Area Start -->
-    <site-footer></site-footer>
     <script>
         import postal from 'postal/lib/postal.lodash'
         import reduce from '../reducer'

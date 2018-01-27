@@ -21,9 +21,14 @@ let eventStore = null;
 let home = () => {
     'use strict';
 
-    riot.mount('site-header');
+    let home = document.createElement('home');
 
-    document.body.appendChild(document.createElement('home'));
+    let footer = document.getElementsByTagName('site-footer')[0];
+
+    let body = document.getElementsByTagName('body')[0];
+
+    body.insertBefore(home, footer);
+
     riot.mount('home');
 
     eventStore.add(eventStore.events, [{
@@ -36,7 +41,14 @@ let home = () => {
 let blog = () => {
     'use strict';
 
-    document.body.appendChild(document.createElement('blog'));
+    let blog = document.createElement('blog');
+
+    let footer = document.getElementsByTagName('site-footer')[0];
+
+    let body = document.getElementsByTagName('body')[0];
+
+    body.insertBefore(blog, footer);
+
     riot.mount('blog');
 
     eventStore.add(eventStore.events, [{
@@ -46,12 +58,21 @@ let blog = () => {
     }]);
 };
 
+let renderHeaderAndFooter = () => {
+    riot.mount('site-header');
+    riot.mount('site-footer');
+};
+
 Storage.get().then( (events) => {
     eventStore = new EventStore(events);
 
     let router = Router({
         '/': home,
         '/blog': blog
+    });
+
+    router.configure({
+        before: renderHeaderAndFooter
     });
 
     router.init();
