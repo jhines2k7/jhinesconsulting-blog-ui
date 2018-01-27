@@ -45,4 +45,30 @@
             </div>
         </div>
     </div>
+
+    <script>
+        this.on('mount', () => {
+            //waypoint
+            if ($.fn.waypoint) {
+                $('.progress_bar_wraper').waypoint(function() {
+                    var progressColor = "#1C48F3";
+                    //progressbar
+                    $('#bar1').barfiller({
+                        barColor: progressColor
+                    });
+                    $('#bar2').barfiller({
+                        barColor: progressColor
+                    });
+                    $(' #bar3').barfiller({
+                        barColor: progressColor
+                    });
+                    $(' #bar4').barfiller({
+                        barColor: progressColor
+                    });
+                }, {
+                    offset: '75%'
+                });
+            }
+        });
+    </script>
 </about-area>
