@@ -2477,3 +2477,8 @@ a[href^="https://maps.google.com/maps"] {
     -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 9px rgba(0, 0, 0, 0.1);
 }
+
+.about-me-image-container {
+    height: 500px;
+    overflow: hidden;
+}

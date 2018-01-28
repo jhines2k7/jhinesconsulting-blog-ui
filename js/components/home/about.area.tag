@@ -2,7 +2,11 @@
     <div class="about_area section_padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 col-sm-6"><img src="assets/img/about1.jpg" alt=""></div>
+                <div class="col-md-5 col-sm-6">
+                    <div class="about-me-image-container">
+                        <img src="assets/img/me_seated.jpeg" alt="">
+                    </div>
+                </div>
                 <div class="col-md-7 col-sm-6">
                     <div class="about_wraper">
                         <div class="section_tittle">

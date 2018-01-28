@@ -1,5 +1,5 @@
 <welcome-area>
-    <div class="welcome_area" style="background-image: url(assets/img/welcome_bg.jpg)">
+    <div class="welcome_area" style="background-image: url(assets/img/home_page_bg.jpg)">
         <div class="display_flex">
             <div class="container">
                 <div class="row">
