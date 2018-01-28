@@ -43,6 +43,16 @@ let home = () => {
         topic: 'app.update.currentView',
         data: 'home'
     }]);
+
+    highlightActiveMenuItem('home');
+};
+
+let highlightActiveMenuItem = (item) => {
+    let activeMenuItem = Array.from(document.getElementsByClassName('main_menu')[0].children).filter((li) => {
+        return li.innerText === item;
+    });
+
+    activeMenuItem[0].className = 'active';
 };
 
 let blog = () => {
@@ -67,6 +77,8 @@ let blog = () => {
         topic: 'app.update.innerPage',
         data: 'Blog'
     }]);
+
+    highlightActiveMenuItem('blog');
 };
 
 let about = () => {
@@ -91,6 +103,8 @@ let about = () => {
         topic: 'app.update.innerPage',
         data: 'About Me'
     }]);
+
+    highlightActiveMenuItem('about');
 };
 
 let contact = () => {
@@ -116,6 +130,8 @@ let contact = () => {
         topic: 'app.update.innerPage',
         data: 'Contact Me'
     }]);
+
+    highlightActiveMenuItem('contact');
 };
 
 let blogArticle = (id) => {
@@ -140,6 +156,8 @@ let blogArticle = (id) => {
         topic: 'app.update.innerPage',
         data: 'Blog Article Title Here'
     }]);
+
+    highlightActiveMenuItem('blog');
 };
 
 let projectDetail = (id) => {
@@ -164,6 +182,8 @@ let projectDetail = (id) => {
         topic: 'app.update.innerPage',
         data: 'Project Title Here'
     }]);
+
+    highlightActiveMenuItem('work');
 };
 
 let renderHeaderAndFooter = () => {
