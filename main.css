@@ -398,7 +398,7 @@ a.custom_btn>i,
 
 a.custom_btn::after,
 .custom_btn::after {
-    background: #454545 none repeat scroll 0 0;
+    background: #c70039 none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
@@ -1087,7 +1087,7 @@ HomePage2  css
 }
 
 .home2_about_img .section_tittle::after {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #c70039 none repeat scroll 0 0;
     bottom: 0;
     content: "";
     height: 5px;
@@ -1945,10 +1945,10 @@ BlogPage  css
 }
 
 .search_bar button {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #571845 none repeat scroll 0 0;
     border: medium none;
     border-radius: 2px;
-    color: #fff;
+    color: #e3e5e0;
     height: 100%;
     position: absolute;
     right: 0;
@@ -1967,14 +1967,14 @@ BlogPage  css
 }
 
 .blog_widget_tittle > h3 {
-    color: #222;
+    color: #571845;
     font-weight: bold;
     padding-bottom: 25px;
     position: relative;
 }
 
 .blog_widget_tittle > h3::after {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #c70039 none repeat scroll 0 0;
     border-radius: 2px;
     bottom: 0;
     content: "";
