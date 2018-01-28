@@ -232,7 +232,7 @@ header area css
         padding: 13px 15.5px;
     }
     .main_menu > li > a {
-        color: #222;
+        color: #571845;
         font-size: 15px;
         font-weight: 500;
         position: relative;
@@ -244,7 +244,7 @@ header area css
         padding-right: 0;
     }
     .main_menu>li:hover > a {
-        color: #1c48f3;
+        color: #c70039;
     }
     .home3_main_menu>li:hover > a {
         color: #49AD01;
@@ -292,7 +292,7 @@ header area css
         display: none;
     }
     .main_menu > li > a::after {
-        background: #1c48f3 none repeat scroll 0 0;
+        background: #c70039 none repeat scroll 0 0;
         bottom: -5px;
         content: "";
         height: 3px;
@@ -353,7 +353,7 @@ welcome area css
 }
 
 .welcome_content h1 {
-    color: #222;
+    color: #571845;
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 25px;
