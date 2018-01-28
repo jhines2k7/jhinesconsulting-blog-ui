@@ -365,10 +365,10 @@ welcome area css
 
 a.custom_btn,
 .custom_btn {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #571845 none repeat scroll 0 0;
     border: medium none;
     border-radius: 2px;
-    color: #fff;
+    color: #e3e5e0;
     font-size: 14px;
     font-weight: bold;
     overflow: hidden;
@@ -389,7 +389,7 @@ a.custom_btn>i,
 
 a.custom_btn::after,
 .custom_btn::after {
-    background: #222 none repeat scroll 0 0;
+    background: #454545 none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
@@ -456,7 +456,7 @@ about area css
 }
 
 .section_tittle > h1 {
-    color: #222;
+    color: #571845;
     font-size: 40px;
     font-weight: bold;
     line-height: 1.37;
@@ -483,7 +483,7 @@ about area css
 }
 
 .barfiller .fill::after {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #c70039 none repeat scroll 0 0;
     content: "";
     height: 7px;
     position: absolute;
@@ -594,7 +594,7 @@ Service area css
 }
 
 .service_icon::after {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #c70039 none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
@@ -736,7 +736,7 @@ Work area css
 }
 
 .hover_content::after {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #c70039 none repeat scroll 0 0;
     border-radius: 50%;
     content: "";
     height: 200%;
@@ -854,7 +854,7 @@ Contact area css
 }
 
 .contact_inf_wraper {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #571845 none repeat scroll 0 0;
     color: #fff;
     padding: 50px 0 50px 50px;
     border-radius: 2px;
@@ -970,7 +970,7 @@ Contact area css
 
 .contact_form form .input::before,
 .contact_form form .textarea::before {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #c70039 none repeat scroll 0 0;
     bottom: 0;
     content: "";
     height: 1px;
@@ -1000,8 +1000,8 @@ Footer area css
 ====/========        =======/====/*/
 
 .footer_area {
-    background: #222222 none repeat scroll 0 0;
-    color: #a4a4a4;
+    background: #837975 none repeat scroll 0 0;
+    color: #e3e5e0;
     padding: 45px 0;
 }
 
@@ -1129,7 +1129,7 @@ HomePage2  css
 }
 
 .home2_testionial_tittle > h4 {
-    color: #222;
+    color: #571845;
     font-weight: bold;
     font-family: Bitter, serif;
 }
@@ -1140,7 +1140,7 @@ HomePage2  css
 }
 
 .home2_testionial_tittle::after {
-    background: #1c48f3 none repeat scroll 0 0;
+    background: #c70039 none repeat scroll 0 0;
     content: "";
     height: 80%;
     left: -15px;
@@ -1152,7 +1152,7 @@ HomePage2  css
 }
 
 .home2_testionial_tittle > span {
-    color: #1c48f3;
+    color: #c70039;
     font-size: 13px;
     font-weight: 500;
 }
@@ -1880,7 +1880,7 @@ BlogPage  css
 }
 
 .inner_page_area h1 {
-    color: #222222;
+    color: #571845;
     font-weight: bold;
     margin-bottom: 12px;
 }

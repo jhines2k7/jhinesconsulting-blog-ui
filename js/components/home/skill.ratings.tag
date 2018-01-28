@@ -64,7 +64,7 @@
         });
 
         let updateSkillRatingBars = () => {
-            let progressColor = "#1C48F3";
+            let progressColor = "#c70039";
 
             //progressbar
             $('#bar1').barfiller({
