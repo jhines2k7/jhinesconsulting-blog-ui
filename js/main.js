@@ -10,10 +10,8 @@ import './components/home/skill.ratings'
 import './components/top.nav'
 import './components/home/welcome.area'
 import './components/home/work.area'
-import './views/blog'
 import './views/about'
 import './views/contact'
-import './views/blog.article'
 import './views/project.detail'
 import './components/inner.page'
 import './components/contact/contact.form'
@@ -53,32 +51,6 @@ let highlightActiveMenuItem = (item) => {
     });
 
     activeMenuItem[0].className = 'active';
-};
-
-let blog = () => {
-    'use strict';
-
-    let blog = document.createElement('blog');
-
-    let footer = document.getElementsByTagName('site-footer')[0];
-
-    let body = document.getElementsByTagName('body')[0];
-
-    body.insertBefore(blog, footer);
-
-    riot.mount('blog');
-
-    eventStore.add(eventStore.events, [{
-        channel: 'routing',
-        topic: 'app.update.currentView',
-        data: 'blog'
-    }, {
-        channel: 'routing',
-        topic: 'app.update.innerPage',
-        data: 'Blog'
-    }]);
-
-    highlightActiveMenuItem('blog');
 };
 
 let about = () => {
@@ -134,32 +106,6 @@ let contact = () => {
     highlightActiveMenuItem('contact');
 };
 
-let blogArticle = (id) => {
-    'use strict';
-
-    let article = document.createElement('blog-article');
-
-    let footer = document.getElementsByTagName('site-footer')[0];
-
-    let body = document.getElementsByTagName('body')[0];
-
-    body.insertBefore(article, footer);
-
-    riot.mount('blog-article');
-
-    eventStore.add(eventStore.events, [{
-        channel: 'routing',
-        topic: 'app.update.currentView',
-        data: 'article'
-    }, {
-        channel: 'routing',
-        topic: 'app.update.innerPage',
-        data: 'Blog Article Title Here'
-    }]);
-
-    highlightActiveMenuItem('blog');
-};
-
 let projectDetail = (id) => {
     'use strict';
 
@@ -196,10 +142,8 @@ Storage.get().then( (events) => {
 
     let router = Router({
         '/': home,
-        '/blog': blog,
         '/about': about,
         '/contact': contact,
-        '/blog/:id': blogArticle,
         '/projects/:id': projectDetail,
     });
 
