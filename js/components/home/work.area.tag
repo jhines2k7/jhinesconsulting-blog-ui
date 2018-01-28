@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <ul class="isotope_menu">
-                            <li data-name=".branding"><a href="#">Data Integration</a></li>
+                            <li data-name=".branding"><span>Data Integration</span></li>
                         </ul>
                     </div>
                 </div>
