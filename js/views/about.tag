@@ -10,7 +10,7 @@
                     <div class="home2_about_img">
                         <img src="assets/img/about2.jpg" alt="">
                         <div class="section_tittle">
-                            <h1>Something about me</h1>
+                            <h1>A little bit more...</h1>
                         </div>
                     </div>
                 </div>

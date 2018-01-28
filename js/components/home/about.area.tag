@@ -6,7 +6,7 @@
                 <div class="col-md-7 col-sm-6">
                     <div class="about_wraper">
                         <div class="section_tittle">
-                            <h1>Something about me</h1>
+                            <h1>A little about me</h1>
                         </div>
                         <div class="about_content">
                             <p>Markab did increasing occasional toem its difficulty far especially known ama tiled but sorry bed sudden manner edeed fat now feebly face doen with emme need of wife paid that beme applauded or favourite dashwoods therefore up distrusts explained. </p>
