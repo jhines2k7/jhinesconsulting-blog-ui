@@ -473,7 +473,6 @@ about area css
 
 .about_wraper {
     padding-left: 70px;
-    padding-top: 55px;
 }
 
 .section_tittle > h1 {
@@ -1110,7 +1109,6 @@ HomePage2  css
 }
 
 .home2_about_wraper {
-    padding-top: 100px;
 }
 
 .marginb70 {
@@ -1570,6 +1568,10 @@ HomePage4  css
     margin-top: -10px;
 }
 
+.about_content p:last-child{
+    margin-top: 10px;
+}
+
 .home4_about_wraper .about_content > * {
     margin-bottom: 20px;
 }
@@ -1895,6 +1897,8 @@ BlogPage  css
 
 .inner_page_area {
     padding: 166px 0 75px;
+    background-image: url(assets/img/sunrise-about-bg.jpg);
+    background-size: cover;
 }
 
 .inner_page_area h1 {
@@ -2524,4 +2528,9 @@ a[href^="https://maps.google.com/maps"] {
 .contact-container {
     display: flex;
     align-items: center;
+}
+
+skill-ratings {
+    display: inline-block;
+    width: 100%;
 }

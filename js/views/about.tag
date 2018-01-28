@@ -10,15 +10,15 @@
                     <div class="home2_about_img">
                         <img src="assets/img/about2.jpg" alt="">
                         <div class="section_tittle">
-                            <h1>A little bit more...</h1>
+                            <h1>A few thoughts...</h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-7 col-md-offset-1 col-sm-offset-1 col-sm-6">
                     <div class="about_wraper home2_about_wraper">
                         <div class="about_content">
-                            <p>Markab did increasing occasional toem itsn dificulty far especially known ama tiled bue sorry bed sudden manner edeed fat now feebly face doen with emme need of wife paid that beme applauded or favourite dashwoods therefore up distrusts explained perce end knowledge certainly day sweetness.</p>
                             <skill-ratings></skill-ratings>
+                            <p>Markab did increasing occasional toem itsn dificulty far especially known ama tiled bue sorry bed sudden manner edeed fat now feebly face doen with emme need of wife paid that beme applauded or favourite dashwoods therefore up distrusts explained perce end knowledge certainly day sweetness.</p>
                         </div>
                     </div>
                 </div>

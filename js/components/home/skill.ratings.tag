@@ -50,36 +50,33 @@
 
         this.on('updated', () => {
             //waypoint
-            if(this.currentView === 'about') {
-               updateSkillRatingBars()
-            } else {
-                if ($.fn.waypoint) {
-                    $('.progress_bar_wraper').waypoint(function() {
-                        updateSkillRatingBars()
-                    }, {
-                        offset: '75%'
+            if ($.fn.waypoint) {
+                $('.progress_bar_wraper').waypoint(function() {
+                    let progressColor = "#c70039";
+                    const duration = 2000;
+
+                    //progressbar
+                    $('#bar1').barfiller({
+                        barColor: progressColor,
+                        duration: duration
                     });
-                }
+                    $('#bar2').barfiller({
+                        barColor: progressColor,
+                        duration: duration
+                    });
+                    $(' #bar3').barfiller({
+                        barColor: progressColor,
+                        duration: duration
+                    });
+                    $(' #bar4').barfiller({
+                        barColor: progressColor,
+                        duration: duration
+                    });
+                }, {
+                    offset: '75%'
+                });
             }
         });
-
-        let updateSkillRatingBars = () => {
-            let progressColor = "#c70039";
-
-            //progressbar
-            $('#bar1').barfiller({
-                barColor: progressColor
-            });
-            $('#bar2').barfiller({
-                barColor: progressColor
-            });
-            $(' #bar3').barfiller({
-                barColor: progressColor
-            });
-            $(' #bar4').barfiller({
-                barColor: progressColor
-            });
-        };
 
         let subscribe = (channel, topic) => {
             return postal.subscribe({
