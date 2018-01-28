@@ -642,6 +642,14 @@ Work area css
     margin-bottom: 20px;
 }
 
+.only-one.single_work_wraper {
+    display: flex;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
 .section_tittle {
     margin-bottom: 50px;
     margin-top: -15px;
@@ -677,6 +685,17 @@ Work area css
 .single_work {
     position: relative;
     display: block;
+}
+
+.only-one .single_work {
+    position: relative;
+    display: block;
+    height: 200px;
+    overflow: hidden;
+}
+
+.only-one .single_work img{
+    width: 1000px;
 }
 
 .single_work > img {

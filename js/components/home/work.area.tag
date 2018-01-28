@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="isotope">
-                    <div class="single_work_wraper branding">
+                    <div class="only-one single_work_wraper branding">
                         <a href="#/projects/1" class="single_work">
                             <img src="assets/img/work1.jpg" alt="">
                             <div class="hover_content">
