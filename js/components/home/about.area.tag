@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-sm-6">
-                    <div class="about-me-image-container">
+                    <div class="about-me-image-container effect7">
                         <img src="assets/img/me_seated.jpeg" alt="">
                     </div>
                 </div>
