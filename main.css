@@ -340,11 +340,23 @@ welcome area css
 ====/========        =======/====/*/
 
 .welcome_area {
+    height: 770px;
+    position: relative;
+}
+
+.welcome_area::after {
+    content: "";
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 770px;
-    position: relative;
+    background-image: url(assets/img/home_page_bg.jpg);
+    opacity: 1.0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .display_flex {
