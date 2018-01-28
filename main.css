@@ -119,7 +119,7 @@ body {
     font-size: 15px;
     line-height: 2;
     height: 100% !important;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 h1,
@@ -216,7 +216,7 @@ header area css
     .main_menu > li > a {
         color: #222;
         font-size: 15px;
-        font-weight: 300;
+        font-weight: 500;
         position: relative;
     }
     .home3_main_menu > li > a {
@@ -634,7 +634,7 @@ Work area css
 .isotope_menu li > a {
     color: #606060;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1;
     padding: 0 10px;
 }
@@ -801,7 +801,6 @@ Testimonial area css
 .home4_work_area .section_tittle {
     margin-bottom: 75px;
 }
-
 
 /*====/========        ===== ==/====/
 Contact area css 
@@ -1095,6 +1094,7 @@ HomePage2  css
 .home2_testionial_tittle > h4 {
     color: #222;
     font-weight: bold;
+    font-family: Bitter, serif;
 }
 
 .home2_testimonial_content {
@@ -1117,7 +1117,7 @@ HomePage2  css
 .home2_testionial_tittle > span {
     color: #1c48f3;
     font-size: 13px;
-    font-weight: normal;
+    font-weight: 500;
 }
 
 .home2_testionial_tittle {
