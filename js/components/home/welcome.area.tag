@@ -32,22 +32,16 @@
 
         let type = () => {
             let greetingText = 'Hello, I\'m James. Pleased to meet you!';
-            let duration = 2000;
+            let delta = 500;
 
-            setTimeout(() => {
-                this.viewModel.greetingText = this.viewModel.greetingText + greetingText.charAt(0);
-                this.update();
-            }, 2000);
+            greetingText.split("").forEach((character) => {
+                setTimeout(() => {
+                    this.viewModel.greetingText = this.viewModel.greetingText + character;
+                    this.update();
+                }, delta);
 
-            setTimeout(() => {
-                this.viewModel.greetingText = this.viewModel.greetingText + greetingText.charAt(1);
-                this.update();
-            }, 4000);
-
-            setTimeout(() => {
-                this.viewModel.greetingText = this.viewModel.greetingText + greetingText.charAt(2);
-                this.update();
-            }, 6000);
+                delta += 500;
+            });
         }
     </script>
 </welcome-area>
