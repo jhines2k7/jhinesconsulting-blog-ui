@@ -25,46 +25,46 @@
         };
 
         this.on('mount', () => {
-            type();
+            type('Hello, I\'m James. Pleased to meet you!')
+                .then(erase)
+                .then(type('Would you like to hear a joke?'));
         });
 
         let erase = () => {
-            let delta = 0;
+            return new Promise((resolve) => {
+                let delta = 1500;
 
-            for(let i = 0; i < this.viewModel.greetingText.length; i++) {
+                for(let i = 0; i < this.viewModel.greetingText.length; i++) {
+                    setTimeout(() => {
+                        this.viewModel.greetingText = this.viewModel.greetingText.slice(0, -1);
+                        this.update();
+                    }, delta);
+
+                    delta += 50;
+                }
+
                 setTimeout(() => {
-                    this.viewModel.greetingText = this.viewModel.greetingText.slice(0, -1);
-                    this.update();
+                    resolve();
                 }, delta);
-
-                delta += 10;
-            }
+            });
         };
 
-        let type = () => {
-            let greetingText = 'Hello, I\'m James. Pleased to meet you!';
-            let delta = 1250;
+        let type = (text) => {
+            return new Promise((resolve) => {
+                let delta = 1250;
 
-            greetingText.split("").forEach( (character) => {
+                text.split("").forEach( (character) => {
+                    setTimeout(() => {
+                        this.viewModel.greetingText = this.viewModel.greetingText + character;
+                        this.update();
+                    }, delta);
+
+                    delta += 100;
+                });
+
                 setTimeout(() => {
-                    this.viewModel.greetingText = this.viewModel.greetingText + character;
-                    this.update();
+                    resolve();
                 }, delta);
-
-                delta += 100;
-            });
-
-            setTimeout(erase, delta += 2500);
-
-            let jokeText = 'Would you like to hear a joke?';
-
-            jokeText.split("").forEach( (character) => {
-                setTimeout(() => {
-                    this.viewModel.greetingText = this.viewModel.greetingText + character;
-                    this.update();
-                }, delta);
-
-                delta += 100;
             });
         }
     </script>
