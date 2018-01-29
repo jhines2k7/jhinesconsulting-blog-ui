@@ -5,7 +5,13 @@
                 <div class="row">
                     <div class="col-md-6 col-md-offset-1 text-center">
                         <div class="welcome_content">
-                            <h1>{ viewModel.greetingText }</h1>
+                            <h1>
+                                <div class="typewrite">
+                                    { viewModel.greetingText }
+                                    <span class="wrap"></span>
+                                </div>
+                            </h1>
+                            <span class="wrap"></span>
                             <p>Compass prepare and easoable size now easy eat hand emma mere dection atten heart amar amd mosems murse means.</p>
                         </div>
                     </div>
@@ -19,7 +25,29 @@
         };
 
         this.on('mount', () => {
-           this.viewModel.greetingText = 'Hello, I\'m James. Pleased to meet you!';
+            type();
+
+            this.update();
         });
+
+        let type = () => {
+            let greetingText = 'Hello, I\'m James. Pleased to meet you!';
+            let duration = 2000;
+
+            setTimeout(() => {
+                this.viewModel.greetingText = this.viewModel.greetingText + greetingText.charAt(0);
+                this.update();
+            }, 2000);
+
+            setTimeout(() => {
+                this.viewModel.greetingText = this.viewModel.greetingText + greetingText.charAt(1);
+                this.update();
+            }, 4000);
+
+            setTimeout(() => {
+                this.viewModel.greetingText = this.viewModel.greetingText + greetingText.charAt(2);
+                this.update();
+            }, 6000);
+        }
     </script>
 </welcome-area>

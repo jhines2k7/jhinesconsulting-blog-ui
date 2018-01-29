@@ -2533,3 +2533,8 @@ skill-ratings {
     display: inline-block;
     width: 100%;
 }
+
+.typewrite > .wrap {
+    border-right: 0.08em solid #837975;
+    margin-left: 5px;
+}
