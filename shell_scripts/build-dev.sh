@@ -17,7 +17,6 @@ if [ ! -d .tmp ]; then
     mkdir .tmp
 fi
 
-
 cp js/*.js .tmp
 
 # js compile and transform
