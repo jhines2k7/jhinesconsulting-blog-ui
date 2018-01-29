@@ -148,7 +148,7 @@ h3 {
 
 a,
 span {
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 img {
@@ -1897,7 +1897,6 @@ BlogPage  css
 
 .inner_page_area {
     padding: 166px 0 75px;
-    background-image: url(assets/img/sunrise-about-bg.jpg);
     background-size: cover;
 }
 
