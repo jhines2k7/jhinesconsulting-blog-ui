@@ -8,7 +8,7 @@
                             <h1>
                                 <div class="typewrite">
                                     { viewModel.greetingText }
-                                    <span class="wrap"></span>
+                                    <span class="blinking-cursor">|</span>
                                 </div>
                             </h1>
                             <span class="wrap"></span>
