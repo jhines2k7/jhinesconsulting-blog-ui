@@ -51,14 +51,17 @@
                 .then(type)
                 .then(erase)
                 .then(type)
+                .then(erase)
+                .then(type);
         });
 
         let banter = [
             "Would you like to hear a joke?",
             "Why couldn't the angle get a loan?",
-            "Her parents wouldn't Cosine!",
-            "Waka, waka!",
-            "Ok, one more...",
+            "Her parents wouldn't cosine!",
+            "Wocka wocka wocka!",
+            "Hmm... Tough crowd...",
+            "Ok, last one...",
             "What is the first derivative of a cow?",
             "Prime rib! Ha!",
             "C'mon, that was a good one...",
@@ -79,7 +82,7 @@
                         this.update();
                     }, delta);
 
-                    delta += 50;
+                    delta += 25;
                 }
 
                 setTimeout(() => {

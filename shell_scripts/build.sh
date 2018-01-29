@@ -1,17 +1,23 @@
 #!/usr/bin/env bash
+VERSION=0.8.0
+
 # clean the dist directory
 if [ -d dist ]; then
-  rm -rf dist
+    rm -rf dist
 fi
 
-mkdir dist
+if [ ! -d dist ]; then
+    mkdir dist
+fi
 
 # clean the .tmp directory
 if [ -d .tmp ]; then
-  rm -rf .tmp
+    rm -rf .tmp
 fi
 
-mkdir .tmp
+if [ ! -d .tmp ]; then
+    mkdir .tmp
+fi
 
 cp js/*.js .tmp
 
@@ -30,6 +36,8 @@ cp index.html dist
 # change the src property of the script tag to bundle.js
 sed -i 's/dist\/bundle.js/bundle.js/g' dist/index.html
 
-docker build -t jhines2017/eventsourced-singleton-admin-ui .
+docker build -t jhines2017/jhines-consulting-blog:$VERSION .
+
+docker push jhines2017/jhines-consulting-blog:$VERSION
 
 date; echo;
