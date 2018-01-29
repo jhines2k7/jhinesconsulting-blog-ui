@@ -26,15 +26,39 @@
 
         this.on('mount', () => {
             type();
-
-            this.update();
         });
+
+        let erase = () => {
+            let delta = 0;
+
+            for(let i = 0; i < this.viewModel.greetingText.length; i++) {
+                setTimeout(() => {
+                    this.viewModel.greetingText = this.viewModel.greetingText.slice(0, -1);
+                    this.update();
+                }, delta);
+
+                delta += 10;
+            }
+        };
 
         let type = () => {
             let greetingText = 'Hello, I\'m James. Pleased to meet you!';
             let delta = 1250;
 
-            greetingText.split("").forEach((character) => {
+            greetingText.split("").forEach( (character) => {
+                setTimeout(() => {
+                    this.viewModel.greetingText = this.viewModel.greetingText + character;
+                    this.update();
+                }, delta);
+
+                delta += 100;
+            });
+
+            setTimeout(erase, delta += 2500);
+
+            let jokeText = 'Would you like to hear a joke?';
+
+            jokeText.split("").forEach( (character) => {
                 setTimeout(() => {
                     this.viewModel.greetingText = this.viewModel.greetingText + character;
                     this.update();
