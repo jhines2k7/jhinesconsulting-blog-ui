@@ -32,7 +32,7 @@
 
         let type = () => {
             let greetingText = 'Hello, I\'m James. Pleased to meet you!';
-            let delta = 500;
+            let delta = 1250;
 
             greetingText.split("").forEach((character) => {
                 setTimeout(() => {
@@ -40,7 +40,7 @@
                     this.update();
                 }, delta);
 
-                delta += 500;
+                delta += 100;
             });
         }
     </script>

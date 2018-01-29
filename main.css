@@ -146,9 +146,8 @@ h3 {
     font-family: 'Bitter', serif;
 }
 
-a,
 span {
-    /*display: inline-block;*/
+    display: inline-block;
 }
 
 img {
@@ -2539,14 +2538,9 @@ skill-ratings {
     margin-left: 5px;
 }
 
-.typewrite {
-    display: flex;
-    justify-content: center;
-}
-
 .blinking-cursor {
     font-weight: 100;
-    font-size: 41px;
+    font-size: 50px;
     color: #837975;
     -webkit-animation: 1s blink step-end infinite;
     -moz-animation: 1s blink step-end infinite;
