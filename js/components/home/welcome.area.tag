@@ -11,7 +11,6 @@
                                     <span class="blinking-cursor">|</span>
                                 </div>
                             </h1>
-                            <span class="wrap"></span>
                             <p>Compass prepare and easoable size now easy eat hand emma mere dection atten heart amar amd mosems murse means.</p>
                         </div>
                     </div>
@@ -27,8 +26,48 @@
         this.on('mount', () => {
             type('Hello, I\'m James. Pleased to meet you!')
                 .then(erase)
-                .then(type('Would you like to hear a joke?'));
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
+                .then(erase)
+                .then(type)
         });
+
+        let banter = [
+            "Would you like to hear a joke?",
+            "Why couldn't the angle get a loan?",
+            "Her parents wouldn't Cosine!",
+            "Waka, waka!",
+            "Ok, one more...",
+            "What is the first derivative of a cow?",
+            "Prime rib! Ha!",
+            "C'mon, that was a good one...",
+            "How about an inspirational quote?",
+            "\"No one can make you feel inferior without your consent.\" - Eleanor Roosevelt",
+            "You're welcome!",
+            "Please have a look around...",
+            "...and don't forget to hire me for your next project!"
+        ];
 
         let erase = () => {
             return new Promise((resolve) => {
@@ -44,7 +83,7 @@
                 }
 
                 setTimeout(() => {
-                    resolve();
+                    resolve(banter.shift());
                 }, delta);
             });
         };
@@ -53,7 +92,7 @@
             return new Promise((resolve) => {
                 let delta = 1250;
 
-                text.split("").forEach( (character) => {
+                text.split("").forEach((character) => {
                     setTimeout(() => {
                         this.viewModel.greetingText = this.viewModel.greetingText + character;
                         this.update();

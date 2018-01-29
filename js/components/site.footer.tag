@@ -1,4 +1,5 @@
 <site-footer>
+    <!--08.Footer Area Start -->
     <footer class="footer_area">
         <div class="container">
             <div class="row">
