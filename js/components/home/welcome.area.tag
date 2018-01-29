@@ -13,4 +13,7 @@
             </div>
         </div>
     </div>
+    <script>
+        this.on('mount', () => {})
+    </script>
 </welcome-area>
