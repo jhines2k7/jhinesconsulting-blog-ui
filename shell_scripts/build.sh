@@ -33,8 +33,13 @@ cp -r assets dist
 # copy index.html to dist directory
 cp index.html dist
 
+#copy css file to dist directory
+cp m
+
 # change the src property of the script tag to bundle.js
 sed -i 's/dist\/bundle.js/bundle.js/g' dist/index.html
+
+docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
 
 docker build -t jhines2017/jhines-consulting-blog:$VERSION .
 
