@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.11.1
+VERSION=0.11.2
 
 # clean the dist directory
 if [ -d dist ]; then

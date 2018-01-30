@@ -13,7 +13,7 @@
         import postal from 'postal/lib/postal.lodash'
         import reduce from '../reducer'
         import EventStore from '../eventStore'
-        import initialize from '../initializeMap'
+        import initializeMap from '../initializeMap'
 
         this.viewModel = {};
 
@@ -23,7 +23,7 @@
             eventStore = new EventStore();
             document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-            initialize();
+            initializeMap();
         });
 
         let subscribe = (channel, topic) => {
