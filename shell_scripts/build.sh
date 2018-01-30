@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.10.0
+VERSION=0.11.1
 
 # clean the dist directory
 if [ -d dist ]; then
@@ -45,7 +45,7 @@ mv dist/bundle.js dist/bundle.$NEW_UUID.js
 mv dist/bundle.js.map dist/bundle.$NEW_UUID.js.map
 
 # update file name of js bundle
-sed -i "s/dist\/bundle.js/dist\/bundle.$NEW_UUID.js/g" dist/index.html
+sed -i "s/dist\/bundle.js/bundle.$NEW_UUID.js/g" dist/index.html
 
 # update file name of main.css
 sed -i "s/main.css/main.$NEW_UUID.css/g" dist/index.html
