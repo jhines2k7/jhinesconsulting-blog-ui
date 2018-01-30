@@ -36,13 +36,22 @@ cp index.html dist
 #copy css file to dist directory
 cp main.css dist
 
-# change the src property of the script tag to bundle.js
-sed -i 's/dist\/bundle.js/bundle.js/g' dist/index.html
+NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
+# append hash to end of css file for cache busting
+mv dist/main.css dist/main.$NEW_UUID.css
+
+# append hash to end of js file for cache busting
+mv dist/bundle.js dist/bundle.$NEW_UUID.js
+mv dist/bundle.js.map dist/bundle.$NEW_UUID.js.map
+
+# update file name of js bundle
+sed -i "s/dist\/bundle.js/dist\/bundle.$NEW_UUID.js/g" dist/index.html
+
+# update file name of main.css
+sed -i "s/main.css/main.$NEW_UUID.css/g" dist/index.html
 
 docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
 
 docker build -t jhines2017/jhines-consulting-blog:$VERSION .
 
 docker push jhines2017/jhines-consulting-blog:$VERSION
-
-date; echo;
