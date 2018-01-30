@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.8.0
+VERSION=0.9.0
 
 # clean the dist directory
 if [ -d dist ]; then
@@ -34,7 +34,7 @@ cp -r assets dist
 cp index.html dist
 
 #copy css file to dist directory
-cp m
+cp main.css dist
 
 # change the src property of the script tag to bundle.js
 sed -i 's/dist\/bundle.js/bundle.js/g' dist/index.html

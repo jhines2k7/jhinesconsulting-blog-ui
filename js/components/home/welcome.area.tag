@@ -59,7 +59,7 @@
             "Would you like to hear a joke?",
             "Why couldn't the angle get a loan?",
             "Her parents wouldn't cosine!",
-            "Wocka wocka wocka!",
+            "Wocka wocka!",
             "Hmm... Tough crowd...",
             "Ok, last one...",
             "What is the first derivative of a cow?",
