@@ -18,7 +18,7 @@
                             <div class="col-md-5">
                                 <ul class="work_data">
                                     <li>
-                                        <span class="bold">Project naame</span>
+                                        <span class="bold">Project Name</span>
                                         <span>Branding Design</span>
                                     </li>
                                     <li>
@@ -34,14 +34,14 @@
                                         <span>02 March, 2017</span>
                                     </li>
                                     <li>
-                                        <span class="bold">Budject</span>
+                                        <span class="bold">Budget</span>
                                         <span>$350</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-md-12">
                                 <div class="resume_margin_top">
-                                    <h2>Solution of this project</h2>
+                                    <h2>Solution</h2>
                                     <p>Markab did increasing occasional toem itsn dificulty and especiay known knows that ama tiled in sorry edeed now feebly face doen withe need of wife paid that beme applauded or favourite dashwoods therefore up distrusts knowledge certainly day sweetness evil soon high in hope do few northward believing attempted. Yet timed being songs marry one defer men our.
                                     </p>
                                     <p>Markab did increasing occasional toem itsn dificulty and especiay known knows that ama tiled in sorry edeed now feebly face doen withe need of wife paid that beme applauded or favourite dashwoods therefore up distrusts knowledge certainly day sweetness evil soon high in hope do few northward believing attempted. Yet timed being songs marry one defer men our.
