@@ -67,7 +67,7 @@
             "C'mon, that was a good one...",
             "How about an inspirational quote?",
             "\"No one can make you feel inferior without your consent.\" - Eleanor Roosevelt",
-            "You're welcome!",
+            "I feel better already",
             "Please have a look around...",
             "...and don't forget to hire me for your next project!"
         ];
