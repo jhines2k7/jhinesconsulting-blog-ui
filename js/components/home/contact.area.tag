@@ -8,7 +8,7 @@
                         <div class="contact_inf_contact">
                             <h4>Email:</h4>
                             <div class="contact_inf">
-                                <a href="mailto:support24@gmail.com">james@jhinesconsulting.com</a>
+                                <a href="mailto:james@jhinesconsulting.com">james@jhinesconsulting.com</a>
                             </div>
                         </div>
                     </div>
