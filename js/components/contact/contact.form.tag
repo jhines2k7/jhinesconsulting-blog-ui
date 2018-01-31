@@ -19,6 +19,11 @@
                     <p>The server encountered an internal error while processing your form submission.</p>
                     <p>Try again later or send an email to: <a href="mailto:support@jhinesconsulting.com">support@jhinesconsulting.com</a></p>
                 </div>
+
+                <div if={ viewModel.showConnectionError } class="form-submission-error">
+                    <p>There was a problem contacting the server.</p>
+                    <p>Try again later or send an email to: <a href="mailto:support@jhinesconsulting.com">support@jhinesconsulting.com</a></p>
+                </div>
             </div>
         </form>
 
@@ -39,6 +44,7 @@
 
         this.viewModel = {
             showContactFormSuccess: false,
+            showConnectionError: false,
             showContactFormError: false
         };
 
@@ -60,19 +66,24 @@
                 channel: channel,
                 topic: topic,
                 callback: (data, envelope) => {
-                    if(envelope.topic === 'app.form.submission.success') {
+                    let currentTopic = envelope.topic;
+
+                    if(currentTopic === 'app.form.submission.success') {
                         this.viewModel.showContactFormSuccess = true;
-                        this.update(this.viewModel);
-                    } else {
+                    } else if(currentTopic === 'app.form.submission.failure') {
                         this.viewModel.showContactFormError = true;
-                        this.update(this.viewModel);
+                    } else if (currentTopic === 'app.connection.error') {
+                        this.viewModel.showConnectionError = true;
                     }
+
+                    this.update(this.viewModel);
                 }
             });
         };
 
         subscribe('api-requests', 'app.form.submission.success');
         subscribe('api-requests', 'app.form.submission.failure');
+        subscribe('api-requests', 'app.connection.error');
 
         submit(e) {
             e.preventDefault();
@@ -95,20 +106,24 @@
                     return response.json();
                 }
 
-                throw new Error('Network response was not ok.');
+                throw new Error('The request to the server was not successful');
             }).then(response => {
-                console.log('Success:', response);
                 eventStore.add(eventStore.events, [{
                     channel: 'api-requests',
                     topic: 'app.form.submission.success'
                 }]);
             }).catch(error => {
-                console.error('Error:', error);
-
-                eventStore.add(eventStore.events, [{
-                    channel: 'api-requests',
-                    topic: 'app.form.submission.failure'
-                }]);
+                if(error.message === 'Failed to fetch') {
+                    eventStore.add(eventStore.events, [{
+                        channel: 'api-requests',
+                        topic: 'app.connection.error'
+                    }]);
+                } else {
+                    eventStore.add(eventStore.events, [{
+                        channel: 'api-requests',
+                        topic: 'app.form.submission.failure'
+                    }]);
+                }
             })
         }
     </script>
