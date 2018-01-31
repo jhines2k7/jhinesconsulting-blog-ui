@@ -28,10 +28,10 @@
         </form>
 
         <div if={ viewModel.showContactFormSuccess } class="contact-form-success important_content">
+            <h2>Thank you!</h2>
             <h3>
                 Dissuade estatic and properly sawen entire sorrow delight endeavor
-                onemy moen eto horrible margaret suitable followed general speed
-                deed vanity excuse amarm are lover offer scale.
+                onemy moen eto horrible lover offer scale.
             </h3>
         </div>
     </div>
