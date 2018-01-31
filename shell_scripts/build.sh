@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.11.2
+VERSION=0.12.2
 
 # clean the dist directory
 if [ -d dist ]; then
@@ -25,7 +25,7 @@ cp js/*.js .tmp
 node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
 
 # modify the value of the domain object in the config file
-sed -i "s/domain: 'localhost'/domain: '192.168.99.101'/g" dist/bundle.js
+sed -i "s/domain: 'localhost'/domain: $CONTACT_FORM_SUBMISSION_SERVICE_HOSTNAME/g" dist/bundle.js
 
 #copy the assets to dist directory
 cp -r assets dist

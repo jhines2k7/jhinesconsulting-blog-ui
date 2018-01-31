@@ -1,9 +1,9 @@
 <contact-form>
     <div class="contact_form">
-        <div class="section_tittle">
+        <div if={ !viewModel.showContactFormSuccess } class="section_tittle">
             <h1>Get in touch</h1>
         </div>
-        <form onsubmit={ submit }>
+        <form if={ !viewModel.showContactFormSuccess } onsubmit={ submit }>
             <div class="input">
                 <input ref="name" type="text" name="name" placeholder="Name here">
             </div>
@@ -21,12 +21,21 @@
                 </div>
             </div>
         </form>
+
+        <div if={ viewModel.showContactFormSuccess } class="contact-form-success important_content">
+            <h3>
+                Dissuade estatic and properly sawen entire sorrow delight endeavor
+                onemy moen eto horrible margaret suitable followed general speed
+                deed vanity excuse amarm are lover offer scale.
+            </h3>
+        </div>
     </div>
 
     <script>
         import postal from 'postal/lib/postal.lodash'
         import EventStore from '../../eventStore'
         import initialize from '../../initializeMap'
+        import config from '../config'
 
         this.viewModel = {
             showContactFormSuccess: false,
@@ -52,7 +61,8 @@
                 topic: topic,
                 callback: (data, envelope) => {
                     if(envelope.topic === 'app.form.submission.success') {
-                        console.log('Contact form submission was successful');
+                        this.viewModel.showContactFormSuccess = true;
+                        this.update(this.viewModel);
                     } else {
                         this.viewModel.showContactFormError = true;
                         this.update(this.viewModel);
@@ -67,7 +77,7 @@
         submit(e) {
             e.preventDefault();
 
-            let url = 'http://localhost:3000/contact';
+            let url = `http://${config.domain}/contact`;
             let data = {
                 name: this.refs.name.value,
                 email: this.refs.email.value,

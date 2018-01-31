@@ -1,3 +1,3 @@
 export default {
-    domain: 'localhost'
+    domain: 'localhost:3000'
 }

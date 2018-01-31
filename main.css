@@ -2593,3 +2593,7 @@ skill-ratings {
         color: #c70039;
     }
 }
+
+.form-submission-error {
+    margin-top: 10px;
+}
