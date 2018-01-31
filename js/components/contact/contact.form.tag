@@ -5,13 +5,13 @@
         </div>
         <form if={ !viewModel.showContactFormSuccess } onsubmit={ submit }>
             <div class="input">
-                <input ref="name" type="text" name="name" placeholder="Name here">
+                <input ref="name" type="text" name="name" placeholder="Name">
             </div>
             <div class="input">
-                <input ref="email" type="email" name="email" placeholder="Email here" required>
+                <input ref="email" type="email" name="email" placeholder="Email" required>
             </div>
             <div class="textarea">
-                <textarea ref="message" name="message" placeholder="Message here"></textarea>
+                <textarea ref="message" name="message" placeholder="Message"></textarea>
             </div>
             <div class="form_btn">
                 <button type="submit" class="custom_btn">Submit<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
