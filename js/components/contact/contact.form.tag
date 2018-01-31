@@ -35,7 +35,7 @@
         import postal from 'postal/lib/postal.lodash'
         import EventStore from '../../eventStore'
         import initialize from '../../initializeMap'
-        import config from '../config'
+        import config from '../../config'
 
         this.viewModel = {
             showContactFormSuccess: false,
