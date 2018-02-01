@@ -48,7 +48,13 @@
                         this.unmount();
                     } else {
                         if(state.scrollTo !== ''){
-                            document.getElementsByTagName('service-area')[0].scrollIntoView(true);
+                            document.getElementsByTagName(state.scrollTo)[0].scrollIntoView(true);
+
+                            eventStore.add(eventStore.events, [{
+                                channel: 'scroll',
+                                topic: 'app.update.scrollTo',
+                                data: ''
+                            }]);
                         }
                     }
                 }

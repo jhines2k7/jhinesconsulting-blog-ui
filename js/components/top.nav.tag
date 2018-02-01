@@ -27,18 +27,25 @@
         });
 
         scrollTo(e) {
+            let hash = e.srcElement.innerHTML;
+            let tagName;
+
+            if(hash === 'services') {
+                tagName = 'service-area';
+            } else {
+                tagName = 'work-area';
+            }
+
             if(this.currentView !== 'home'){
                 eventStore.add(eventStore.events, [{
                     channel: 'scroll',
                     topic: 'app.update.scrollTo',
-                    data: {
-                        scrollTo: 'service-area'
-                    }
+                    data: tagName
                 }]);
 
                 Router().setRoute('/');
             } else {
-                document.getElementsByTagName('service-area')[0].scrollIntoView(true);
+                document.getElementsByTagName(tagName)[0].scrollIntoView(true);
             }
         }
 

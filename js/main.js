@@ -74,6 +74,10 @@ let about = () => {
         channel: 'routing',
         topic: 'app.update.innerPage',
         data: 'About Me'
+    }, {
+        channel: 'scroll',
+        topic: 'app.update.scrollTo',
+        data: ''
     }]);
 
     highlightActiveMenuItem('about');
@@ -101,6 +105,10 @@ let contact = () => {
         channel: 'routing',
         topic: 'app.update.innerPage',
         data: 'Contact Me'
+    }, {
+        channel: 'scroll',
+        topic: 'app.update.scrollTo',
+        data: ''
     }]);
 
     highlightActiveMenuItem('contact');
@@ -127,6 +135,10 @@ let projectDetail = (id) => {
         channel: 'routing',
         topic: 'app.update.innerPage',
         data: 'Project Title Here'
+    }, {
+        channel: 'scroll',
+        topic: 'app.update.scrollTo',
+        data: ''
     }]);
 
     highlightActiveMenuItem('work');
@@ -135,14 +147,6 @@ let projectDetail = (id) => {
 let renderHeaderAndFooter = () => {
     riot.mount('site-header');
     riot.mount('site-footer');
-
-    eventStore.add(eventStore.events, [{
-        channel: 'scroll',
-        topic: 'app.update.scrollTo',
-        data: {
-            scrollTo: ''
-        }
-    }]);
 };
 
 Storage.get().then( (events) => {
