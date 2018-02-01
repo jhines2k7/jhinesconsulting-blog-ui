@@ -10,6 +10,10 @@ export default function reduce(events) {
             state.pageTitle = event.data;
         }
 
+        if(event.topic === 'app.update.scrollTo') {
+            state.scrollTo = event.data;
+        }
+
         return state;
     }, {
         currentView: 'home',
@@ -19,6 +23,7 @@ export default function reduce(events) {
             email: '',
             message: ''
         },
-        pageTitle: ''
+        pageTitle: '',
+        scrollTo: ''
     })
 }

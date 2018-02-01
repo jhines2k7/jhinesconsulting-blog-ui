@@ -135,6 +135,14 @@ let projectDetail = (id) => {
 let renderHeaderAndFooter = () => {
     riot.mount('site-header');
     riot.mount('site-footer');
+
+    eventStore.add(eventStore.events, [{
+        channel: 'scroll',
+        topic: 'app.update.scrollTo',
+        data: {
+            scrollTo: ''
+        }
+    }]);
 };
 
 Storage.get().then( (events) => {

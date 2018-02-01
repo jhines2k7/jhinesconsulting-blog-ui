@@ -46,11 +46,16 @@
 
                     if(state.currentView !== 'home') {
                         this.unmount();
+                    } else {
+                        if(state.scrollTo !== ''){
+                            document.getElementsByTagName('service-area')[0].scrollIntoView(true);
+                        }
                     }
                 }
             });
         };
 
         subscribe('routing', 'app.update.currentView');
+        subscribe('scroll', 'app.update.scrollTo');
     </script>
 </home> 
