@@ -52,6 +52,5 @@
         };
 
         subscribe('routing', 'app.update.currentView');
-        subscribe('scroll', 'app.scrollTo.hash');
     </script>
 </home> 
