@@ -529,6 +529,10 @@ about area css
     visibility: hidden;
 }
 
+.barfiller span.tip {
+    display: none;
+}
+
 .skill_title {
     font-size: 13px;
     font-weight: bold;
