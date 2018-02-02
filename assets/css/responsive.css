@@ -900,11 +900,15 @@ Mobile
     }
 
     .welcome_area::after {
-        background-position: -88px 5px;
+        background-position: -140px 5px;
     }
 
     .col-xs-6 {
-        width: 75%;
+        width: 80%;
+    }
+
+    .header_area a img {
+        max-width: 30%;
     }
 }
 
@@ -932,11 +936,11 @@ wid device
     }
 
     .welcome_area::after {
-        background-position: -10px 5px;
+        background-position: -60px 5px;
     }
 
     .col-xs-6 {
-        width: 65%;
+        width: 80%;
     }
 
     .header_area a img {
