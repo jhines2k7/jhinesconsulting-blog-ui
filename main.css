@@ -2601,3 +2601,16 @@ skill-ratings {
 .form-submission-error {
     margin-top: 10px;
 }
+
+.form_btn .svg-container {
+    overflow: hidden;
+    height: 36px;
+    position: relative;
+}
+
+.form_btn .svg-container img{
+    height: 90px;
+    position: relative;
+    top: -27px;
+    left: -14px;
+}

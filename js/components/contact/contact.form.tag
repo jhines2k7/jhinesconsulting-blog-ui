@@ -14,13 +14,18 @@
                 <textarea ref="message" name="message" placeholder="Message"></textarea>
             </div>
             <div class="form_btn">
-                <button type="submit" class="custom_btn">Submit<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-                <div if={ viewModel.showContactFormError } class="form-submission-error">
+                <button if={ !viewModel.requestInProgress } type="submit" class="custom_btn">Submit<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+
+                <div if={ viewModel.requestInProgress } class="svg-container">
+                    <img src="assets/img/Bars-1s-200px.svg" alt="">
+                </div>
+
+                <div if={ viewModel.showContactFormError && !viewModel.requestInProgress } class="form-submission-error">
                     <p>The server encountered an internal error while processing your form submission.</p>
                     <p>Try again later or send an email to: <a href="mailto:support@jhinesconsulting.com">support@jhinesconsulting.com</a></p>
                 </div>
 
-                <div if={ viewModel.showConnectionError } class="form-submission-error">
+                <div if={ viewModel.showConnectionError && !viewModel.requestInProgress } class="form-submission-error">
                     <p>There was a problem contacting the server.</p>
                     <p>Try again later or send an email to: <a href="mailto:support@jhinesconsulting.com">support@jhinesconsulting.com</a></p>
                 </div>
@@ -45,7 +50,8 @@
         this.viewModel = {
             showContactFormSuccess: false,
             showConnectionError: false,
-            showContactFormError: false
+            showContactFormError: false,
+            requestInProgress: false
         };
 
         let eventStore = null;
@@ -72,8 +78,10 @@
                         this.viewModel.showContactFormSuccess = true;
                     } else if(currentTopic === 'app.form.submission.failure') {
                         this.viewModel.showContactFormError = true;
+                        this.viewModel.requestInProgress = false;
                     } else if (currentTopic === 'app.connection.error') {
                         this.viewModel.showConnectionError = true;
+                        this.viewModel.requestInProgress = false;
                     }
 
                     this.update(this.viewModel);
@@ -87,6 +95,12 @@
 
         submit(e) {
             e.preventDefault();
+
+            this.viewModel.requestInProgress = true;
+            this.viewModel.showConnectionError = false;
+            this.viewModel.showContactFormError = false;
+
+            this.update(this.viewModel);
 
             let url = `http://${config.domain}/contact`;
             let data = {
