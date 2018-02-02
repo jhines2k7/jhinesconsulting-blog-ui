@@ -4,7 +4,7 @@ medium
 ================+/+/+/+/+/+/+/+/+/=================
 */
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
     .welcome_content {
         padding: 0 14px 150px;
     }
@@ -63,6 +63,14 @@ medium
     .work_data {
         margin-left: 0;
         padding: 60px 0 58px 36px;
+    }
+
+    .single_contact_inf .contact_icon {
+        display: none;
+    }
+
+    .single_contact_inf {
+        padding-left: 0;
     }
 }
 
