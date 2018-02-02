@@ -898,6 +898,14 @@ Mobile
         float: none;
         width: 100%;
     }
+
+    .welcome_area::after {
+        background-position: -88px 5px;
+    }
+
+    .col-xs-6 {
+        width: 75%;
+    }
 }
 
 
@@ -924,11 +932,11 @@ wid device
     }
 
     .welcome_area::after {
-        opacity: 0.25;
+        background-position: -10px 5px;
     }
 
     .col-xs-6 {
-        width: 100%;
+        width: 65%;
     }
 
     .header_area a img {
