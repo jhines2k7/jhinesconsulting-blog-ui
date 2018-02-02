@@ -65,12 +65,13 @@ medium
         padding: 60px 0 58px 36px;
     }
 
-    .single_contact_inf .contact_icon {
-        display: none;
+    .contact-container {
+        display: unset;
     }
 
-    .single_contact_inf {
-        padding-left: 0;
+    .contact_colum4, .contact_colum8 {
+        float: none;
+        width: 100%;
     }
 }
 
@@ -90,7 +91,7 @@ tab
         margin-bottom: 15px;
     }
     .welcome_content {
-        padding: 0 168px 80px;
+        padding: 0 168px 80px 0px;
     }
     .welcome_content .custom_btn {
         margin-top: 20px;
@@ -261,6 +262,19 @@ tab
     .resume_section_tittle {
         padding: 0;
     }
+
+    .text-center {
+        text-align: left;
+    }
+
+    .contact-container {
+        display: unset;
+    }
+
+    .contact_colum4, .contact_colum8 {
+        float: none;
+        width: 100%;
+    }
 }
 
 
@@ -343,7 +357,7 @@ Mobile
         padding: 0;
     }
     .welcome_content>h1 {
-        font-size: 40px;
+        font-size: 36px;
         margin-bottom: 10px;
     }
     .welcome_content .custom_btn {
@@ -871,6 +885,19 @@ Mobile
     .single_blog .custom_btn {
         margin-top: 20px;
     }
+
+    .text-center {
+        text-align: left;
+    }
+
+    .contact-container {
+        display: unset;
+    }
+
+    .contact_colum4, .contact_colum8 {
+        float: none;
+        width: 100%;
+    }
 }
 
 
@@ -894,5 +921,17 @@ wid device
     }
     .single_service.home5_single_service {
         margin: 0 14% 30px;
+    }
+
+    .welcome_area::after {
+        opacity: 0.25;
+    }
+
+    .col-xs-6 {
+        width: 100%;
+    }
+
+    .header_area a img {
+        max-width: 20%;
     }
 }

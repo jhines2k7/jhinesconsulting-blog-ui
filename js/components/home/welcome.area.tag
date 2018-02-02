@@ -3,7 +3,7 @@
         <div class="display_flex">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-1 text-center">
+                    <div class="col-md-6 col-md-offset-1 col-sm-9 col-xs-6 text-center">
                         <div class="welcome_content">
                             <h1>
                                 <div class="typewrite">
