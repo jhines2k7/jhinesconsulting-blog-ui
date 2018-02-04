@@ -29,7 +29,7 @@ cp js/*.js .tmp
 node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
 
 # modify the value of the domain object in the config file
-sed -i "s/domain: 'localhost:3000'/domain: $CONTACT_FORM_SUBMISSION_SERVICE_HOSTNAME/g" dist/bundle.js
+sed -i "s/domain: 'localhost:3000'/domain: $CONTACT_FORM_SUBMISSION_SERVICE_IP/g" dist/bundle.js
 
 #copy the assets to dist directory
 cp -r assets dist
@@ -59,3 +59,5 @@ docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
 docker build -t jhines2017/jhines-consulting-blog:$VERSION -f jhines-consulting-blog .
 
 docker push jhines2017/jhines-consulting-blog:$VERSION
+
+rm -rf node_modules .tmp dist

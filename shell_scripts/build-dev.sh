@@ -22,5 +22,4 @@ cp js/*.js .tmp
 # js compile and transform
 node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
 
-# modify the value of the domain object in the config file
-sed -i "s/domain: 'localhost'/domain: $CONTACT_FORM_SUBMISSION_SERVICE_HOSTNAME/g" dist/bundle.js
+sed -i "s/domain: 'localhost:3000'/domain: $CONTACT_FORM_SUBMISSION_SERVICE_IP/g" dist/bundle.js
