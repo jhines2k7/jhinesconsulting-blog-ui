@@ -41,7 +41,7 @@ let home = (hash) => {
     let tagName;
 
     if(typeof hash !== 'undefined') {
-        if(hash === 'service') {
+        if(hash === 'services') {
             tagName = 'service-area';
         } else if(hash === 'work') {
             tagName = 'work-area';
