@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 VERSION=0.18.3
 
+echo "Contact form submission service ip: "
+echo $CONTACT_FORM_SUBMISSION_SERVICE_IP
+
 cd /home/james/projects/jhines-consulting-blog
 
 npm install
