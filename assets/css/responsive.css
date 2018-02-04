@@ -289,8 +289,11 @@ Mobile
         font-size: 13px;
         line-height: 1.5;
     }
-    .main_menu {
+    .main_menu li a {
         display: none;
+    }
+    .main_menu li a.icon {
+        display: block;
     }
     .header_area {
         padding-top: 20px;
@@ -751,7 +754,7 @@ Mobile
         padding: 40px 0;
     }
     .inner_page_area h1 {
-        font-size: 28px;
+        font-size: 20px;
         margin-bottom: 6px;
         text-align: center;
     }
@@ -909,7 +912,7 @@ Mobile
     }
 
     .header_area a img {
-        max-width: 30%;
+        max-width: 20%;
     }
 
     .about-me-image-container {

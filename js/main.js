@@ -72,7 +72,9 @@ let highlightActiveMenuItem = (item) => {
         return li.innerText === item;
     });
 
-    activeMenuItem[0].className = 'active';
+    if(activeMenuItem.length > 0) {
+        activeMenuItem[0].className = 'active';
+    }
 };
 
 let about = () => {

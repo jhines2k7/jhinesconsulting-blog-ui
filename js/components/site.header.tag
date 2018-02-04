@@ -7,7 +7,7 @@
                     <!--<h4>Proper.</h4>-->
                 </a>
             </div>
-            <div class="col-sm-9 col-xs-6 text-right">
+            <div class="col-sm-9 col-xs-2 text-right">
                 <top-nav></top-nav>
             </div>
         </div>

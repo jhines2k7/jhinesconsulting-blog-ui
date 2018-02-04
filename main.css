@@ -224,6 +224,11 @@ header area css
     max-width: 40%;
 }
 
+.main_menu li a.icon {
+    font-size: 40px;
+    display: none;
+}
+
 @media only screen and (min-width:768px) {
     .main_menu > li {
         display: inline-block;

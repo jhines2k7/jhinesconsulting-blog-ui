@@ -1,6 +1,7 @@
 <top-nav>
     <nav class="menu_bar">
         <ul class="main_menu">
+            <li><a onclick={ toggleNav } class="icon">&#9776;</a></li>
             <li><a href="#/">home</a></li>
             <li><a href="#/about">about</a></li>
             <li><a onclick={ scrollTo } href="#services">services</a></li>
@@ -15,7 +16,6 @@
         import EventStore from '../eventStore'
         import {Router} from 'director/build/director'
 
-
         this.viewModel = {};
 
         this.currentView = '';
@@ -25,6 +25,15 @@
         this.on('mount', () => {
             eventStore = new EventStore();
         });
+
+        toggleNav(e) {
+            // diplay all links except for the home link
+            Array.from(document.getElementsByClassName("main_menu")[0].children).forEach(function(item) {
+                if(item.textContent !== 'home') {
+                    item.childNodes[0].style.display = 'inline-block'
+                }
+            });
+        }
 
         scrollTo(e) {
             let hash = e.srcElement.innerHTML;
