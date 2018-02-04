@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.17.3
+VERSION=0.18.3
 
 cd /home/james/projects/jhines-consulting-blog
 
