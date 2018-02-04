@@ -753,6 +753,7 @@ Mobile
     .inner_page_area h1 {
         font-size: 28px;
         margin-bottom: 6px;
+        text-align: center;
     }
     .blog_page_area {
         padding: 60px 0;
