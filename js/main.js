@@ -26,15 +26,17 @@ let eventStore = null;
 let home = (hash) => {
     'use strict';
 
-    let home = document.createElement('home');
+    if(document.getElementsByTagName('home').length ===0) {
+        let home = document.createElement('home');
 
-    let footer = document.getElementsByTagName('site-footer')[0];
+        let footer = document.getElementsByTagName('site-footer')[0];
 
-    let body = document.getElementsByTagName('body')[0];
+        let body = document.getElementsByTagName('body')[0];
 
-    body.insertBefore(home, footer);
+        body.insertBefore(home, footer);
 
-    riot.mount('home');
+        riot.mount('home');
+    }
 
     let events = [];
 
