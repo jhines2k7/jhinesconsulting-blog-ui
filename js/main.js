@@ -23,7 +23,7 @@ import EventStore from './eventStore'
 
 let eventStore = null;
 
-let home = () => {
+let home = (hash) => {
     'use strict';
 
     let home = document.createElement('home');
@@ -36,11 +36,31 @@ let home = () => {
 
     riot.mount('home');
 
-    eventStore.add(eventStore.events, [{
+    let events = [];
+
+    let tagName;
+
+    if(typeof hash !== 'undefined') {
+        if(hash === 'service') {
+            tagName = 'service-area';
+        } else if(hash === 'work') {
+            tagName = 'work-area';
+        }
+
+        events.push({
+            channel: 'scroll',
+            topic: 'app.update.scrollTo',
+            data: tagName
+        })
+    }
+
+    events.push({
         channel: 'routing',
         topic: 'app.update.currentView',
         data: 'home'
-    }]);
+    });
+
+    eventStore.add(eventStore.events, events);
 
     highlightActiveMenuItem('home');
 };
@@ -145,11 +165,12 @@ Storage.get().then( (events) => {
         '/about': about,
         '/contact': contact,
         '/projects/:id': projectDetail,
+        '/:hash': home
     });
 
     router.configure({
         before: renderHeaderAndFooter
     });
 
-    router.init();
+    router.init(['/']);
 });
