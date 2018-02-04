@@ -2,7 +2,7 @@
     <div class="about_area section_padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 col-sm-6">
+                <div class="col-md-5 col-sm-6 col-xs-5">
                     <div class="about-me-image-container effect7">
                         <img src="assets/img/me_seated.jpeg" alt="">
                     </div>

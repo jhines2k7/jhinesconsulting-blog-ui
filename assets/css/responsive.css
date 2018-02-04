@@ -404,7 +404,7 @@ Mobile
         text-align: left;
     }
     .about_area img {
-        width: 270px;
+        width: 100%;
         display: inline-block;
     }
     .service_content {
@@ -910,6 +910,18 @@ Mobile
     .header_area a img {
         max-width: 30%;
     }
+
+    .about-me-image-container {
+        height: 330px;
+    }
+
+    .effect7 {
+        width: 100%;
+    }
+
+    .col-xs-5 {
+        width: 100%;
+    }
 }
 
 
@@ -936,11 +948,11 @@ wid device
     }
 
     .welcome_area::after {
-        background-position: -60px 5px;
+        background-position: 0px 5px;
     }
 
     .col-xs-6 {
-        width: 80%;
+        width: 68%;
     }
 
     .header_area a img {
