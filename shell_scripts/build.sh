@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 VERSION=0.17.3
 
+cd /home/james/projects/jhines-consulting-blog
+
+npm install
+
 # clean the dist directory
 if [ -d dist ]; then
     rm -rf dist
@@ -52,6 +56,6 @@ sed -i "s/main.css/main.$NEW_UUID.css/g" dist/index.html
 
 docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
 
-docker build -t jhines2017/jhines-consulting-blog:$VERSION .
+docker build -t jhines2017/jhines-consulting-blog:$VERSION -f jhines-consulting-blog .
 
 docker push jhines2017/jhines-consulting-blog:$VERSION
