@@ -926,6 +926,16 @@ Mobile
     .col-xs-5 {
         width: 100%;
     }
+
+    .responsive {
+        position: absolute;
+        right: 0px;
+        width: 200px;
+    }
+
+    .responsive .menu_bar .main_menu li {
+        background-color: #c70039;
+    }
 }
 
 

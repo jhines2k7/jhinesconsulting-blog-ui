@@ -27,10 +27,20 @@
         });
 
         toggleNav(e) {
-            // diplay all links except for the home link
+            document.getElementsByTagName('top-nav')[0].classList.add('responsive');
+
             Array.from(document.getElementsByClassName("main_menu")[0].children).forEach(function(item) {
                 if(item.textContent !== 'home') {
-                    item.childNodes[0].style.display = 'inline-block'
+                    if(item.children[0].className !== 'icon') {
+                        let anchorTag = item.childNodes[0];
+
+                        if(anchorTag.style.display === '' || anchorTag.style.display === 'none'){
+                            anchorTag.style.display = 'inline-block';
+                        } else if(anchorTag.style.display === 'inline-block'){
+                            anchorTag.style.display = 'none';
+
+                        }
+                    }
                 }
             });
         }
