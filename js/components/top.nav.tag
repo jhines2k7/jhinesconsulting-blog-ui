@@ -35,8 +35,8 @@
                         let anchorTag = item.childNodes[0];
 
                         if(anchorTag.style.display === '' || anchorTag.style.display === 'none'){
-                            anchorTag.style.display = 'inline-block';
-                        } else if(anchorTag.style.display === 'inline-block'){
+                            anchorTag.style.display = 'block';
+                        } else if(anchorTag.style.display === 'block'){
                             anchorTag.style.display = 'none';
 
                         }

@@ -294,6 +294,7 @@ Mobile
     }
     .main_menu li a.icon {
         display: block;
+        color: #571845;
     }
     .header_area {
         padding-top: 20px;
@@ -933,8 +934,20 @@ Mobile
         width: 200px;
     }
 
-    .responsive .menu_bar .main_menu li {
-        background-color: #c70039;
+    .responsive .menu_bar .main_menu li a{
+        background-color: #571845;
+        color: #e3e5e0;
+        width: 200px;
+        padding: 5px 20px 5px 0;
+    }
+
+    .responsive .menu_bar .main_menu li a.icon {
+        color: #571845;
+        background-color: transparent;
+        width: 20%;
+        position: relative;
+        right: -145px;
+        padding: 0;
     }
 }
 
