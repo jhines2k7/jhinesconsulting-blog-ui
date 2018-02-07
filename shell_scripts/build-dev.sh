@@ -21,3 +21,5 @@ cp js/*.js .tmp
 
 # js compile and transform
 node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
+
+sed -i "s/domain: 'localhost:3000'/domain: '$CONTACT_FORM_SUBMISSION_SERVICE_IP'/g" dist/bundle.js
