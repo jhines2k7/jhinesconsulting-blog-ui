@@ -116,11 +116,9 @@
                     'Content-Type': 'application/json'
                 })
             }).then(response => {
-                if(response.ok) {
-                    return response.json();
+                if(!response.ok) {
+                    throw new Error('The request to the server was not successful');
                 }
-
-                throw new Error('The request to the server was not successful');
             }).then(response => {
                 eventStore.add(eventStore.events, [{
                     channel: 'api-requests',
