@@ -119,11 +119,6 @@
                 if(!response.ok) {
                     throw new Error('The request to the server was not successful');
                 }
-            }).then(response => {
-                eventStore.add(eventStore.events, [{
-                    channel: 'api-requests',
-                    topic: 'app.form.submission.success'
-                }]);
             }).catch(error => {
                 if(error.message === 'Failed to fetch') {
                     eventStore.add(eventStore.events, [{
