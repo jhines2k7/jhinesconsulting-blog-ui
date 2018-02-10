@@ -29,20 +29,34 @@
         toggleNav(e) {
             document.getElementsByTagName('top-nav')[0].classList.add('responsive');
 
-            Array.from(document.getElementsByClassName("main_menu")[0].children).forEach(function(item) {
-                if(item.textContent !== 'home') {
-                    if(item.children[0].className !== 'icon') {
-                        let anchorTag = item.childNodes[0];
+//            Array.from(document.getElementsByClassName("main_menu")[0].children).forEach(function(item) {
+//                if(item.textContent !== 'home') {
+//                    if(item.children[0].className !== 'icon') {
+//                        let anchorTag = item.childNodes[0];
+//
+//                        if(anchorTag.style.display === '' || anchorTag.style.display === 'none'){
+//                            anchorTag.style.display = 'block';
+//                        } else if(anchorTag.style.display === 'block'){
+//                            anchorTag.style.display = 'none';
+//
+//                        }
+//                    }
+//                }
+//            });
 
-                        if(anchorTag.style.display === '' || anchorTag.style.display === 'none'){
-                            anchorTag.style.display = 'block';
-                        } else if(anchorTag.style.display === 'block'){
-                            anchorTag.style.display = 'none';
+            Array.from(document.getElementsByClassName("main_menu")[0].children)
+                .filter((item) => item.textContent !== 'home')
+                .filter((item) => item.children[0].className !== 'icon')
+                .forEach((item) => {
+                    let anchorTag = item.childNodes[0];
 
-                        }
+                    if(anchorTag.style.display === '' || anchorTag.style.display === 'none'){
+                        anchorTag.style.display = 'block';
+                    } else if(anchorTag.style.display === 'block'){
+                        anchorTag.style.display = 'none';
+
                     }
-                }
-            });
+                })
         }
 
         scrollTo(e) {
