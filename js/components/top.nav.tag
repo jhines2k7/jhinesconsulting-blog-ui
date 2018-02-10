@@ -54,7 +54,6 @@
                         anchorTag.style.display = 'block';
                     } else if(anchorTag.style.display === 'block'){
                         anchorTag.style.display = 'none';
-
                     }
                 })
         }
