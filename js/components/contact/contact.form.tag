@@ -66,7 +66,7 @@
             });
         }
 
-        let eventSource = new EventSource(`http://${config.domain}/events/contactsaved`, {});
+        let eventSource = new EventSource(`http://${config.domain}/events/contactsaved/${createUUID()}`, {});
 
         this.on('mount', () => {
             eventStore = new EventStore();
