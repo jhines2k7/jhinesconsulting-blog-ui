@@ -56,15 +56,42 @@
 
         let eventStore = null;
 
+        let eventSource = new EventSource(`http://${config.domain}/events/contactsaved`, {});
+
         this.on('mount', () => {
             eventStore = new EventStore();
 
             //Form Focus
-            var forminput = $(".contact_form form .input,.contact_form form .textarea");
-            forminput.on("focusin", function() {
+            let forminput = $(".contact_form form .input,.contact_form form .textarea");
+            forminput.on("focusin", () => {
                 forminput.removeClass("active");
                 $(this).addClass("active");
             });
+
+            eventSource.addEventListener("contact-saved", function(e) {
+                eventStore.add(eventStore.events, [{
+                    channel: 'api-requests',
+                    topic: 'app.form.submission.success'
+                }]);
+            }, false);
+
+            eventSource.onopen = (e) => {
+                console.log('connection was opened');
+
+
+            };
+
+            eventSource.onerror = (e) => {
+                if (e.readyState == EventSource.CONNECTING) {
+                    console.log('event: CONNECTING');
+                } else if (e.readyState == EventSource.OPEN) {
+                    console.log('event: OPEN');
+                } else if (e.readyState == EventSource.CLOSING) {
+                    console.log('event: CLOSING');
+                } else if (e.readyState == EventSource.CLOSED) {
+                    console.log('event: CLOSED');
+                }
+            };
         });
 
         let subscribe = (channel, topic) => {
