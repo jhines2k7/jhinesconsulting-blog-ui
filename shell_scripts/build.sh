@@ -59,8 +59,8 @@ sed -i "s/main.css/main.$NEW_UUID.css/g" dist/index.html
 
 docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
 
-docker build -t jhines2017/jhines-consulting-blog:$VERSION .
+docker build -t jhines2017/jhines-consulting-blog-ui:$VERSION .
 
-docker push jhines2017/jhines-consulting-blog:$VERSION
+docker push jhines2017/jhines-consulting-blog-ui:$VERSION
 
 rm -rf node_modules .tmp dist
