@@ -68,18 +68,12 @@
                 $(this).addClass("active");
             });
 
-            eventSource.addEventListener("contact-saved", function(e) {
+            eventSource.addEventListener("contact-saved", (e) => {
                 eventStore.add(eventStore.events, [{
                     channel: 'api-requests',
                     topic: 'app.form.submission.success'
                 }]);
             }, false);
-
-            eventSource.onopen = (e) => {
-                console.log('connection was opened');
-
-
-            };
 
             eventSource.onerror = (e) => {
                 if (e.readyState == EventSource.CONNECTING) {
