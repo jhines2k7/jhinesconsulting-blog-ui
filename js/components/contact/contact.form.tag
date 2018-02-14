@@ -74,18 +74,6 @@
                     topic: 'app.form.submission.success'
                 }]);
             }, false);
-
-            eventSource.onerror = (e) => {
-                if (e.readyState == EventSource.CONNECTING) {
-                    console.log('event: CONNECTING');
-                } else if (e.readyState == EventSource.OPEN) {
-                    console.log('event: OPEN');
-                } else if (e.readyState == EventSource.CLOSING) {
-                    console.log('event: CLOSING');
-                } else if (e.readyState == EventSource.CLOSED) {
-                    console.log('event: CLOSED');
-                }
-            };
         });
 
         let subscribe = (channel, topic) => {
