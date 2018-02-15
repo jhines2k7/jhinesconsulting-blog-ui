@@ -56,17 +56,9 @@
 
         let eventStore = null;
 
-        createUUID(){
-            let dt = new Date().getTime();
+        const clientID = config.clientID;
 
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-                let r = (dt + Math.random()*16)%16 | 0;
-                dt = Math.floor(dt/16);
-                return (c=='x' ? r :(r&0x3|0x8)).toString(16);
-            });
-        }
-
-        let eventSource = new EventSource(`http://${config.domain}/events/contactsaved/${createUUID()}`, {});
+        let eventSource = new EventSource(`http://${config.domain}/events/contactsaved/${clientID}`, {});
 
         this.on('mount', () => {
             eventStore = new EventStore();
@@ -78,7 +70,7 @@
                 $(this).addClass("active");
             });
 
-            eventSource.addEventListener("contact-saved", (e) => {
+            eventSource.addEventListener(`contact-saved-${clientID}`, (e) => {
                 eventStore.add(eventStore.events, [{
                     channel: 'api-requests',
                     topic: 'app.form.submission.success'
@@ -123,6 +115,7 @@
 
             let url = `http://${config.domain}/contact`;
             let data = {
+                clientID: clientID,
                 name: this.refs.name.value,
                 email: this.refs.email.value,
                 message: this.refs.message.value
