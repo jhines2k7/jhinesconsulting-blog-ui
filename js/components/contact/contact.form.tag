@@ -60,6 +60,8 @@
 
         let eventSource = new EventSource(`http://${config.domain}/events/contactsaved/${clientID}`, {});
 
+        console.log(`EventSource readyState: ${evtSource.readyState}`);
+
         this.on('mount', () => {
             eventStore = new EventStore();
 
