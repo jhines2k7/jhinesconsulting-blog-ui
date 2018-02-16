@@ -7,8 +7,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-5">
-                    <div class="home2_about_img">
-                        <img src="assets/img/about2.jpg" alt="">
+                    <div class="home2_about_img effect7">
+                        <img src="assets/img/me_at_cjug-cropped.jpg" alt="">
                         <div class="section_tittle">
                             <h1>A few thoughts...</h1>
                         </div>
