@@ -2619,3 +2619,13 @@ skill-ratings {
     top: -27px;
     left: -14px;
 }
+
+.credit {
+    text-align: right;
+    font-size: xx-small;
+    color: #e3e5e0;
+}
+
+.credit a {
+    color: #e3e5e0;
+}

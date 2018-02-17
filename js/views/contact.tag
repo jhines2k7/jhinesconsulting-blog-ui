@@ -1,6 +1,8 @@
 <contact>
     <!--02.InnerPage Area Start-->
-    <div data-is="inner-page" class="inner_page_area background_ofwhite"></div>
+    <div data-is="inner-page" class="inner_page_area background_ofwhite"
+         style="background-image: url(assets/img/cityscape_for_contact_page_sean_medgar.jpg);background-position-y: bottom;background-blend-mode: multiply">
+    </div>
     <!--02.InnerPage Area End-->
     <!--03.ContactPage Area Start-->
     <div data-is="contact-area" class="contact_area section_padding"></div>
