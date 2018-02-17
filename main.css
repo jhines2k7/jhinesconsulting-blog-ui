@@ -664,7 +664,7 @@ Work area css
 .single_work_wraper {
     padding: 0 10px;
     float: left;
-    width: 25%;
+    width: 50%;
     margin-bottom: 20px;
 }
 
@@ -673,7 +673,6 @@ Work area css
     padding: 0 10px;
     margin-bottom: 20px;
     justify-content: center;
-    width: 100%;
 }
 
 .section_tittle {
@@ -2334,7 +2333,7 @@ AboutPage  css
 .single_resume h4 {
     font-size: 17px;
     font-weight: bold;
-    color: #222;
+    color: #454545;
 }
 
 .resume_year span {
@@ -2355,7 +2354,7 @@ AboutPage  css
 }
 
 .resume_content::after {
-    background: #0078FF none repeat scroll 0 0;
+    background: #c70039 none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
@@ -2375,7 +2374,7 @@ AboutPage  css
 }
 
 .resume_section_tittle > h1 {
-    color: #222;
+    color: #571845;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
