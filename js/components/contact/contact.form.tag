@@ -105,7 +105,7 @@
         subscribe('api-requests', 'app.connection.error');
 
         submit(e) {
-            console.log(`EventSource.readyState: `${eventSource.readyState});
+            console.log(`EventSource.readyState: ${eventSource.readyState}`);
 
             e.preventDefault();
 
