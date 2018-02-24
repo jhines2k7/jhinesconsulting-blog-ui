@@ -26,7 +26,7 @@ let eventStore = null;
 let home = (hash) => {
     'use strict';
 
-    if(document.getElementsByTagName('home').length ===0) {
+    if(document.getElementsByTagName('home').length === 0) {
         let home = document.createElement('home');
 
         let footer = document.getElementsByTagName('site-footer')[0];

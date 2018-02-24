@@ -58,7 +58,7 @@
 
         const clientID = config.clientID;
 
-        let eventSource = new EventSource(`http://${config.domain}/events/contactsaved/${clientID}`, {});
+        let eventSource = new EventSource(`http://${config.contactFormServiceIP}/events/contactsaved/${clientID}`, {});
 
         this.on('mount', () => {
             eventStore = new EventStore();
@@ -115,7 +115,8 @@
 
             this.update(this.viewModel);
 
-            let url = `http://${config.domain}/contact`;
+            let url = `http://${config.contactFormServiceIP}/contact`;
+
             let data = {
                 clientID: clientID,
                 name: this.refs.name.value,
