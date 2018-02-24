@@ -4,6 +4,9 @@ VERSION=0.30.5
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
 
+echo "List projects service ip: "
+echo $LIST_PROJECTS_SERVICE_IP
+
 cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
 npm install
