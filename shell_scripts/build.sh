@@ -2,9 +2,9 @@
 VERSION=0.30.5
 
 echo "Contact form submission service ip: "
-echo $CONTACT_FORM_SUBMISSION_SERVICE_IP
+echo $CONTACT_FORM_SERVICE_IP
 
-cd /home/james/projects/jhines-consulting-blog
+cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
 npm install
 
@@ -31,8 +31,11 @@ cp js/*.js .tmp
 # js compile and transform
 node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
 
-# modify the value of the domain object in the config file
-sed -i "s/domain: 'localhost:3000'/domain: '$CONTACT_FORM_SUBMISSION_SERVICE_IP'/g" dist/bundle.js
+# modify the value of the contact form service ip object in the config file
+sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
+
+# modify the value of the list projects service ip object in the config file
+sed -i "s/listProjectsServiceIP: ''/listProjectsServiceIP: '$LIST_PROJECTS_SERVICE_IP'/g" dist/bundle.js
 
 #copy the assets to dist directory
 cp -r assets dist
@@ -59,8 +62,8 @@ sed -i "s/main.css/main.$NEW_UUID.css/g" dist/index.html
 
 docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
 
-docker build -t jhines2017/jhines-consulting-blog-ui:$VERSION .
+docker build -t jhines2017/jhinesconsulting-blog-ui:$VERSION .
 
-docker push jhines2017/jhines-consulting-blog-ui:$VERSION
+docker push jhines2017/jhinesconsulting-blog-ui:$VERSION
 
 rm -rf node_modules .tmp dist

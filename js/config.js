@@ -9,6 +9,7 @@ let createUUID = () => {
 };
 
 export default {
-    domain: 'localhost:3000',
+    contactFormServiceIP: '',
+    listProjectsServiceIP: '',
     clientID: createUUID()
 }
