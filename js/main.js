@@ -1,6 +1,8 @@
 import './views/home'
-import './components/top.nav'
-import './components/site.header'
+import './views/about'
+import './views/contact'
+import './views/blog'
+import './views/project.detail'
 import './components/home/about.area'
 import './components/home/contact.area'
 import './components/home/service.area'
@@ -8,11 +10,10 @@ import './components/home/welcome.area'
 import './components/home/work.area'
 import './components/home/testimonial.area'
 import './components/home/skill.ratings'
+import './components/top.nav'
+import './components/site.header'
 import './components/site.footer'
 import './components/top.nav'
-import './views/about'
-import './views/contact'
-import './views/project.detail'
 import './components/inner.page'
 import './components/contact.form'
 
@@ -156,6 +157,32 @@ let projectDetail = (id) => {
     highlightActiveMenuItem('work');
 };
 
+let blog = () => {
+    'use strict';
+
+    let blog = document.createElement('blog');
+
+    let footer = document.getElementsByTagName('site-footer')[0];
+
+    let body = document.getElementsByTagName('body')[0];
+
+    body.insertBefore(blog, footer);
+
+    riot.mount('blog');
+
+    eventStore.add(eventStore.events, [{
+        channel: 'routing',
+        topic: 'app.update.currentView',
+        data: 'blog'
+    }, {
+        channel: 'routing',
+        topic: 'app.update.innerPage',
+        data: 'Blog'
+    }]);
+
+    highlightActiveMenuItem('blog');
+};
+
 let renderHeaderAndFooter = () => {
     riot.mount('site-header');
     riot.mount('site-footer');
@@ -169,6 +196,7 @@ Storage.get().then( (events) => {
         '/about': about,
         '/contact': contact,
         '/projects/:id': projectDetail,
+        '/blog': blog,
         '/:hash': home
     });
 
