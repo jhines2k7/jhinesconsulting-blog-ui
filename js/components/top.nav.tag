@@ -6,6 +6,7 @@
             <li><a href="#/about">about</a></li>
             <li><a onclick={ scrollTo } href="#services">services</a></li>
             <li><a onclick={ scrollTo } href="#work">work</a></li>
+            <li><a href="#/blog">blog</a></li>
             <li><a href="#/contact">contact</a></li>
         </ul>
     </nav>
@@ -45,8 +46,7 @@
 //            });
 
             Array.from(document.getElementsByClassName("main_menu")[0].children)
-                .filter((item) => item.textContent !== 'home')
-                .filter((item) => item.children[0].className !== 'icon')
+                .filter((item) => item.textContent !== 'home' && item.children[0].className !== 'icon')
                 .forEach((item) => {
                     let anchorTag = item.childNodes[0];
 
