@@ -23,5 +23,3 @@ cp js/*.js .tmp
 node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
 
 sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
-
-sed -i "s/listProjectsServiceIP: ''/listProjectsServiceIP: '$LIST_PROJECTS_SERVICE_IP'/g" dist/bundle.js

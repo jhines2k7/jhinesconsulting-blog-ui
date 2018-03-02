@@ -4,9 +4,6 @@ VERSION=0.30.5
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
 
-echo "List projects service ip: "
-echo $LIST_PROJECTS_SERVICE_IP
-
 cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
 npm install
@@ -36,9 +33,6 @@ node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.con
 
 # modify the value of the contact form service ip object in the config file
 sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
-
-# modify the value of the list projects service ip object in the config file
-sed -i "s/listProjectsServiceIP: ''/listProjectsServiceIP: '$LIST_PROJECTS_SERVICE_IP'/g" dist/bundle.js
 
 #copy the assets to dist directory
 cp -r assets dist

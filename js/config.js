@@ -10,6 +10,5 @@ let createUUID = () => {
 
 export default {
     contactFormServiceIP: '',
-    listProjectsServiceIP: '',
     clientID: createUUID()
 }

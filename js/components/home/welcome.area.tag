@@ -11,7 +11,10 @@
                                     <span class="blinking-cursor">|</span>
                                 </div>
                             </h1>
-                            <p>Compass prepare and easoable size now easy eat hand emma mere dection atten heart amar amd mosems murse means.</p>
+                            <p>
+                                I'm an IT Consultant and Data Solutions architect. I can help your small or mid-sized business make
+                                sense of one of the most valuable resources you have: Your data!
+                            </p>
                         </div>
                     </div>
                 </div>
