@@ -13,7 +13,7 @@
                             <h3>{ article.title }</h3>
                             <span class="blog_meta">{ article.author } / { article.date }</span>
                             <p>{ article.summary }</p>
-                            <a href=#/{ article.slug } class="custom_btn">Read more</a>
+                            <a href=#/blog/{ article.slug } class="custom_btn">Read more</a>
                         </div>
                     </div>
                 </div>

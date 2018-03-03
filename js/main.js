@@ -178,8 +178,6 @@ let blog = () => {
             return response.json();
         })
         .then(function(articles) {
-            console.log(articles);
-
             eventStore.add(eventStore.events, [{
                 channel: 'routing',
                 topic: 'app.update.currentView',
@@ -211,15 +209,23 @@ let blogArticle = (slug) => {
 
     riot.mount('blog-article');
 
-    eventStore.add(eventStore.events, [{
-        channel: 'routing',
-        topic: 'app.update.currentView',
-        data: 'blogArticle'
-    }, {
-        channel: 'blog',
-        topic: 'app.update.article',
-        data: slug
-    }]);
+    fetch('data/articles.json')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(articles) {
+            let article = articles.find( (article) => article.slug === slug );
+
+            eventStore.add(eventStore.events, [{
+                channel: 'routing',
+                topic: 'app.update.currentView',
+                data: 'blogArticle'
+            }, {
+                channel: 'blog',
+                topic: 'app.update.article',
+                data: article
+            }]);
+        });
 
     highlightActiveMenuItem('blog');
 };

@@ -1,7 +1,7 @@
 <comment-widget>
     <div class="comment_wraper">
         <div class="blog_widget_tittle">
-            <h3>Comment</h3>
+            <h3>Comments</h3>
         </div>
         <div class="single_commment clearfix">
             <div class="commentor_pic">

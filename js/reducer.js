@@ -18,6 +18,10 @@ export default function reduce(events) {
             state.articles = event.data;
         }
 
+        if(event.topic === 'app.update.article') {
+            state.article = event.data;
+        }
+
         return state;
     }, {
         currentView: 'home',
@@ -29,6 +33,7 @@ export default function reduce(events) {
         },
         pageTitle: '',
         scrollTo: '',
-        articles: '',
+        articles: [],
+        article: {}
     })
 }

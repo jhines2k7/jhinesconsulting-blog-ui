@@ -33,6 +33,10 @@
                 channel: channel,
                 topic: topic,
                 callback: (data, envelope) => {
+                    if(eventStore === null) {
+                        eventStore = new EventStore();
+                    }
+
                     let state = reduce(eventStore.events);
 
                     this.viewModel.pageTitle = state.pageTitle;
