@@ -145,6 +145,9 @@ sorry bed sudden manner edeed fat now feebly face doen</span>
         </div>
     </div>
     <!--04.Resume Area End -->
+    <!--05.ContactPage Area Start-->
+    <div data-is="contact-area" class="contact_area section_padding"></div>
+    <!--05.ContactPage Area End-->
     <script>
         import postal from 'postal/lib/postal.lodash'
         import reduce from '../reducer'

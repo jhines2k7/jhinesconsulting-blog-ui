@@ -9,7 +9,7 @@
 								</span>
                         </div>
                         <div class="service_content">
-                            <h5>BRANDING AND IDENTITY</h5>
+                            <h5>REAL-TIME AND BATCH ANALYTICS / REPORTING</h5>
                             <p>Compass prepare and easoable size now easy eat hand emma mere dec heart amar amd murse.</p>
                         </div>
                     </div>
@@ -21,7 +21,7 @@
 								</span>
                         </div>
                         <div class="service_content">
-                            <h5>WEB DEVELOPMENT</h5>
+                            <h5>DATA BACKUP/LONG TERM STORAGE AND RETRIEVAL</h5>
                             <p>Compass prepare and easoable size now easy eat hand emma mere dec heart amar amd murse.</p>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
 								</span>
                         </div>
                         <div class="service_content">
-                            <h5>SOCIAL MEDIA MARKETING</h5>
+                            <h5>REAL-TIME DASHBOARDS AND ALERTS</h5>
                             <p>Compass prepare and easoable size now easy eat hand emma mere dec heart amar amd murse.</p>
                         </div>
                     </div>

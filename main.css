@@ -663,8 +663,6 @@ Work area css
 
 .single_work_wraper {
     padding: 0 10px;
-    float: left;
-    width: 50%;
     margin-bottom: 20px;
 }
 
@@ -2398,10 +2396,6 @@ AboutPage  css
 .resume_area .custom_btn {
     margin-top: 15px;
     margin-right: 20px;
-}
-
-.resume_area {
-    padding-bottom: 90px;
 }
 
 a.custom_btn > i.margin_rihgt,
