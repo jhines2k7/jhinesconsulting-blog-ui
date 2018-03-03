@@ -43,6 +43,7 @@
 
         this.on('mount', () => {
             eventStore = new EventStore();
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
         });
 
         let subscribe = (channel, topic) => {
