@@ -30,43 +30,53 @@ let eventStore = null;
 let home = (hash) => {
     'use strict';
 
-    if(document.getElementsByTagName('home').length === 0) {
-        let home = document.createElement('home');
-
-        let footer = document.getElementsByTagName('site-footer')[0];
-
-        let body = document.getElementsByTagName('body')[0];
-
-        body.insertBefore(home, footer);
-
-        riot.mount('home');
-    }
-
-    let events = [];
-
-    let tagName;
-
-    if(typeof hash !== 'undefined') {
-        if(hash === 'services') {
-            tagName = 'service-area';
-        } else if(hash === 'work') {
-            tagName = 'work-area';
-        }
-
-        events.push({
-            channel: 'scroll',
-            topic: 'app.update.scrollTo',
-            data: tagName
+    fetch('data/projects.json')
+        .then(function(response) {
+            return response.json();
         })
-    }
+        .then(function(projects) {
+            if(document.getElementsByTagName('home').length === 0) {
+                let home = document.createElement('home');
 
-    events.push({
-        channel: 'routing',
-        topic: 'app.update.currentView',
-        data: 'home'
-    });
+                let footer = document.getElementsByTagName('site-footer')[0];
 
-    eventStore.add(eventStore.events, events);
+                let body = document.getElementsByTagName('body')[0];
+
+                body.insertBefore(home, footer);
+
+                riot.mount('home');
+            }
+
+            let events = [];
+
+            let tagName;
+
+            if(typeof hash !== 'undefined') {
+                if(hash === 'services') {
+                    tagName = 'service-area';
+                } else if(hash === 'work') {
+                    tagName = 'work-area';
+                }
+
+                events.push({
+                    channel: 'scroll',
+                    topic: 'app.update.scrollTo',
+                    data: tagName
+                })
+            }
+
+            events.push({
+                channel: 'routing',
+                topic: 'app.update.currentView',
+                data: 'home'
+            },{
+                channel: 'routing',
+                topic: 'app.update.projects',
+                data: projects
+            });
+
+            eventStore.add(eventStore.events, events);
+        });
 
     highlightActiveMenuItem('home');
 };
@@ -134,28 +144,36 @@ let contact = () => {
     highlightActiveMenuItem('contact');
 };
 
-let projectDetail = (id) => {
+let projectDetail = (slug) => {
     'use strict';
 
-    let projectDetail = document.createElement('project-detail');
+    fetch('data/projects.json')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(projects) {
+            let projectDetail = document.createElement('project-detail');
 
-    let footer = document.getElementsByTagName('site-footer')[0];
+            let footer = document.getElementsByTagName('site-footer')[0];
 
-    let body = document.getElementsByTagName('body')[0];
+            let body = document.getElementsByTagName('body')[0];
 
-    body.insertBefore(projectDetail, footer);
+            body.insertBefore(projectDetail, footer);
 
-    riot.mount('project-detail');
+            riot.mount('project-detail');
 
-    eventStore.add(eventStore.events, [{
-        channel: 'routing',
-        topic: 'app.update.currentView',
-        data: 'projectDetail'
-    }, {
-        channel: 'routing',
-        topic: 'app.update.innerPage',
-        data: 'Project Title Here'
-    }]);
+            let project = projects.find((project) => project.slug === slug);
+
+            eventStore.add(eventStore.events, [{
+                channel: 'routing',
+                topic: 'app.update.currentView',
+                data: 'projectDetail'
+            }, {
+                channel: 'routing',
+                topic: 'app.update.project',
+                data: project
+            }]);
+        });
 
     highlightActiveMenuItem('work');
 };
@@ -163,21 +181,21 @@ let projectDetail = (id) => {
 let blog = () => {
     'use strict';
 
-    let blog = document.createElement('blog');
-
-    let footer = document.getElementsByTagName('site-footer')[0];
-
-    let body = document.getElementsByTagName('body')[0];
-
-    body.insertBefore(blog, footer);
-
-    riot.mount('blog');
-
     fetch('data/articles.json')
         .then(function(response) {
             return response.json();
         })
         .then(function(articles) {
+            let blog = document.createElement('blog');
+
+            let footer = document.getElementsByTagName('site-footer')[0];
+
+            let body = document.getElementsByTagName('body')[0];
+
+            body.insertBefore(blog, footer);
+
+            riot.mount('blog');
+
             eventStore.add(eventStore.events, [{
                 channel: 'routing',
                 topic: 'app.update.currentView',
@@ -199,21 +217,21 @@ let blog = () => {
 let blogArticle = (slug) => {
     'use strict';
 
-    let blogArticle = document.createElement('blog-article');
-
-    let footer = document.getElementsByTagName('site-footer')[0];
-
-    let body = document.getElementsByTagName('body')[0];
-
-    body.insertBefore(blogArticle, footer);
-
-    riot.mount('blog-article');
-
     fetch('data/articles.json')
         .then(function(response) {
             return response.json();
         })
         .then(function(articles) {
+            let blogArticle = document.createElement('blog-article');
+
+            let footer = document.getElementsByTagName('site-footer')[0];
+
+            let body = document.getElementsByTagName('body')[0];
+
+            body.insertBefore(blogArticle, footer);
+
+            riot.mount('blog-article');
+
             let article = articles.find( (article) => article.slug === slug );
 
             eventStore.add(eventStore.events, [{
@@ -242,7 +260,7 @@ Storage.get().then( (events) => {
         '/': home,
         '/about': about,
         '/contact': contact,
-        '/projects/:id': projectDetail,
+        '/projects/:slug': projectDetail,
         '/blog': blog,
         '/blog/:slug': blogArticle,
         '/:hash': home

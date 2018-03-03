@@ -12,40 +12,28 @@
                             <div class="col-md-12"><img src="assets/img/work_banner.jpg" alt=""></div>
                             <div class="col-md-7">
                                 <h2>Project Description</h2>
-                                <p>Markab did increasing occasional toem itsn dificulty and especiay known ama tiled bue sorry bed sudden manner edeed now feebly face doen with emmem need of wife paid that beme applauded or favourite dashwoods therefore up distrusts knowledge certainly day sweetness.</p>
-                                <p>Markab did increasing occasional toem itsn dificulty and especiay known ama tiled bue sorry bed sudden manner edeed now feebly face doen with emmem need of wife paid that beme applauded.</p>
+                                <problem></problem>
                             </div>
                             <div class="col-md-5">
                                 <ul class="work_data">
                                     <li>
                                         <span class="bold">Project Name</span>
-                                        <span>Branding Design</span>
+                                        <span>{ viewModel.project.name }</span>
                                     </li>
                                     <li>
                                         <span class="bold">Client</span>
-                                        <span>David Roman</span>
-                                    </li>
-                                    <li>
-                                        <span class="bold">Duration</span>
-                                        <span>02 Months</span>
+                                        <span>{ viewModel.project.client }</span>
                                     </li>
                                     <li>
                                         <span class="bold">Date</span>
-                                        <span>02 March, 2017</span>
-                                    </li>
-                                    <li>
-                                        <span class="bold">Budget</span>
-                                        <span>$350</span>
+                                        <span>{ viewModel.project.date }</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-md-12">
                                 <div class="resume_margin_top">
                                     <h2>Solution</h2>
-                                    <p>Markab did increasing occasional toem itsn dificulty and especiay known knows that ama tiled in sorry edeed now feebly face doen withe need of wife paid that beme applauded or favourite dashwoods therefore up distrusts knowledge certainly day sweetness evil soon high in hope do few northward believing attempted. Yet timed being songs marry one defer men our.
-                                    </p>
-                                    <p>Markab did increasing occasional toem itsn dificulty and especiay known knows that ama tiled in sorry edeed now feebly face doen withe need of wife paid that beme applauded or favourite dashwoods therefore up distrusts knowledge certainly day sweetness evil soon high in hope do few northward believing attempted. Yet timed being songs marry one defer men our.
-                                    </p>
+                                    <solution></solution>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +48,9 @@
         import reduce from '../reducer'
         import EventStore from '../eventStore'
 
-        this.viewModel = {};
+        this.viewModel = {
+            project: {}
+        };
 
         let eventStore = null;
 
@@ -78,11 +68,42 @@
 
                     if(state.currentView !== 'projectDetail') {
                         this.unmount();
+                    } else {
+                        this.viewModel.project = state.project;
+
+                        riot.tag('problem', '<span></span>', function(opts) {
+                            if(opts.r) {
+                                this.root.innerHTML = opts.r;
+                            }
+                        });
+
+                        riot.mount('problem', {
+                            r: state.project.problem
+                        });
+
+                        riot.tag('solution', '<span></span>', function(opts) {
+                            if(opts.r) {
+                                this.root.innerHTML = opts.r;
+                            }
+                        });
+
+                        riot.mount('solution', {
+                            r: state.project.solution
+                        });
+
+                        eventStore.add(eventStore.events, [{
+                            channel: 'routing',
+                            topic: 'app.update.innerPage',
+                            data: state.project.name
+                        }]);
+
+                        this.update(this.viewModel);
                     }
                 }
             });
         };
 
         subscribe('routing', 'app.update.currentView');
+        subscribe('routing', 'app.update.project');
     </script>
 </project-detail>

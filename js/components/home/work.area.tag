@@ -17,13 +17,13 @@
                     </div>
                 </div>
 
-                <div class="only-one single_work_wraper branding">
-                    <a href="#/projects/1" class="single_work">
-                        <img src="assets/img/work1.jpg" alt="">
+                <div class="only-one single_work_wraper branding" each={ project in viewModel.projects }>
+                    <a href="#/projects/{project.slug}" class="single_work">
+                        <img src="{ project.image }" alt="">
                         <div class="hover_content">
                             <div>
-                                <h4>Idea Foundry</h4>
-                                <span>22 March, 16</span>
+                                <h4>{ project.name }</h4>
+                                <span>{ project.date }</span>
                             </div>
                         </div>
                     </a>
@@ -31,4 +31,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+        import postal from 'postal/lib/postal.lodash'
+        import reduce from '../../reducer'
+        import EventStore from '../../eventStore'
+
+        this.viewModel = {
+            projects: []
+        };
+
+        let eventStore = null;
+
+        this.on('mount', () => {
+            eventStore = new EventStore();
+
+            let state = reduce(eventStore.events);
+
+            this.viewModel.projects = state.projects;
+
+            this.update(this.viewModel);
+        });
+    </script>
 </work-area>

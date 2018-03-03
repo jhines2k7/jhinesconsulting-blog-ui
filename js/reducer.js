@@ -22,6 +22,14 @@ export default function reduce(events) {
             state.article = event.data;
         }
 
+        if(event.topic === 'app.update.project') {
+            state.project = event.data;
+        }
+
+        if(event.topic === 'app.update.projects') {
+            state.projects = event.data;
+        }
+
         return state;
     }, {
         currentView: 'home',
@@ -34,6 +42,8 @@ export default function reduce(events) {
         pageTitle: '',
         scrollTo: '',
         articles: [],
-        article: {}
+        article: {},
+        projects: [],
+        project: {}
     })
 }
