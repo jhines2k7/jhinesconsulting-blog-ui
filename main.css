@@ -1947,7 +1947,11 @@ BlogPage  css
 
 .single_blog {
     margin-bottom: 60px;
-}`
+}
+
+.single_blog a {
+    display: inline-block;
+}
 
 .blog_wraper {
     padding-right: 74px;
