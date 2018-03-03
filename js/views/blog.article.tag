@@ -57,19 +57,19 @@
                     } else {
                         this.viewModel.article = state.article;
 
-                        eventStore.add(eventStore.events, [{
-                            channel: 'routing',
-                            topic: 'app.update.innerPage',
-                            data: state.article.title
-                        }]);
-
                         riot.tag('raw', '<span></span>', function(opts) {
                             this.root.innerHTML = opts.r;
                         });
 
                         riot.mount('raw', {
                             r: this.viewModel.article.content
-                        })
+                        });
+
+                        eventStore.add(eventStore.events, [{
+                            channel: 'routing',
+                            topic: 'app.update.innerPage',
+                            data: state.article.title
+                        }]);
 
                         this.update(this.viewModel);
                     }

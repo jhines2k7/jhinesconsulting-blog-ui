@@ -1947,7 +1947,7 @@ BlogPage  css
 
 .single_blog {
     margin-bottom: 60px;
-}
+}`
 
 .blog_wraper {
     padding-right: 74px;
@@ -2046,6 +2046,7 @@ BlogPage  css
 }
 
 .single-recent_post > a {
+    font-family: 'Bitter', serif;
     color: #222222;
     font-size: 19px;
     font-weight: 400;
@@ -2055,7 +2056,7 @@ BlogPage  css
 }
 
 .single-recent_post > a:hover {
-    color: #1c48f3;
+    color: #c70039;
 }
 
 .single_blog_widget.recent_post {
