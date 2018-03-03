@@ -173,20 +173,32 @@ let blog = () => {
 
     riot.mount('blog');
 
-    eventStore.add(eventStore.events, [{
-        channel: 'routing',
-        topic: 'app.update.currentView',
-        data: 'blog'
-    }, {
-        channel: 'routing',
-        topic: 'app.update.innerPage',
-        data: 'Blog'
-    }]);
+    fetch('data/articles.json')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(articles) {
+            console.log(articles);
+
+            eventStore.add(eventStore.events, [{
+                channel: 'routing',
+                topic: 'app.update.currentView',
+                data: 'blog'
+            }, {
+                channel: 'routing',
+                topic: 'app.update.innerPage',
+                data: 'Blog'
+            }, {
+                channel: 'blog',
+                topic: 'app.update.articles',
+                data: articles
+            }]);
+        });
 
     highlightActiveMenuItem('blog');
 };
 
-let blogArticle = (title) => {
+let blogArticle = (slug) => {
     'use strict';
 
     let blogArticle = document.createElement('blog-article');
@@ -204,9 +216,9 @@ let blogArticle = (title) => {
         topic: 'app.update.currentView',
         data: 'blogArticle'
     }, {
-        channel: 'routing',
-        topic: 'app.update.innerPage',
-        data: 'Title Of Blog Article'
+        channel: 'blog',
+        topic: 'app.update.article',
+        data: slug
     }]);
 
     highlightActiveMenuItem('blog');
@@ -226,7 +238,7 @@ Storage.get().then( (events) => {
         '/contact': contact,
         '/projects/:id': projectDetail,
         '/blog': blog,
-        '/blog/:title': blogArticle,
+        '/blog/:slug': blogArticle,
         '/:hash': home
     });
 

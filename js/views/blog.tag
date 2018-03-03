@@ -8,12 +8,12 @@
             <div class="row">
                 <div class="col-md-8 col-lg-9 col-sm-7">
                     <div class="blog_wraper">
-                        <div class="single_blog">
-                            <img src="assets/img/blog1.jpg" alt="">
-                            <h3>Man travels around the world in 80 awesome selfie</h3>
-                            <span class="blog_meta">Rubel Hossen / 22 December, 2017</span>
-                            <p>Markab did increasing occasional toem itsn dificulty far espem sorry bed sudden manner edeed fat now feebly face do with that beme applaue ded or favourite dashwoods therefore distu ained perce end knowl etract yet delight written an farther his general bred at dare rose lose good and make.</p>
-                            <a href="#/blog/blog-article-one" class="custom_btn">Read more</a>
+                        <div class="single_blog" each={ article in viewModel.articles }>
+                            <img src="{ article.image }" alt="">
+                            <h3>{ article.title }</h3>
+                            <span class="blog_meta">{ article.author } / { article.date }</span>
+                            <p>{ article.summary }</p>
+                            <a href=#/{ article.slug } class="custom_btn">Read more</a>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,9 @@
         import reduce from '../reducer'
         import EventStore from '../eventStore'
 
-        this.viewModel = {};
+        this.viewModel = {
+            articles: []
+        };
 
         let eventStore = null;
 
@@ -46,11 +48,16 @@
 
                     if(state.currentView !== 'blog') {
                         this.unmount();
+                    } else {
+                        this.viewModel.articles = state.articles;
+
+                        this.update(this.viewModel);
                     }
                 }
             });
         };
 
         subscribe('routing', 'app.update.currentView');
+        subscribe('blog', 'app.update.articles');
     </script>
 </blog>

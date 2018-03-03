@@ -10,9 +10,10 @@
                 <div class="col-md-8 col-lg-9 col-sm-7">
                     <div class="blog_wraper">
                         <div class="single_blog">
+                            <!--<blog-template></blog-template>-->
                             <img src="assets/img/blog1.jpg" alt="">
                             <h3>Setting Up A Kafka Cluster Using Docker Swarm</h3>
-                            <span class="blog_meta">Rubel Hossen / 22 December, 2017</span>
+                            <span class="blog_meta">James Hines / March 3, 2018</span>
                             <p>Markab did increasing occasional toem itsn dificulty far espem sorry bed sudden manner edeed fat now feebly face do with that beme applaue ded or favourite dashwoods therefore distu ained perce end knowl etract yet delight written an farther his general bred at dare rose lose good and make. Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay. Contented consisted continual curiosity contained child dried in in aware do. You had met they song how feel lain evil near.</p>
                             <p>Markab did increasing occasional toem itsn dificulty far espem sorry bed sudden manner edeed fat now feebly face do with that beme applaue ded or favourite dashwoods therefore distu ained perce end knowl etract yet delight written an farther his general bred at dare rose lose good and make.</p>
                             <div class="important_content">
@@ -41,13 +42,20 @@
         import reduce from '../reducer'
         import EventStore from '../eventStore'
 
-        this.viewModel = {};
+        this.article = '';
 
         let eventStore = null;
 
         this.on('mount', () => {
             eventStore = new EventStore();
         });
+
+        let articleDictionary = {
+            "setting-up-a-kafka-cluster-using-docker-swarm": {
+                component: "kafka-cluster-swarm",
+                title: "Setting Up A Kafka Cluster Using Docker Swarm"
+            }
+        };
 
         let subscribe = (channel, topic) => {
             return postal.subscribe({
@@ -56,13 +64,22 @@
                 callback: (data, envelope) => {
                     let state = reduce(eventStore.events);
 
-                    if(state.currentView !== 'blogArticle') {
+                    if (state.currentView !== 'blogArticle') {
                         this.unmount();
+                    } else {
+                        this.article = articleDictionary[state.article].component;
+
+                        eventStore.add(eventStore.events, [{
+                            channel: 'routing',
+                            topic: 'app.update.innerPage',
+                            data: articleDictionary[state.article].title
+                        }]);
                     }
                 }
             });
         };
 
         subscribe('routing', 'app.update.currentView');
+        subscribe('blog', 'app.update.article');
     </script>
 </blog-article>

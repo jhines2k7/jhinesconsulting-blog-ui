@@ -14,6 +14,10 @@ export default function reduce(events) {
             state.scrollTo = event.data;
         }
 
+        if(event.topic === 'app.update.articles') {
+            state.articles = event.data;
+        }
+
         return state;
     }, {
         currentView: 'home',
@@ -24,6 +28,7 @@ export default function reduce(events) {
             message: ''
         },
         pageTitle: '',
-        scrollTo: ''
+        scrollTo: '',
+        articles: '',
     })
 }
