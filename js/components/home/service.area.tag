@@ -9,7 +9,7 @@
 								</span>
                         </div>
                         <div class="service_content">
-                            <h5>REAL-TIME AND BATCH ANALYTICS / REPORTING</h5>
+                            <h5>REAL-TIME AND BATCH DATA INTEGRATION / REPORTING</h5>
                             <p>Compass prepare and easoable size now easy eat hand emma mere dec heart amar amd murse.</p>
                         </div>
                     </div>
