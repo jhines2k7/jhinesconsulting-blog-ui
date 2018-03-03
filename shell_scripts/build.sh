@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.32.5
+VERSION=0.33.5
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
@@ -36,6 +36,9 @@ sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_
 
 #copy the assets to dist directory
 cp -r assets dist
+
+#copy the data to dist directory
+cp -r data dist
 
 # copy index.html to dist directory
 cp index.html dist
