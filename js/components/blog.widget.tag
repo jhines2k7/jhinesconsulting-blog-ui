@@ -33,17 +33,5 @@
 
             this.update(this.viewModel);
         });
-//
-//        let subscribe = (channel, topic) => {
-//            return postal.subscribe({
-//                channel: channel,
-//                topic: topic,
-//                callback: (data, envelope) => {
-//
-//                }
-//            });
-//        };
-//
-//        subscribe('blog', 'app.update.articles');
     </script>
 </blog-widget>

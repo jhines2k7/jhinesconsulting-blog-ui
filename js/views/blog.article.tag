@@ -15,7 +15,7 @@
                             <h3>{ viewModel.article.title }</h3>
                             <span class="blog_meta">{ viewModel.article.author } / { viewModel.article.date }</span>
 
-                            { viewModel.article.content }
+                            <raw></raw>
 
                         </div>
 
@@ -62,6 +62,14 @@
                             topic: 'app.update.innerPage',
                             data: state.article.title
                         }]);
+
+                        riot.tag('raw', '<span></span>', function(opts) {
+                            this.root.innerHTML = opts.r;
+                        });
+
+                        riot.mount('raw', {
+                            r: this.viewModel.article.content
+                        })
 
                         this.update(this.viewModel);
                     }
