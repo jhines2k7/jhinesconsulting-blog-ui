@@ -58,11 +58,13 @@
                         this.viewModel.article = state.article;
 
                         riot.tag('raw', '<span></span>', function(opts) {
-                            this.root.innerHTML = opts.r;
+                            if(opts.r) {
+                                this.root.innerHTML = opts.r;
+                            }
                         });
 
                         riot.mount('raw', {
-                            r: this.viewModel.article.content
+                            r: state.article.content
                         });
 
                         eventStore.add(eventStore.events, [{
