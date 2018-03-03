@@ -10,7 +10,7 @@
                     <div class="home2_about_img effect7">
                         <img src="assets/img/me_at_cjug-cropped.jpg" alt="">
                         <div class="section_tittle">
-                            <h1>A few thoughts...</h1>
+                            <h1>So what's the big deal?</h1>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
                     <div class="resume_section_tittle text-center">
-                        <h1>My Resume</h1>
+                        <h1>Resume</h1>
                         <span>Markab did increasing occasional toem itsn dificulty far known ama
 sorry bed sudden manner edeed fat now feebly face doen</span>
                     </div>
