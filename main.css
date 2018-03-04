@@ -2129,6 +2129,10 @@ BlogPage  css
     padding: 60px 57px 50px;
 }
 
+.contact-form-success.important_content a{
+    color: #c70039;
+}
+
 .single_blog_page_area .single_blog {
     border-bottom: 1px solid #f0f0f0;
     margin-bottom: 0;
@@ -2403,7 +2407,6 @@ a.custom_btn > i.margin_rihgt,
     margin-left: 0;
     margin-right: 5px;
 }
-
 
 /*====/========        ===== ==/====/
 WorkPage  css 

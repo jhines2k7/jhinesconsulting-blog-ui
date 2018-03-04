@@ -35,8 +35,8 @@
         <div if={ viewModel.showContactFormSuccess } class="contact-form-success important_content">
             <h2>Thank you!</h2>
             <h3>
-                Dissuade estatic and properly sawen entire sorrow delight endeavor
-                onemy moen eto horrible lover offer scale.
+                I'm thrilled to hear from you. I’ll get back to you very soon. Don't be shy! Have a look around. Please feel free to take a look at some of the articles in my
+                <a href="#/blog"> blog</a>.
             </h3>
         </div>
     </div>
@@ -124,29 +124,31 @@
                 message: this.refs.message.value
             };
 
-            fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: new Headers({
-                    'Content-Type': 'application/json'
-                })
-            }).then(response => {
-                if(!response.ok) {
-                    throw new Error('The request to the server was not successful');
-                }
-            }).catch(error => {
-                if(error.message === 'Failed to fetch') {
-                    eventStore.add(eventStore.events, [{
-                        channel: 'api-requests',
-                        topic: 'app.connection.error'
-                    }]);
-                } else {
-                    eventStore.add(eventStore.events, [{
-                        channel: 'api-requests',
-                        topic: 'app.form.submission.failure'
-                    }]);
-                }
-            })
+            this.viewModel.showContactFormSuccess = true;
+
+//            fetch(url, {
+//                method: 'POST',
+//                body: JSON.stringify(data),
+//                headers: new Headers({
+//                    'Content-Type': 'application/json'
+//                })
+//            }).then(response => {
+//                if(!response.ok) {
+//                    throw new Error('The request to the server was not successful');
+//                }
+//            }).catch(error => {
+//                if(error.message === 'Failed to fetch') {
+//                    eventStore.add(eventStore.events, [{
+//                        channel: 'api-requests',
+//                        topic: 'app.connection.error'
+//                    }]);
+//                } else {
+//                    eventStore.add(eventStore.events, [{
+//                        channel: 'api-requests',
+//                        topic: 'app.form.submission.failure'
+//                    }]);
+//                }
+//            })
         }
     </script>
 </contact-form>
