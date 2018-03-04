@@ -124,31 +124,29 @@
                 message: this.refs.message.value
             };
 
-            this.viewModel.showContactFormSuccess = true;
-
-//            fetch(url, {
-//                method: 'POST',
-//                body: JSON.stringify(data),
-//                headers: new Headers({
-//                    'Content-Type': 'application/json'
-//                })
-//            }).then(response => {
-//                if(!response.ok) {
-//                    throw new Error('The request to the server was not successful');
-//                }
-//            }).catch(error => {
-//                if(error.message === 'Failed to fetch') {
-//                    eventStore.add(eventStore.events, [{
-//                        channel: 'api-requests',
-//                        topic: 'app.connection.error'
-//                    }]);
-//                } else {
-//                    eventStore.add(eventStore.events, [{
-//                        channel: 'api-requests',
-//                        topic: 'app.form.submission.failure'
-//                    }]);
-//                }
-//            })
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            }).then(response => {
+                if(!response.ok) {
+                    throw new Error('The request to the server was not successful');
+                }
+            }).catch(error => {
+                if(error.message === 'Failed to fetch') {
+                    eventStore.add(eventStore.events, [{
+                        channel: 'api-requests',
+                        topic: 'app.connection.error'
+                    }]);
+                } else {
+                    eventStore.add(eventStore.events, [{
+                        channel: 'api-requests',
+                        topic: 'app.form.submission.failure'
+                    }]);
+                }
+            })
         }
     </script>
 </contact-form>
