@@ -70,7 +70,7 @@ let home = (hash) => {
                 topic: 'app.update.currentView',
                 data: 'home'
             },{
-                channel: 'routing',
+                channel: 'projects',
                 topic: 'app.update.projects',
                 data: projects
             });

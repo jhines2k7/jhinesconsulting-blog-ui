@@ -26,12 +26,23 @@
 
         this.on('mount', () => {
             eventStore = new EventStore();
-
-            let state = reduce(eventStore.events);
-
-            this.viewModel.articles = state.articles;
-
-            this.update(this.viewModel);
         });
+
+        let subscribe = (channel, topic) => {
+            return postal.subscribe({
+                channel: channel,
+                topic: topic,
+                callback: (data, envelope) => {
+
+                    let state = reduce(eventStore.events);
+
+                    this.viewModel.articles = state.articles;
+
+                    this.update(this.viewModel);
+                }
+            });
+        };
+
+        subscribe('blog', 'app.update.articles');
     </script>
 </blog-widget>
