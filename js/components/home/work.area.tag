@@ -52,12 +52,13 @@
                 channel: channel,
                 topic: topic,
                 callback: (data, envelope) => {
+                    if(eventStore) {
+                        let state = reduce(eventStore.events);
 
-                    let state = reduce(eventStore.events);
+                        this.viewModel.projects = state.projects;
 
-                    this.viewModel.projects = state.projects;
-
-                    this.update(this.viewModel);
+                        this.update(this.viewModel);
+                    }
                 }
             });
         };
