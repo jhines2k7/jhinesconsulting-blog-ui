@@ -55,7 +55,7 @@
         <div if={ viewModel.showContactFormSuccess } class="contact-form-success important_content">
             <h2>Thank you!</h2>
             <h3>
-                I'm thrilled to hear from you. I’ll get back to you very soon. Don't be shy! Have a look around. Please feel free to take a look at some of the articles in my
+                I'm thrilled to hear from you. I’ll get back to you very soon. Have a look around, and please feel free to take a look at some of the articles in my
                 <a href="#/blog"> blog</a>.
             </h3>
         </div>
