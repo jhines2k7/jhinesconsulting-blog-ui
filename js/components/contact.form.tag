@@ -14,8 +14,8 @@
             <p>What areas of your business would you like to improve?</p>
 
             <div class="business-area-checkbox">
-                <input type="checkbox" value="Customer satisfaction" ref="customerSatisfaction">
-                <p>Customer satisfaction</p>
+                <input type="checkbox" value="Understanding customer behavior" ref="understandCustomers">
+                <p>Understanding customer behavior</p>
             </div>
 
             <div class="business-area-checkbox">
@@ -24,8 +24,13 @@
             </div>
 
             <div class="business-area-checkbox">
-                <input type="checkbox" value="Social media analysis and response" ref="socialMediaAnalysis">
-                <p>Social media analysis and response</p>
+                <input type="checkbox" value="Social media sentiment analysis and response" ref="socialMediaAnalysis">
+                <p>Social media sentiment analysis and response</p>
+            </div>
+
+            <div class="business-area-checkbox">
+                <input type="checkbox" value="Tailored and targeted messaging" ref="targetedMessaging">
+                <p>Tailored and targeted messaging</p>
             </div>
 
             <div class="form_btn">
@@ -133,9 +138,10 @@
             let url = `http://${config.contactFormServiceIP}/contact`;
 
             let businessAreas = [
-                this.refs.customerSatisfaction,
+                this.refs.understandCustomers,
                 this.refs.opEfficiency,
-                this.refs.socialMediaAnalysis
+                this.refs.socialMediaAnalysis,
+                this.refs.targetedMessaging
             ];
 
             let filteredBusinessAreas = businessAreas.filter(area => area.checked).map(area => area.value);

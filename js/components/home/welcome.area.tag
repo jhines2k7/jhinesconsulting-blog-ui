@@ -12,7 +12,7 @@
                                 </div>
                             </h1>
                             <p>
-                                I'm a Data Solutions architect and IT Consultant. I can help your small or mid-sized business make
+                                I'm a Data Solutions Architect and IT Consultant. I can help your small or mid-sized business make
                                 sense of one of the most valuable resources you have: Your data!
                             </p>
                         </div>
@@ -47,30 +47,18 @@
                 .then(erase)
                 .then(type)
                 .then(erase)
-                .then(type)
-                .then(erase)
-                .then(type)
-                .then(erase)
-                .then(type)
-                .then(erase)
-                .then(type)
-                .then(erase)
                 .then(type);
         });
 
         let banter = [
             "I'm a Data Solutions Architect and IT Consultant.",
             "What areas of your business would you like to improve?",
-            "Customer satisfaction?",
+            "Understanding customer behavior?",
             "Operational efficiency?",
-            "Social media analysis and response?",
-            "Ok, last one...",
-            "What is the first derivative of a cow?",
-            "Prime rib! Ha!",
-            "C'mon, that was a good one...",
-            "How about an inspirational quote?",
-            "\"No one can make you feel inferior without your consent.\" - Eleanor Roosevelt",
-            "I feel better already",
+            "Social media sentiment analysis and response?",
+            "Tailored and targeted messaging?",
+            "I could keep going... ",
+            "...but I think you get the idea.",
             "Please have a look around...",
             "...and don't forget to hire me for your next project!"
         ];
