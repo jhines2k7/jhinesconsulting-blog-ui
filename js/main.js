@@ -242,6 +242,10 @@ let blogArticle = (slug) => {
                 channel: 'blog',
                 topic: 'app.update.article',
                 data: article
+            }, {
+                channel: 'blog',
+                topic: 'app.update.articles',
+                data: articles
             }]);
         });
 
