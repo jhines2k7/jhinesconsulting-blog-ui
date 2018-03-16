@@ -2612,6 +2612,10 @@ skill-ratings {
     margin-top: 10px;
 }
 
+.form_btn {
+    margin-top: 15px;
+}
+
 .form_btn .svg-container {
     overflow: hidden;
     height: 36px;
@@ -2633,4 +2637,19 @@ skill-ratings {
 
 .credit a {
     color: #e3e5e0;
+}
+
+.contact_form form .business-area-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.contact_form form .business-area-checkbox input{
+    height: 15px;
+    width: auto;
+    margin-top: 0;
+}
+
+.contact_form form .business-area-checkbox p {
+    margin-left: 10px;
 }

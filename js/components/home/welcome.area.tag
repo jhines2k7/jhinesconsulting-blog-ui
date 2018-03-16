@@ -12,7 +12,7 @@
                                 </div>
                             </h1>
                             <p>
-                                I'm an IT Consultant and Data Solutions architect. I can help your small or mid-sized business make
+                                I'm a Data Solutions architect and IT Consultant. I can help your small or mid-sized business make
                                 sense of one of the most valuable resources you have: Your data!
                             </p>
                         </div>
@@ -59,7 +59,7 @@
         });
 
         let banter = [
-            "I'm an IT Consultant and Data Solutions Architect.",
+            "I'm a Data Solutions Architect and IT Consultant.",
             "What areas of your business would you like to improve?",
             "Customer satisfaction?",
             "Operational efficiency?",

@@ -18,7 +18,12 @@
                     <div class="about_wraper home2_about_wraper">
                         <div class="about_content">
                             <skill-ratings></skill-ratings>
-                            <p>Markab did increasing occasional toem itsn dificulty far especially known ama tiled bue sorry bed sudden manner edeed fat now feebly face doen with emme need of wife paid that beme applauded or favourite dashwoods therefore up distrusts explained perce end knowledge certainly day sweetness.</p>
+                            <p>
+                                I've worked as a contract software developer in the Columbus area for the last 7 years.
+                                Sometimes it can be a challenge trying to be enthusiastic about a poorly managed project
+                                that has very little impact on the organization for which I'm under contract.
+                                That's just life for an individual contributor in very large organizations
+                            </p>
                         </div>
                     </div>
                 </div>

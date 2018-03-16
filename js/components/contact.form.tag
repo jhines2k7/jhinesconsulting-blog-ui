@@ -10,9 +10,24 @@
             <div class="input">
                 <input ref="email" type="email" name="email" placeholder="Email" required>
             </div>
-            <div class="textarea">
-                <textarea ref="message" name="message" placeholder="Message"></textarea>
+
+            <p>What areas of your business would you like to improve?</p>
+
+            <div class="business-area-checkbox">
+                <input type="checkbox" value="Customer satisfaction" ref="customerSatisfaction">
+                <p>Customer satisfaction</p>
             </div>
+
+            <div class="business-area-checkbox">
+                <input type="checkbox" value="Operational efficiency" ref="opEfficiency">
+                <p>Operational efficiency</p>
+            </div>
+
+            <div class="business-area-checkbox">
+                <input type="checkbox" value="Social media analysis and response" ref="socialMediaAnalysis">
+                <p>Social media analysis and response</p>
+            </div>
+
             <div class="form_btn">
                 <button if={ !viewModel.requestInProgress } type="submit" class="custom_btn">Submit<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
 
@@ -117,11 +132,19 @@
 
             let url = `http://${config.contactFormServiceIP}/contact`;
 
+            let businessAreas = [
+                this.refs.customerSatisfaction,
+                this.refs.opEfficiency,
+                this.refs.socialMediaAnalysis
+            ];
+
+            let filteredBusinessAreas = businessAreas.filter(area => area.checked).map(area => area.value);
+
             let data = {
                 clientID: clientID,
                 name: this.refs.name.value,
                 email: this.refs.email.value,
-                message: this.refs.message.value
+                businessAreas: filteredBusinessAreas
             };
 
             fetch(url, {
