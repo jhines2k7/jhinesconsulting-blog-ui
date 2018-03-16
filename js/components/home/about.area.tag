@@ -10,11 +10,11 @@
                 <div class="col-md-7 col-sm-6">
                     <div class="about_wraper">
                         <div class="section_tittle">
-                            <h1>A little about me</h1>
+                            <h1>What areas of your business would you like to improve?</h1>
                         </div>
                         <div class="about_content">
-                            <p>Markab did increasing occasional toem its difficulty far especially known ama tiled but sorry bed sudden manner edeed fat now feebly face doen with emme need of wife paid that beme applauded or favourite dashwoods therefore up distrusts explained. </p>
-                            <skill-ratings></skill-ratings>
+                            <p>Big data isn't just for Fortune 500 companies anymore.</p>
+                            <a href=#/blog/big-data-for-small-business class="custom_btn">Read more</a>
                         </div>
                     </div>
                 </div>

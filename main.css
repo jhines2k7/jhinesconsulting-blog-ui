@@ -491,7 +491,6 @@ about area css
     margin-top: 0;
     padding: 0;
     text-align: left;
-    width: 200px;
 }
 
 .barfiller .fill {
@@ -1573,8 +1572,12 @@ HomePage4  css
     margin-top: -10px;
 }
 
-.about_content p:last-child{
-    margin-top: 10px;
+.about_content p{
+    margin-bottom: 10px;
+}
+
+.about_content a {
+    display: inline-block;
 }
 
 .home4_about_wraper .about_content > * {

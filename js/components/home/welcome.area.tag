@@ -27,7 +27,7 @@
         };
 
         this.on('mount', () => {
-            type('Hello, I\'m James. Pleased to meet you!')
+            type("Hello, I'm James. Pleased to meet you!")
                 .then(erase)
                 .then(type)
                 .then(erase)
@@ -59,11 +59,11 @@
         });
 
         let banter = [
-            "Would you like to hear a joke?",
-            "Why couldn't the angle get a loan?",
-            "Her parents wouldn't cosine!",
-            "Wocka wocka!",
-            "Hmm... Tough crowd...",
+            "I'm an IT Consultant and Data Solutions Architect.",
+            "What areas of your business would you like to improve?",
+            "Customer satisfaction?",
+            "Operational efficiency?",
+            "Social media analysis and response?",
             "Ok, last one...",
             "What is the first derivative of a cow?",
             "Prime rib! Ha!",
