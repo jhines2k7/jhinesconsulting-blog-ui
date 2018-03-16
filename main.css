@@ -477,6 +477,7 @@ about area css
 
 .about_wraper {
     padding-left: 70px;
+    display: inline-block;
 }
 
 .section_tittle > h1 {
@@ -712,7 +713,6 @@ Work area css
 .only-one .single_work {
     position: relative;
     display: block;
-    height: 200px;
     overflow: hidden;
 }
 
