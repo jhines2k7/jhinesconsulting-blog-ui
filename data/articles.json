@@ -1,6 +1,6 @@
 [
   {
-    "image": "assets/img/blog1.jpg",
+    "image": "assets/img/apache-kafka-logo.png",
     "slug": "setting-up-a-kafka-cluster-using-docker-swarm",
     "title": "Setting Up A Kafka Cluster Using Docker Swarm",
     "author": "James Hines",
@@ -9,7 +9,7 @@
     "content": "<p>As businesses become more comfortable moving away from monolithic architectures and toward microservices, one of the technical challenges they must face is what to do with the data.</p><p>Markab did increasing occasional toem itsn dificulty far espem sorry bed sudden manner edeed fat now feebly face do with that beme applaue ded or favourite dashwoods therefore distu ained perce end knowl etract yet delight written an farther his general bred at dare rose lose good and make.</p><div class=\"important_content\"><h3>Dissuade estatic and properly sawen entire sorrow delight endeavoronemy moen eto horrible margaret suitable followed general speeddeed vanity excuse amarm are lover offer scale.</h3></div><p>Markab did increasing occasional toem itsn dificulty far espem sorry bed sudden manner edeed fat now feebly face do with that beme applaue ded or favourite dashwoods therefore distu ained perce end knowl etract yet delight written an farther his general bred at dare rose lose good and make. Extremely we promotion remainder eagerness enjoyment Ham her demands removal brought minuter raising invited gay.</p>"
   },
   {
-    "image": "assets/img/blog1.jpg",
+    "image": "assets/img/big-data.png",
     "slug": "big-data-for-small-business",
     "title": "Big Data for Small Business",
     "author": "James Hines",

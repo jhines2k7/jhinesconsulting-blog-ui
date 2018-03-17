@@ -1,7 +1,7 @@
 <inner-page>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-xs-8 col-xs-offset-2 text-center">
+            <div class="col-md-9 col-xs-8 col-xs-offset-2 col-md-offset-3 col-xs-offset-2 text-center">
                 <h1>{ viewModel.pageTitle }</h1>
                 <div if={ viewModel.giveCreditWhereDue } class="credit">image courtesy of: <a href={ viewModel.credit.url }>{ viewModel.credit.label }</a></div>
             </div>

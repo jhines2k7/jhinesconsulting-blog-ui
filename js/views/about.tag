@@ -10,7 +10,7 @@
                     <div class="home2_about_img effect7">
                         <img src="assets/img/me_at_cjug-cropped.jpg" alt="">
                         <div class="section_tittle">
-                            <h1>What's the big deal?</h1>
+                            <h1>A little about me</h1>
                         </div>
                     </div>
                 </div>

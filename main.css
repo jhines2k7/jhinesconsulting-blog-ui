@@ -2632,11 +2632,11 @@ skill-ratings {
 .credit {
     text-align: right;
     font-size: xx-small;
-    color: #e3e5e0;
+    color: #571845;
 }
 
 .credit a {
-    color: #e3e5e0;
+    color: #c70039;
 }
 
 .contact_form form .business-area-checkbox {
@@ -2652,4 +2652,12 @@ skill-ratings {
 
 .contact_form form .business-area-checkbox p {
     margin-left: 10px;
+}
+
+.emphasis {
+    color: #c70039;
+    font-family: Bitter, serif;
+    font-style: oblique;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
