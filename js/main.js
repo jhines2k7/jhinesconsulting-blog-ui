@@ -217,22 +217,26 @@ let blog = () => {
 let blogArticle = (slug) => {
     'use strict';
 
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+
     fetch('data/articles.json')
         .then(function(response) {
             return response.json();
         })
         .then(function(articles) {
-            let blogArticle = document.createElement('blog-article');
+            if(document.getElementsByTagName('blog-article').length === 0) {
+                let blogArticle = document.createElement('blog-article');
 
-            let footer = document.getElementsByTagName('site-footer')[0];
+                let footer = document.getElementsByTagName('site-footer')[0];
 
-            let body = document.getElementsByTagName('body')[0];
+                let body = document.getElementsByTagName('body')[0];
 
-            body.insertBefore(blogArticle, footer);
+                body.insertBefore(blogArticle, footer);
 
-            riot.mount('blog-article');
+                riot.mount('blog-article');
+            }
 
-            let article = articles.find( (article) => article.slug === slug );
+            let article = articles.find( article => article.slug === slug );
 
             eventStore.add(eventStore.events, [{
                 channel: 'routing',
