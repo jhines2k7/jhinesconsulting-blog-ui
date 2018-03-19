@@ -1,6 +1,6 @@
 <blog>
     <!--02.InnerPage Area Start-->
-    <div data-is="inner-page" class="inner_page_area background_ofwhite"></div>
+    <div data-is="inner-page" class="inner_page_area background_ofwhite" style="background-image: url(assets/img/reflections.jpg);background-blend-mode: hard-light"></div>
     <!--02.InnerPage Area End-->
     <!--03.BlogPage Area Start-->
     <div class="blog_page_area">

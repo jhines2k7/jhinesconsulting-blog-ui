@@ -30,6 +30,9 @@
         </div>
     </div>
     <!--03.BlogPage Area End-->
+    <!--04.ContactPage Area Start-->
+    <div data-is="contact-area" class="contact_area section_padding"></div>
+    <!--04.ContactPage Area End-->
     <script>
         import postal from 'postal/lib/postal.lodash'
         import reduce from '../reducer'
