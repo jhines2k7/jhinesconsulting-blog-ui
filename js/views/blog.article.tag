@@ -10,12 +10,12 @@
                 <div class="col-md-8 col-lg-9 col-sm-7">
                     <div class="blog_wraper">
                         <div class="single_blog">
-                            <blog-template></blog-template>
-                            <!--<img src={ viewModel.article.image } alt="">-->
-                            <!--<h3>{ viewModel.article.title }</h3>-->
-                            <!--<span class="blog_meta">{ viewModel.article.author } / { viewModel.article.date }</span>-->
+                            <!--<blog-template></blog-template>-->
+                            <img src={ viewModel.article.image } alt="">
+                            <h3>{ viewModel.article.title }</h3>
+                            <span class="blog_meta">{ viewModel.article.author } / { viewModel.article.date }</span>
 
-                            <!--<raw></raw>-->
+                            <raw></raw>
 
                         </div>
 

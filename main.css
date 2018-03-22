@@ -2661,3 +2661,7 @@ skill-ratings {
     font-weight: bold;
     margin-bottom: 15px;
 }
+
+blog-template p,.single_blog p {
+    margin-bottom: 10px;
+}

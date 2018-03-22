@@ -33,4 +33,16 @@
         data is not all about having unlimited amounts of information — it’s more about receiving high-quality
         information in a timely manner that is specific to your business.
     </p>
+    <p>
+        Data is giving rise to a new economy. In many of the same ways that oil has been crucial to driving the world
+        economy most of us are familiar with, data powers the online services and devices that form a digital economy.
+        Even if you're running a decidedly non-technical business in this age of smartphones and social media, you're
+        still very much a part of it.
+    </p>
+    <p>
+        A 360-degree customer view is only the beginning. Once you've begun the process of centralizing your data
+        you can do things like create better marketing campaigns and make sense of social media. Start using your
+        data to transform your business into a smarter, more efficient organization today!
+    </p>
+
 </blog-template>
