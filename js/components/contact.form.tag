@@ -33,6 +33,11 @@
                 <p>Tailored and targeted messaging</p>
             </div>
 
+            <div class="business-area-checkbox">
+                <input type="checkbox" value="Other" ref="other">
+                <p>Other</p>
+            </div>
+
             <div class="form_btn">
                 <button if={ !viewModel.requestInProgress } type="submit" class="custom_btn">Submit<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
 
@@ -141,7 +146,8 @@
                 this.refs.understandCustomers,
                 this.refs.opEfficiency,
                 this.refs.socialMediaAnalysis,
-                this.refs.targetedMessaging
+                this.refs.targetedMessaging,
+                this.refs.other
             ];
 
             let filteredBusinessAreas = businessAreas.filter(area => area.checked).map(area => area.value);
