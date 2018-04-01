@@ -10,7 +10,7 @@
                     <div class="blog_wraper">
                         <div class="single_blog" each={ article in viewModel.articles }>
                             <img src="{ article.image }" alt="">
-                            <h3>{ article.title }</h3>
+                            <h3><a href=#/blog/{ article.slug }>{ article.title }</a></h3>
                             <span class="blog_meta">{ article.author } / { article.date }</span>
                             <p>{ article.summary }</p>
                             <a href=#/blog/{ article.slug } class="custom_btn">Read more</a>

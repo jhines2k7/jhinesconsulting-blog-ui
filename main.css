@@ -1932,10 +1932,14 @@ BlogPage  css
     width: 100%;
 }
 
-.single_blog > h3 {
+.single_blog > h3 a{
     color: #222222;
     font-size: 22px;
     margin-bottom: 10px;
+}
+
+.single_blog > h3 a:hover {
+    color: #c70039;
 }
 
 .blog_meta {
