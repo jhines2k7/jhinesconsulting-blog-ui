@@ -1,6 +1,7 @@
 <blog-article>
     <!--02.InnerPage Area Start-->
-    <div data-is="inner-page" class="inner_page_area background_ofwhite"></div>
+    <div data-is="inner-page" class="inner_page_area background_ofwhite" style="background-image: url(assets/img/fog-2756456_1920.jpg);"></div>
+
     <!--02.InnerPage Area End-->
 
     <!--03.BlogPage Area Start-->
