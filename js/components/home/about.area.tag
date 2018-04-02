@@ -15,7 +15,7 @@
                         <div class="about_content">
                             <h4 class="emphasis">Big Data isn't just for Fortune 500 companies anymore</h4>
                             <p>
-                                If you're a small business with stiff competition, how do you consistently deliver an
+                                If you're a growing business with stiff competition, how do you consistently deliver an
                                 experience that will help you stand out? Know your customer. Business 101, right?
                                 Knowing your customers in an era where tastes and trends can change as suddenly as the
                                 weather can make for an interesting challenge. Your data holds many of the answers, but
