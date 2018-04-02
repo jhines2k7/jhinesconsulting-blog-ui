@@ -9,7 +9,7 @@
                         </div>
                         <div class="service_content">
                             <h5>STREAMING AND BATCH DATA INTEGRATION / REPORTING</h5>
-                            <p>Can you afford to wait? Modern data integration techniques take a hybrid approach to ETL</p>
+                            <p>Modern data integration techniques take a hybrid approach to ETL. Can you afford to wait?</p>
                         </div>
                     </div>
                 </div>
