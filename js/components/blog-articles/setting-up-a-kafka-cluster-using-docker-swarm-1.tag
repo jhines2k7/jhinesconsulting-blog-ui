@@ -45,7 +45,7 @@
 
     <ul>
         <li>Digital Ocean account</li>
-        <li>Digital Ocean API key</li>
+        <li>Digital Ocean access token</li>
         <li>A provisioned droplet with Docker and docker-machine installed</li>
     </ul>
 
