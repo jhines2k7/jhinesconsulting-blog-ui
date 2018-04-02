@@ -92,7 +92,7 @@
         Here is a diagram of the network for our highly available Kafka cluster:
     </p>
 
-    <img src="assets/img/ha-kafka-cluster-network.svg" alt="">
+    <img src="assets/img/ha-kafka-cluster-network-2.svg" alt="">
 
     <p>
         There are 6 virtual machines spread across 3 availability regions. Because we’ll be using Docker containers to
