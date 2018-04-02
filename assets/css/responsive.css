@@ -393,6 +393,9 @@ Mobile
     .about_area {
         text-align: center;
     }
+    .about_area p {
+        text-align: left;
+    }
     .about_area .section_tittle {
         margin-bottom: 20px;
         text-align: center;
