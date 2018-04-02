@@ -59,7 +59,7 @@
                             data: state.article.title
                         }]);
 
-                        this.update(this.viewModel);
+                        this.update();
                     }
                 }
             });

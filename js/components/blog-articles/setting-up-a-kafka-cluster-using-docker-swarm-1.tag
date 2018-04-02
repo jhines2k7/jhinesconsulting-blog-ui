@@ -145,10 +145,10 @@
         --digitalocean-size 4gb \
         --digitalocean-access-token $DIGITALOCEAN_ACCESS_TOKEN \
         --digitalocean-region nyc1 \
-        ZooKeeper1
+        zookeeper1
 
     # These commands configure the Linux firewall for Docker Swarm
-    $ docker-machine ssh ZooKeeper1 \
+    $ docker-machine ssh zookeeper1 \
         echo '"y" | sudo ufw --force enable \
         && sudo ufw default deny incoming \
         && sudo ufw allow 22/tcp \
@@ -168,10 +168,10 @@
         --digitalocean-size 4gb \
         --digitalocean-access-token $DIGITALOCEAN_ACCESS_TOKEN \
         --digitalocean-region nyc3 \
-        ZooKeeper2
+        zookeeper2
 
     # These commands configure the Linux firewall for Docker Swarm
-    $ docker-machine ssh ZooKeeper2 \
+    $ docker-machine ssh zookeeper2 \
         echo '"y" | sudo ufw --force enable \
         && sudo ufw default deny incoming \
         && sudo ufw allow 22/tcp \
@@ -191,10 +191,10 @@
         --digitalocean-size 4gb \
         --digitalocean-access-token $DIGITALOCEAN_ACCESS_TOKEN \
         --digitalocean-region sfo2 \
-        ZooKeeper3
+        zookeeper3
 
     # These commands configure the Linux firewall for Docker Swarm
-    $ docker-machine ssh ZooKeeper3 \
+    $ docker-machine ssh zookeeper3 \
         echo '"y" | sudo ufw --force enable \
         && sudo ufw default deny incoming \
         && sudo ufw allow 22/tcp \

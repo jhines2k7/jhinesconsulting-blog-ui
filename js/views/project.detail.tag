@@ -8,35 +8,7 @@
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
                     <div class="work_page_wraper">
-                        <div class="row">
-                            <div class="col-md-12"><img src="assets/img/work_banner.jpg" alt=""></div>
-                            <div class="col-md-7">
-                                <h2>Project Description</h2>
-                                <problem></problem>
-                            </div>
-                            <div class="col-md-5">
-                                <ul class="work_data">
-                                    <li>
-                                        <span class="bold">Project Name</span>
-                                        <span>{ viewModel.project.name }</span>
-                                    </li>
-                                    <li>
-                                        <span class="bold">Client</span>
-                                        <span>{ viewModel.project.client }</span>
-                                    </li>
-                                    <li>
-                                        <span class="bold">Date</span>
-                                        <span>{ viewModel.project.date }</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="resume_margin_top">
-                                    <h2>Solution</h2>
-                                    <solution></solution>
-                                </div>
-                            </div>
-                        </div>
+                        <div data-is={ component }></div>
                     </div>
                 </div>
             </div>
@@ -48,9 +20,7 @@
         import reduce from '../reducer'
         import EventStore from '../eventStore'
 
-        this.viewModel = {
-            project: {}
-        };
+        this.component = '';
 
         let eventStore = null;
 
@@ -69,27 +39,7 @@
                     if(state.currentView !== 'projectDetail') {
                         this.unmount();
                     } else {
-                        this.viewModel.project = state.project;
-
-                        riot.tag('problem', '<span></span>', function(opts) {
-                            if(opts.r) {
-                                this.root.innerHTML = opts.r;
-                            }
-                        });
-
-                        riot.mount('problem', {
-                            r: state.project.problem
-                        });
-
-                        riot.tag('solution', '<span></span>', function(opts) {
-                            if(opts.r) {
-                                this.root.innerHTML = opts.r;
-                            }
-                        });
-
-                        riot.mount('solution', {
-                            r: state.project.solution
-                        });
+                        this.component = state.project.slug;
 
                         eventStore.add(eventStore.events, [{
                             channel: 'routing',
@@ -97,7 +47,7 @@
                             data: state.project.name
                         }]);
 
-                        this.update(this.viewModel);
+                        this.update();
                     }
                 }
             });
