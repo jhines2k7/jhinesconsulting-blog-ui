@@ -3,7 +3,8 @@ import './views/about'
 import './views/contact'
 import './views/blog'
 import './views/blog.article'
-import './components/blog-articles/blog.template'
+import './components/blog-articles/setting-up-a-kafka-cluster-using-docker-swarm-1'
+import './components/blog-articles/big-data-for-small-business'
 import './views/project.detail'
 import './components/home/about.area'
 import './components/home/service.area'
@@ -237,7 +238,7 @@ let blogArticle = (slug) => {
                 riot.mount('blog-article');
             }
 
-            let article = articles.find( article => article.slug === slug );
+            let article = articles.find( article => article.slug === slug);
 
             eventStore.add(eventStore.events, [{
                 channel: 'routing',

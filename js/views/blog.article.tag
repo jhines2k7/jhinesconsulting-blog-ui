@@ -10,14 +10,7 @@
                 <div class="col-md-8 col-lg-9 col-sm-7">
                     <div class="blog_wraper">
                         <div class="single_blog">
-                            <blog-template></blog-template>
-
-                            <!--<img src={ viewModel.article.image } alt="">
-                            <h3>{ viewModel.article.title }</h3>
-                            <span class="blog_meta">{ viewModel.article.author } / { viewModel.article.date }</span>
-
-                            <raw></raw>-->
-
+                            <div data-is={ component }></div>
                         </div>
 
                         <!--<comment-widget></comment-widget>-->
@@ -39,9 +32,7 @@
         import reduce from '../reducer'
         import EventStore from '../eventStore'
 
-        this.viewModel = {
-            article: {}
-        };
+        this.component = '';
 
         let eventStore = null;
 
@@ -59,17 +50,7 @@
                     if (state.currentView !== 'blogArticle') {
                         this.unmount();
                     } else {
-                        this.viewModel.article = state.article;
-
-                        riot.tag('raw', '<span></span>', function(opts) {
-                            if(opts.r) {
-                                this.root.innerHTML = opts.r;
-                            }
-                        });
-
-                        riot.mount('raw', {
-                            r: state.article.content
-                        });
+                        this.component = state.article.slug;
 
                         eventStore.add(eventStore.events, [{
                             channel: 'routing',

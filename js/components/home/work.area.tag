@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
                         <ul class="isotope_menu">
-                            <li data-name=".branding"><span>Data Integration</span></li>
+                            <li data-name=".branding"><span>360-Degree Customer</span></li>
                         </ul>
                     </div>
                 </div>
