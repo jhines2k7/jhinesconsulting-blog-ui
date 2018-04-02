@@ -1,6 +1,6 @@
 <project-detail>
     <!--02.InnerPage Area Start-->
-    <div data-is="inner-page" class="inner_page_area background_ofwhite" style="background-image: url(assets/img/banner-1571873_1920.jpg);background-blend-mode: color-burn"></div>
+    <div data-is="inner-page" class="inner_page_area background_ofwhite" style="background-image: url({ bannerImage });background-blend-mode: color-burn"></div>
     <!--02.InnerPage Area End-->
     <!--03.WorkPage Area Start-->
     <div class="work_page_area section_padding">
@@ -21,6 +21,7 @@
         import EventStore from '../eventStore'
 
         this.component = '';
+        this.bannerImage = '';
 
         let eventStore = null;
 
@@ -40,6 +41,7 @@
                         this.unmount();
                     } else {
                         this.component = state.project.slug;
+                        this.bannerImage = state.project.bannerImage;
 
                         eventStore.add(eventStore.events, [{
                             channel: 'routing',

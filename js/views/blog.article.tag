@@ -1,6 +1,6 @@
 <blog-article>
     <!--02.InnerPage Area Start-->
-    <div data-is="inner-page" class="inner_page_area background_ofwhite" style="background-image: url(assets/img/fog-2756456_1920.jpg);"></div>
+    <div data-is="inner-page" class="inner_page_area background_ofwhite" style={ bannerImage }></div>
 
     <!--02.InnerPage Area End-->
 
@@ -52,6 +52,14 @@
                         this.unmount();
                     } else {
                         this.component = state.article.slug;
+
+                        let banner = `background-image: url(${state.article.bannerImage});`;
+
+                        if(this.component === 'setting-up-a-kafka-cluster-using-docker-swarm-1') {
+                            banner += 'background-blend-mode: overlay';
+                        }
+
+                        this.bannerImage = banner;
 
                         eventStore.add(eventStore.events, [{
                             channel: 'routing',

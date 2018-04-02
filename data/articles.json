@@ -1,6 +1,7 @@
 [
   {
     "image": "assets/img/big-data.png",
+    "bannerImage": "assets/img/fog-2756456_1920.jpg",
     "slug": "big-data-for-small-business",
     "title": "Big Data for Small Business",
     "author": "James Hines",
@@ -9,6 +10,7 @@
   },
   {
     "image": "assets/img/apache-kafka-logo.png",
+    "bannerImage": "assets/img/site-3279650_1920.jpg",
     "slug": "setting-up-a-kafka-cluster-using-docker-swarm-1",
     "title": "Setting Up A Highly Available Apache Kafka Cluster Using Docker Swarm: Part 1 of 2",
     "author": "James Hines",
