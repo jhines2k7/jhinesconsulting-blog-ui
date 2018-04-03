@@ -1,5 +1,5 @@
 <work-area>
-    <div id="work" class="work_area section_padding">
+    <div id="work" class="work_area">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">

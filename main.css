@@ -915,6 +915,10 @@ Contact area css
     margin-bottom: 10px;
 }
 
+.contact_area {
+    margin-top: 100px;
+}
+
 .contact_area .section_tittle {
     padding: 0;
     text-align: left;
@@ -1925,7 +1929,6 @@ BlogPage  css
 
 .blog_page_area {
     padding: 100px 0 0 0;
-    margin-bottom: 100px;
 }
 
 .single_blog > img {
@@ -2721,4 +2724,8 @@ skill-ratings {
 
 .code {
     font-family: "Courier New";
+}
+
+.work_area {
+    margin-top: 100px;
 }
