@@ -2332,8 +2332,6 @@ AboutPage  css
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
     height: 100%;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
