@@ -13,7 +13,7 @@
                             </h1>
                             <p>
                                 I'm a Data Solutions Architect and IT Consultant. I can help your small or mid-sized business make
-                                sense of one of the most valuable resources you have: Your data!
+                                sense of one of the most valuable resources you have: YOUR DATA!
                             </p>
                         </div>
                     </div>

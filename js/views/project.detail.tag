@@ -15,6 +15,9 @@
         </div>
     </div>
     <!--03.WorkPage Area End-->
+    <!--05.ContactPage Area Start-->
+    <div data-is="contact-area" class="contact_area"></div>
+    <!--05.ContactPage Area End-->
     <script>
         import postal from 'postal/lib/postal.lodash'
         import reduce from '../reducer'
