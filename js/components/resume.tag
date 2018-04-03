@@ -24,10 +24,28 @@ sorry bed sudden manner edeed fat now feebly face doen</span>
                             <div class="resume_content">
                                 <h4>Contract Software Developer</h4>
                                 <span>Columbus, OH</span>
-                                <p>
-                                    L Brands, Nationwide Insurance, Fuse by Cardinal Health, Signet Accel, NetJets,
-                                    JP Morgan Chase, FactGem, McGraw Hill
-                                </p>
+                                <ul>
+                                    <li>Java
+                                        <ul>
+                                            <li>L Brands, Nationwide Insurance, Fuse by Cardinal Health, McGraw Hill</li>
+                                        </ul>
+                                    </li>
+                                    <li>JavaScript
+                                        <ul>
+                                            <li>JP MorganChase, FactGem, NetJets, Fuse by Cardinal Health, McGraw Hill</li>
+                                        </ul>
+                                    </li>
+                                    <li>Grails
+                                        <ul>
+                                            <li>FactGem, NetJets</li>
+                                        </ul>
+                                    </li>
+                                    <li>Groovy
+                                        <ul>
+                                            <li>McGraw Hill</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -61,9 +79,23 @@ sorry bed sudden manner edeed fat now feebly face doen</span>
                             <div class="resume_content">
                                 <h4>Contract Software Developer</h4>
                                 <span>Columbus, OH</span>
-                                <p>
-                                    Innova Partners, Franklin University, Nationwide Insurance, HigherEdLectures.com
-                                </p>
+                                <ul>
+                                    <li>Informatica
+                                        <ul>
+                                            <li>Nationwide Insurance</li>
+                                        </ul>
+                                    </li>
+                                    <li>JavaScript
+                                        <ul>
+                                            <li>Franklin University</li>
+                                        </ul>
+                                    </li>
+                                    <li>PHP
+                                        <ul>
+                                            <li>Innova Partners, HigherEdLectures.com</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
