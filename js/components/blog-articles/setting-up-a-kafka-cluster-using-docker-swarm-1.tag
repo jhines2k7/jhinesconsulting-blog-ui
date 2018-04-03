@@ -18,11 +18,11 @@
     <p>
         Apache Kafka is a distributed streaming platform. For my purposes, this means that Kafka makes it easier to
         build and scale distributed applications that transfer data between systems and applications in real time.
-        It’s a very mature project and among its many functionalities can be used as an async messaging system.
+        It's a very mature project and among its many functionalities can be used as an async messaging system.
     </p>
 
     <p>
-        Here’s a list of technologies we’ll be using in this article. You don’t have to be an expert, but you should
+        Here's a list of technologies we’ll be using in this article. You don’t have to be an expert, but you should
         have some experience working with the following:
     </p>
 
@@ -67,21 +67,20 @@
 
     <p>
         I’m a big believer that developers should always be able to develop against environments with a network
-        topology that’s identical to what will be used in production. So no localhost or 127.0.0.1 IP addresses. In
+        topology that's identical to what will be used in production. So no localhost or 127.0.0.1 IP addresses. In
         addition, the entire application infrastructure for a production environment should be reproducible as we
         promote code from development through staging. The number of provisioned machines or application instances in
-        dev, QA, or staging environments don’t need to match what’s in production, but the infrastructure should be
-        identical. With on demand compute power available from any of several cloud providers, this is not an
-        unreasonable thing to ask for... In my opinion, that means developing against vms running in a cloud
-        environment, and isolate the service you're building. That means running an entire production environment on
-        demand as you need it, with the exception of the service you're building. For the rest of this article I will
-        be deploying to machines I have provisioned on demand in Digital Ocean.
+        dev, QA, or staging environments don’t need to match what's in production, but the infrastructure should be
+        identical. With on demand compute power available from any of several cloud providers and mature tools that
+        make it easier to automate infrastructure, this is not unreasonable. Developing against vms running in a virtual private
+        cloud will become second nature, so will running an entire production environment on demand as you need it.
+        For the rest of this article I will be deploying to machines I have provisioned on demand in Digital Ocean.
     </p>
 
     <p>
-        It’s been my experience that no one really knows the the actual state of completion of a software system
-        until it's put into production. Therefore we should do everything in outr power to make sure we can make
-        changes to the system as quickly and as smoothly as possible...
+        No one really knows the the actual state of completion of a software system until it's put into
+        production, so we should do everything in our power to make sure deploying our software is as easy and smooth as
+        possible.
     </p>
 
     <p>Alright, rant over...</p>
@@ -95,7 +94,7 @@
     <img src="assets/img/ha-kafka-cluster-network-2.svg" alt="">
 
     <p>
-        There are 6 virtual machines spread across 3 availability regions. Because we’ll be using Docker containers to
+        There will be 6 virtual machines spread across 3 availability regions. Because we’ll be using Docker containers to
         run our ZooKeeper and Kafka services, we can take advantage of overlay networking to make container to
         container communication easier. It will not be necessary to expose any of the ports of our containers for the
         purposes of this article, as we can use dockerized consumers and producers to interact with our cluster.
@@ -103,7 +102,7 @@
 
     <p>
         We’ll be using the docker-machine command to provision 6 dockerized vms that will be used to host our Kafka
-        cluster. We’ll start with the ZooKeeper nodes, but let’s take some time to talk about ZooKeeper and its role
+        cluster. We’ll start with the ZooKeeper nodes, but let's take some time to talk about ZooKeeper and its role
         in a Kafka cluster.
     </p>
 
@@ -210,14 +209,14 @@
 
     <p>
         Because we will be deploying our services into a docker swarm, we need to designate one of the ZooKeeper
-        nodes we’ve just created as swarm manager. Let's get the IP address of ZooKeeper1, then we'll use that in
+        nodes we’ve just created as swarm manager. Let's get the IP address of zookeeper1, then we'll use that in
         the command to init the swarm manager:
     </p>
 
     <pre><code>
-    $ export SWARM_MANAGER_IP=$(docker-machine ip ZooKeeper1)
+    $ export SWARM_MANAGER_IP=$(docker-machine ip zookeeper1)
 
-    $ docker-machine ssh ZooKeeper1 sudo docker swarm init --advertise-addr $SWARM_MANAGER_IP
+    $ docker-machine ssh zookeeper1 sudo docker swarm init --advertise-addr $SWARM_MANAGER_IP
     </code></pre>
 
     <p>
@@ -226,14 +225,14 @@
     </p>
 
     <pre><code>
-    $ export JOIN_TOKEN=$(docker-machine ssh ZooKeeper1 sudo docker swarm join-token worker -q)
+    $ export JOIN_TOKEN=$(docker-machine ssh zookeeper1 sudo docker swarm join-token worker -q)
 
-    $ docker-machine ssh ZooKeeper2 \
+    $ docker-machine ssh zookeeper2 \
         sudo docker swarm join \
         --token $JOIN_TOKEN \
         $SWARM_MANAGER_IP:2377
 
-    $ docker-machine ssh ZooKeeper3 \
+    $ docker-machine ssh zookeeper3 \
         sudo docker swarm join \
         --token $JOIN_TOKEN \
         $SWARM_MANAGER_IP:2377
@@ -245,9 +244,9 @@
     </p>
 
     <pre><code>
-        $ eval "$(docker-machine env ZooKeeper1)"
+        $ eval "$(docker-machine env zookeeper1)"
 
-        $ docker-machine ssh ZooKeeper1 docker network create -d overlay --attachable kafkanet
+        $ docker-machine ssh zookeeper1 docker network create -d overlay --attachable kafkanet
     </code></pre>
 
     <p>
@@ -257,7 +256,7 @@
     <pre><code>
     $ docker service create \
         --network kafkanet \
-        --name ZooKeeper1 \
+        --name zookeeper1 \
         -e ZooKeeper_SERVER_ID=1 \
         -e ZooKeeper_CLIENT_PORT=22181 \
         -e ZooKeeper_TICK_TIME=2000 \
@@ -265,11 +264,11 @@
         -e ZooKeeper_SYNC_LIMIT=2 \
         -e ZooKeeper_SERVERS="0.0.0.0:22888:23888;ZooKeeper2:32888:33888;ZooKeeper3:42888:43888" \
         --constraint "engine.labels.node.type==zknode1" \
-        confluentinc/cp-ZooKeeper:4.0.0
+        confluentinc/cp-zookeeper:4.0.0
 
     $ docker service create \
         --network kafkanet \
-        --name ZooKeeper2 \
+        --name zookeeper2 \
         -e ZooKeeper_SERVER_ID=2 \
         -e ZooKeeper_CLIENT_PORT=32181 \
         -e ZooKeeper_TICK_TIME=2000 \
@@ -277,11 +276,11 @@
         -e ZooKeeper_SYNC_LIMIT=2 \
         -e ZooKeeper_SERVERS="ZooKeeper1:22888:23888;0.0.0.0:32888:33888;ZooKeeper3:42888:43888" \
         --constraint "engine.labels.node.type==zknode2" \
-        confluentinc/cp-ZooKeeper:4.0.0
+        confluentinc/cp-zookeeper:4.0.0
 
     $ docker service create \
         --network kafkanet \
-        --name ZooKeeper3 \
+        --name zookeeper3 \
         -e ZooKeeper_SERVER_ID=3 \
         -e ZooKeeper_CLIENT_PORT=42181 \
         -e ZooKeeper_TICK_TIME=2000 \
@@ -289,7 +288,7 @@
         -e ZooKeeper_SYNC_LIMIT=2 \
         -e ZooKeeper_SERVERS="ZooKeeper1:22888:23888;ZooKeeper2:32888:33888;0.0.0.0:42888:43888" \
         --constraint "engine.labels.node.type==zknode3" \
-        confluentinc/cp-ZooKeeper:4.0.0
+        confluentinc/cp-zookeeper:4.0.0
     </code></pre>
 
     <p>
@@ -299,9 +298,9 @@
     <pre><code>
     $ docker service ls
     ID              NAME        MODE        REPLICAS    IMAGE                               PORTS
-    ba833go46st2    ZooKeeper1  replicated  1/1         confluentinc/cp-ZooKeeper:4.0.0
-    h3ke1cl29s6o    ZooKeeper2  replicated  1/1         confluentinc/cp-ZooKeeper:4.0.0
-    a4c163jgwb79    ZooKeeper3  replicated  1/1         confluentinc/cp-ZooKeeper:4.0.0
+    ba833go46st2    ZooKeeper1  replicated  1/1         confluentinc/cp-zookeeper:4.0.0
+    h3ke1cl29s6o    ZooKeeper2  replicated  1/1         confluentinc/cp-zookeeper:4.0.0
+    a4c163jgwb79    ZooKeeper3  replicated  1/1         confluentinc/cp-zookeeper:4.0.0
     </code></pre>
 
     <p>
@@ -311,9 +310,9 @@
     </p>
 
     <pre><code>
-    $ docker run --net=kafkanet --rm confluentinc/cp-ZooKeeper:4.0.0 bash -c "echo stat | nc ZooKeeper1 22181 | grep Mode"
-    $ docker run --net=kafkanet --rm confluentinc/cp-ZooKeeper:4.0.0 bash -c "echo stat | nc ZooKeeper2 32181 | grep Mode"
-    $ docker run --net=kafkanet --rm confluentinc/cp-ZooKeeper:4.0.0 bash -c "echo stat | nc ZooKeeper3 42181 | grep Mode"
+    $ docker run --net=kafkanet --rm confluentinc/cp-zookeeper:4.0.0 bash -c "echo stat | nc ZooKeeper1 22181 | grep Mode"
+    $ docker run --net=kafkanet --rm confluentinc/cp-zookeeper:4.0.0 bash -c "echo stat | nc ZooKeeper2 32181 | grep Mode"
+    $ docker run --net=kafkanet --rm confluentinc/cp-zookeeper:4.0.0 bash -c "echo stat | nc ZooKeeper3 42181 | grep Mode"
     </code></pre>
 
     <p>
