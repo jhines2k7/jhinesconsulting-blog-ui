@@ -2348,6 +2348,9 @@ AboutPage  css
     font-size: 17px;
     font-weight: bold;
     color: #454545;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
 .resume_year span {
@@ -2378,13 +2381,21 @@ AboutPage  css
     width: 3px;
 }
 
-.resume_content > span {
+.resume_content > span, .resume_content ul, .resume_content p {
     font-size: 14px;
 }
 
 .resume_content ul ul{
     margin-left: 30px;
     list-style-type: disc;
+}
+
+.resume_content h4 > span {
+    display: inline;
+    font-size: 14px;
+    font-weight: 500;
+    color: #606060;
+    float: right;
 }
 
 .resume_section_tittle > h1 {
