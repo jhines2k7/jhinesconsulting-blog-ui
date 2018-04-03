@@ -35,7 +35,7 @@
     <resume></resume>
     <!--04.Resume Area End -->
     <!--05.ContactPage Area Start-->
-    <div data-is="contact-area" class="contact_area section_padding"></div>
+    <div data-is="contact-area" class="contact_area"></div>
     <!--05.ContactPage Area End-->
     <script>
         import postal from 'postal/lib/postal.lodash'

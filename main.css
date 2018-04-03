@@ -1925,6 +1925,7 @@ BlogPage  css
 
 .blog_page_area {
     padding: 100px 0 0 0;
+    margin-bottom: 100px;
 }
 
 .single_blog > img {
@@ -2573,6 +2574,7 @@ a[href^="https://maps.google.com/maps"] {
 .contact-container {
     display: flex;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 skill-ratings {

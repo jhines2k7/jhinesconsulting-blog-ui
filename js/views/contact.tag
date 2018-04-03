@@ -5,7 +5,7 @@
     </div>
     <!--02.InnerPage Area End-->
     <!--03.ContactPage Area Start-->
-    <div data-is="contact-area" class="contact_area section_padding"></div>
+    <div data-is="contact-area" class="contact_area"></div>
     <!--03.ContactPage Area End-->
     <!--08.ContactMap Start -->
     <div class="map" id="googleMap"></div>
