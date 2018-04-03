@@ -22,6 +22,7 @@ import './components/inner.page'
 import './components/contact.form'
 import './components/blog.widget'
 import './components/comment.widget'
+import './components/resume'
 
 import Storage from './storage'
 import {Router} from 'director/build/director'
