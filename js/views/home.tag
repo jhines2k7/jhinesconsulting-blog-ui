@@ -16,7 +16,7 @@
     <!--05.Work Area End -->
 
     <!--06.Testimonial Area Start -->
-    <testimonial-area></testimonial-area>
+    <!--<testimonial-area></testimonial-area>-->
     <!--06.Testimonial Area End -->
 
     <!--07.Contact Area Start -->

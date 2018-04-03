@@ -2381,13 +2381,33 @@ AboutPage  css
     width: 3px;
 }
 
-.resume_content > span, .resume_content ul, .resume_content p {
+.resume_content > span, .resume_content ul {
     font-size: 14px;
+    font-weight: 400;
 }
 
-.resume_content ul ul{
-    margin-left: 30px;
+.resume_content p {
+    font-weight: 300;
+}
+
+.resume_content ul {
     list-style-type: disc;
+}
+
+.resume_content ul li {
+    display: inline-block;
+    font-weight: 400;
+}
+
+.resume_content ul li:before {
+    content: '\00a0\2022\00a0\00a0';
+    color: #999;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 11px;
+}
+
+.resume_content ul li:first-child:before {
+    content: '';
 }
 
 .resume_content h4 > span {
@@ -2406,7 +2426,7 @@ AboutPage  css
 }
 
 .resume_section_tittle {
-    margin-bottom: 75px;
+    margin-bottom: 25px;
     padding: 0 48px;
 }
 

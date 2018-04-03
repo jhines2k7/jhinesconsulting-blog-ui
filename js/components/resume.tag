@@ -22,33 +22,25 @@
                             </div>
                             <div class="resume_content">
                                 <h4>Contract Software Developer <span>Columbus, OH</span></h4>
-                                <span>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto commodi debitis
-                                    delectus, est nihil quaerat sed sequi sint vel vero. Aliquam deleniti dolorem id,
-                                    illum iusto molestiae sint suscipit voluptatum.
-                                </span>
                                 <ul>
-                                    <li>Java
-                                        <ul>
-                                            <li>L Brands, Nationwide Insurance, Fuse by Cardinal Health, McGraw Hill</li>
-                                        </ul>
-                                    </li>
-                                    <li>JavaScript
-                                        <ul>
-                                            <li>JP MorganChase, FactGem, NetJets, Fuse by Cardinal Health, McGraw Hill</li>
-                                        </ul>
-                                    </li>
-                                    <li>Grails
-                                        <ul>
-                                            <li>FactGem, NetJets</li>
-                                        </ul>
-                                    </li>
-                                    <li>Groovy
-                                        <ul>
-                                            <li>McGraw Hill</li>
-                                        </ul>
-                                    </li>
+                                    <li>L Brands</li>
+                                    <li>Nationwide Insurance</li>
+                                    <li>Fuse by Cardinal Health</li>
+                                    <li>Signet Accel</li>
+                                    <li>NetJets</li>
+                                    <li>JP Morgan Chase</li>
+                                    <li>FactGem</li>
+                                    <li>McGraw Hill</li>
                                 </ul>
+                                <p>
+                                    During this period I had the pleasure of building features for: the POS application
+                                    in use by one of the largest clothing retailers in the world; a cabinet for secure,
+                                    automated dispensation of prescription medicine; an online music education course;
+                                    maintenance scheduling software for private jets; a POC that demonstrated a
+                                    streaming data ingestion pipeline for one of the world’s largest insurance and
+                                    financial services companies; a rewrite of the consumer facing web application for a
+                                    Fortune 100 bank
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -86,28 +78,20 @@
                             </div>
                             <div class="resume_content">
                                 <h4>Contract Software Developer <span>Columbus, OH</span></h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequatur
-                                    mollitia possimus? Deserunt eaque et fugit in magni nemo nisi suscipit ullam vel
-                                    velit. Eveniet magni maiores nam nostrum temporibus.
-                                </p>
                                 <ul>
-                                    <li>Informatica
-                                        <ul>
-                                            <li>Nationwide Insurance</li>
-                                        </ul>
-                                    </li>
-                                    <li>JavaScript
-                                        <ul>
-                                            <li>Franklin University</li>
-                                        </ul>
-                                    </li>
-                                    <li>PHP
-                                        <ul>
-                                            <li>Innova Partners, HigherEdLectures.com</li>
-                                        </ul>
-                                    </li>
+                                    <li>Innova Partners</li>
+                                    <li>Franklin University</li>
+                                    <li>Nationwide Insurance</li>
                                 </ul>
+                                <p>
+                                    During this period I had the pleasure of worked with companies to:
+                                    implement efficient ETL mappings to populate dimension tables for Nationwide
+                                    Insurance's Customer Insights and Business Intelligence (CIBI) data warehouse
+                                    project in a Teradata database; integrate CKEditor into a student portal for more
+                                    seamless communication between students and faculty; created an address book
+                                    component using Backbone.js and jQuery for managing user contacts in the CoverMyMeds
+                                    web application
+                                </p>
                             </div>
                         </div>
                     </div>

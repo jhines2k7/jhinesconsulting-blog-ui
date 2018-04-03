@@ -3,7 +3,7 @@
     <div data-is="inner-page" class="inner_page_area background_ofwhite" style="background-image: url(assets/img/sunrise-about-bg.jpg);"></div>
     <!--02.InnerPage Area End-->
     <!--03.About Area Start -->
-    <div class="about_area section_padding home2_about_area about_page_area">
+    <div class="about_area home2_about_area about_page_area">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-5">
