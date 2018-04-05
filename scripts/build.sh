@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.46.11
+VERSION=0.47.11-QA
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
@@ -47,8 +47,23 @@ cp index.html dist
 cp main.css dist
 
 NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
+
+#concatenate minified css files
+cp assets/css/bootstrap.min.css assets/css/font-awesome.min.css .tmp
+cat .tmp/bootstrap.min.css .tmp/font-awesome.min.css > .tmp/lib.min.css
+
+#concatenate main, barfiller, and responsive
+cp main.css assets/css/responsive.css assets/css/bar-filler.css .tmp
+cat .tmp/main.css .tmp/responsive.css .tmp/bar-filler.css > .tmp/main.tmp.css
+
+# minify main.tmp.css
+node_modules/.bin/uglifycss .tmp/main.tmp.css --output .tmp/main.min.css
+
+# concatenate all minified css
+cat .tmp/lib.min.css .tmp/main.min.css > dist/app.min.css
+
 # append hash to end of css file for cache busting
-mv dist/main.css dist/main.$NEW_UUID.css
+mv dist/app.min.css dist/app.min.$NEW_UUID.css
 
 # append hash to end of js file for cache busting
 #mv dist/bundle.js dist/bundle.$NEW_UUID.js
@@ -61,7 +76,13 @@ node_modules/.bin/uglifyjs dist/bundle.js --compress --mangle -o dist/bundle.$NE
 sed -i "s/dist\/bundle.js/bundle.$NEW_UUID.min.js/g" dist/index.html
 
 # update file name of main.css
-sed -i "s/main.css/main.$NEW_UUID.css/g" dist/index.html
+sed -i "s/main.css/app.min.$NEW_UUID.css/g" dist/index.html
+
+# remove other css imports
+sed -i '/bootstrap.min.css/d' dist/index.html
+sed -i '/font-awesome.min.css/d' dist/index.html
+sed -i '/bar-filler.css/d' dist/index.html
+sed -i '/responsive.css/d' dist/index.html
 
 docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
 
