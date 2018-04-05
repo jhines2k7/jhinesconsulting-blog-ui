@@ -26,6 +26,8 @@
     "eslint": "^4.16.0",
     "glob": "^7.1.2",
     "http-server": "^0.11.1",
+    "uglify-js": "^3.3.18",
+    "uglifycss": "0.0.29",
     "watch": "^1.0.2",
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.2"

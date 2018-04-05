@@ -51,11 +51,14 @@ NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
 mv dist/main.css dist/main.$NEW_UUID.css
 
 # append hash to end of js file for cache busting
-mv dist/bundle.js dist/bundle.$NEW_UUID.js
-mv dist/bundle.js.map dist/bundle.$NEW_UUID.js.map
+#mv dist/bundle.js dist/bundle.$NEW_UUID.js
+#mv dist/bundle.js.map dist/bundle.$NEW_UUID.js.map
+
+#uglify bundle.js
+node_modules/.bin/uglifyjs dist/bundle.js --compress --mangle -o dist/bundle.$NEW_UUID.min.js
 
 # update file name of js bundle
-sed -i "s/dist\/bundle.js/bundle.$NEW_UUID.js/g" dist/index.html
+sed -i "s/dist\/bundle.js/bundle.$NEW_UUID.min.js/g" dist/index.html
 
 # update file name of main.css
 sed -i "s/main.css/main.$NEW_UUID.css/g" dist/index.html
