@@ -257,36 +257,36 @@
     $ docker service create \
         --network kafkanet \
         --name zookeeper1 \
-        -e ZooKeeper_SERVER_ID=1 \
-        -e ZooKeeper_CLIENT_PORT=22181 \
-        -e ZooKeeper_TICK_TIME=2000 \
-        -e ZooKeeper_INIT_LIMIT=5 \
-        -e ZooKeeper_SYNC_LIMIT=2 \
-        -e ZooKeeper_SERVERS="0.0.0.0:22888:23888;ZooKeeper2:32888:33888;ZooKeeper3:42888:43888" \
+        -e ZOOKEEPER_SERVER_ID=1 \
+        -e ZOOKEEPER_CLIENT_PORT=22181 \
+        -e ZOOKEEPER_TICK_TIME=2000 \
+        -e ZOOKEEPER_INIT_LIMIT=5 \
+        -e ZOOKEEPER_SYNC_LIMIT=2 \
+        -e ZOOKEEPER_SERVERS="0.0.0.0:22888:23888;zookeeper2:32888:33888;zookeeper3:42888:43888" \
         --constraint "engine.labels.node.type==zknode1" \
         confluentinc/cp-zookeeper:4.0.0
 
     $ docker service create \
         --network kafkanet \
         --name zookeeper2 \
-        -e ZooKeeper_SERVER_ID=2 \
-        -e ZooKeeper_CLIENT_PORT=32181 \
-        -e ZooKeeper_TICK_TIME=2000 \
-        -e ZooKeeper_INIT_LIMIT=5 \
-        -e ZooKeeper_SYNC_LIMIT=2 \
-        -e ZooKeeper_SERVERS="ZooKeeper1:22888:23888;0.0.0.0:32888:33888;ZooKeeper3:42888:43888" \
+        -e ZOOKEEPER_SERVER_ID=2 \
+        -e ZOOKEEPER_CLIENT_PORT=32181 \
+        -e ZOOKEEPER_TICK_TIME=2000 \
+        -e ZOOKEEPER_INIT_LIMIT=5 \
+        -e ZOOKEEPER_SYNC_LIMIT=2 \
+        -e ZOOKEEPER_SERVERS="zookeeper1:22888:23888;0.0.0.0:32888:33888;zookeeper3:42888:43888" \
         --constraint "engine.labels.node.type==zknode2" \
         confluentinc/cp-zookeeper:4.0.0
 
     $ docker service create \
         --network kafkanet \
         --name zookeeper3 \
-        -e ZooKeeper_SERVER_ID=3 \
-        -e ZooKeeper_CLIENT_PORT=42181 \
-        -e ZooKeeper_TICK_TIME=2000 \
-        -e ZooKeeper_INIT_LIMIT=5 \
-        -e ZooKeeper_SYNC_LIMIT=2 \
-        -e ZooKeeper_SERVERS="ZooKeeper1:22888:23888;ZooKeeper2:32888:33888;0.0.0.0:42888:43888" \
+        -e ZOOKEEPER_SERVER_ID=3 \
+        -e ZOOKEEPER_CLIENT_PORT=42181 \
+        -e ZOOKEEPER_TICK_TIME=2000 \
+        -e ZOOKEEPER_INIT_LIMIT=5 \
+        -e ZOOKEEPER_SYNC_LIMIT=2 \
+        -e ZOOKEEPER_SERVERS="zookeeper1:22888:23888;zookeeper2:32888:33888;0.0.0.0:42888:43888" \
         --constraint "engine.labels.node.type==zknode3" \
         confluentinc/cp-zookeeper:4.0.0
     </code></pre>
@@ -298,9 +298,9 @@
     <pre><code>
     $ docker service ls
     ID              NAME        MODE        REPLICAS    IMAGE                               PORTS
-    ba833go46st2    ZooKeeper1  replicated  1/1         confluentinc/cp-zookeeper:4.0.0
-    h3ke1cl29s6o    ZooKeeper2  replicated  1/1         confluentinc/cp-zookeeper:4.0.0
-    a4c163jgwb79    ZooKeeper3  replicated  1/1         confluentinc/cp-zookeeper:4.0.0
+    ba833go46st2    zookeeper1  replicated  1/1         confluentinc/cp-zookeeper:4.0.0
+    h3ke1cl29s6o    zookeeper2  replicated  1/1         confluentinc/cp-zookeeper:4.0.0
+    a4c163jgwb79    zookeeper3  replicated  1/1         confluentinc/cp-zookeeper:4.0.0
     </code></pre>
 
     <p>
@@ -310,9 +310,9 @@
     </p>
 
     <pre><code>
-    $ docker run --net=kafkanet --rm confluentinc/cp-zookeeper:4.0.0 bash -c "echo stat | nc ZooKeeper1 22181 | grep Mode"
-    $ docker run --net=kafkanet --rm confluentinc/cp-zookeeper:4.0.0 bash -c "echo stat | nc ZooKeeper2 32181 | grep Mode"
-    $ docker run --net=kafkanet --rm confluentinc/cp-zookeeper:4.0.0 bash -c "echo stat | nc ZooKeeper3 42181 | grep Mode"
+    $ docker run --net=kafkanet --rm confluentinc/cp-zookeeper:4.0.0 bash -c "echo stat | nc zookeeper1 22181 | grep Mode"
+    $ docker run --net=kafkanet --rm confluentinc/cp-zookeeper:4.0.0 bash -c "echo stat | nc zookeeper2 32181 | grep Mode"
+    $ docker run --net=kafkanet --rm confluentinc/cp-zookeeper:4.0.0 bash -c "echo stat | nc zookeeper3 42181 | grep Mode"
     </code></pre>
 
     <p>
