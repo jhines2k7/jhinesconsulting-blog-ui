@@ -19,10 +19,20 @@
                         <div class="about_content">
                             <skill-ratings></skill-ratings>
                             <p>
-                                I've worked as a contract software developer in the Columbus area for the last 7 years.
-                                Sometimes it can be a challenge trying to be enthusiastic about a poorly managed project
-                                that has very little impact on the organization for which I'm under contract.
-                                That's just life for an individual contributor in very large organizations
+                                I'm a Data Solutions Architect out of Columbus, OH and I’m going to help you grow your business.
+                            </p>
+                            <p>
+                                I’ve worked as a software developer in some of the largest companies in the world, and
+                                noticed there were tools and techniques to aid in the decision making process available
+                                to Fortune 500 companies that smaller companies don’t have access to. Sometimes this is
+                                due to a lack of awareness of what's possible and sometimes it's just too costly in
+                                terms of money, but more importantly time.
+                            </p>
+                            <p>
+                                There are a number of prepackaged business solutions available to help analyze business
+                                intelligence, but who has time to learn how to properly use them? I'd like to take a
+                                different approach. One that starts with a question: What areas of your business would
+                                you like to improve?
                             </p>
                         </div>
                     </div>
