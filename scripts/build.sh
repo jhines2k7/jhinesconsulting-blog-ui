@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.47.11-QA
+VERSION=0.47.11
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
@@ -37,14 +37,14 @@ sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_
 #copy the assets to dist directory
 cp -r assets dist
 
+# remove the css directory from dist/assets
+rm -rf dist/assets/css
+
 #copy the data to dist directory
 cp -r data dist
 
 # copy index.html to dist directory
 cp index.html dist
-
-#copy css file to dist directory
-cp main.css dist
 
 NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
 
