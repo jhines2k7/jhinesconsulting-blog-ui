@@ -6,7 +6,7 @@ export default class Storage {
 
         localforage.setItem('jhines-consulting-blog', events).catch(function(err) {
             // This code runs if there were any errors
-            console.log(err);
+            console.error(err);
         });
     }
 
@@ -19,10 +19,11 @@ export default class Storage {
             }
 
             console.log('Returned from storage', events);
+
             return events;
         }).catch(function(err) {
             // This code runs if there were any errors
-            console.log(err);
+            console.error(err);
         });
     }
 }

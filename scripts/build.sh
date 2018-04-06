@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-VERSION=0.49.11
+VERSION=0.50.11
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
 
-cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
+#cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
 npm install
 
@@ -31,14 +31,14 @@ cp js/*.js .tmp
 # js compile and transform
 node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
 
+# remove all console.log occurrences
+find .tmp -name "*.js" -type f | xargs sed -i '/console.log/d'
+
 # modify the value of the contact form service ip object in the config file
 sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
 
 #copy the assets to dist directory
 cp -r assets dist
-
-# remove the css directory from dist/assets
-rm -rf dist/assets/css
 
 #copy the data to dist directory
 cp -r data dist
@@ -80,14 +80,13 @@ sed -i "s/main.css/app.min.$NEW_UUID.css/g" dist/index.html
 
 # remove other css imports
 sed -i '/bootstrap.min.css/d' dist/index.html
-sed -i '/font-awesome.min.css/d' dist/index.html
 sed -i '/bar-filler.css/d' dist/index.html
 sed -i '/responsive.css/d' dist/index.html
 
-docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
-
-docker build -t jhines2017/jhinesconsulting-blog-ui:$VERSION .
-
-docker push jhines2017/jhinesconsulting-blog-ui:$VERSION
-
-rm -rf node_modules .tmp dist
+#docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
+#
+#docker build -t jhines2017/jhinesconsulting-blog-ui:$VERSION .
+#
+#docker push jhines2017/jhinesconsulting-blog-ui:$VERSION
+#
+#rm -rf node_modules .tmp dist
