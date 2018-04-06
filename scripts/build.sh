@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-VERSION=0.51.12
+VERSION=0.52.12
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
 
-cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
+#cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
 npm install
 
@@ -40,6 +40,19 @@ sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_
 #copy the assets to dist directory
 cp -r assets/ dist
 
+# minify jquery.barfiller
+cp assets/js/jquery.barfiller.js .tmp
+node_modules/.bin/uglifyjs .tmp/jquery.barfiller.js --compress --mangle -o .tmp/jquery.barfiller.min.js
+
+cp assets/js/jquery.min.js .tmp
+cp assets/js/waypoint.js .tmp
+
+NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
+
+# concatenate jquery, barfiller, waypoint
+cat .tmp/jquery.min.js .tmp/jquery.barfiller.min.js .tmp/waypoint.js > .tmp/lib.min.js
+mv .tmp/lib.min.js dist/lib.$NEW_UUID.min.js
+
 # "clearing" the css directory
 rm -rf dist/assets/css
 mkdir dist/assets/css
@@ -49,8 +62,6 @@ cp -r data dist
 
 # copy index.html to dist directory
 cp index.html dist
-
-NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
 
 #concatenate minified css files
 cp assets/css/bootstrap.min.css assets/css/font-awesome.min.css .tmp
@@ -84,6 +95,9 @@ node_modules/.bin/uglifyjs dist/bundle.js --compress --mangle -o dist/bundle.$NE
 # update file name of js bundle
 sed -i "s/dist\/bundle.js/bundle.$NEW_UUID.min.js/g" dist/index.html
 
+# update file name of js libs
+sed -i "s/assets\/js\/jquery.min.js/lib.$NEW_UUID.min.js/g" dist/index.html
+
 # update file name of main.css
 sed -i "s/main.css/assets\/css\/app.min.$NEW_UUID.css/g" dist/index.html
 
@@ -92,6 +106,12 @@ sed -i '/bootstrap.min.css/d' dist/index.html
 sed -i '/font-awesome.min.css/d' dist/index.html
 sed -i '/bar-filler.css/d' dist/index.html
 sed -i '/responsive.css/d' dist/index.html
+
+# remove other js imports
+sed -i '/waypoint.js/d' dist/index.html
+sed -i '/jquery.barfiller.js/d' dist/index.html
+
+rm -rf dist/assets/js
 
 docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
 
