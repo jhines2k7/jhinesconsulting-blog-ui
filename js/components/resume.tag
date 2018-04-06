@@ -84,7 +84,7 @@
                                     <li>Nationwide Insurance</li>
                                 </ul>
                                 <p>
-                                    During this period I had the pleasure of worked with companies to:
+                                    Here I had the pleasure of working with these companies to:
                                     implement efficient ETL mappings to populate dimension tables for Nationwide
                                     Insurance's Customer Insights and Business Intelligence (CIBI) data warehouse
                                     project in a Teradata database; integrate CKEditor into a student portal for more
