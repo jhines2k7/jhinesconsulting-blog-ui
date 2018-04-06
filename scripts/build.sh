@@ -58,7 +58,7 @@ cat .tmp/bootstrap.min.css .tmp/font-awesome.min.css > .tmp/lib.min.css
 
 #concatenate main, barfiller, and responsive
 cp main.css assets/css/responsive.css assets/css/bar-filler.css .tmp
-cat .tmp/main.css .tmp/responsive.css .tmp/bar-filler.css > .tmp/main.tmp.css
+cat .tmp/bar-filler.css .tmp/main.css .tmp/responsive.css > .tmp/main.tmp.css
 
 # minify main.tmp.css
 node_modules/.bin/uglifycss .tmp/main.tmp.css --output .tmp/main.min.css
