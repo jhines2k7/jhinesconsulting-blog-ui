@@ -28,11 +28,11 @@ fi
 
 cp js/*.js .tmp
 
-# js compile and transform
-node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
-
 # remove all console.log occurrences
 find .tmp -name "*.js" -type f | xargs sed -i '/console.log/d'
+
+# js compile and transform
+node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
 
 # modify the value of the contact form service ip object in the config file
 sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
@@ -80,7 +80,7 @@ node_modules/.bin/uglifyjs dist/bundle.js --compress --mangle -o dist/bundle.$NE
 sed -i "s/dist\/bundle.js/bundle.$NEW_UUID.min.js/g" dist/index.html
 
 # update file name of main.css
-sed -i "s/main.css/dist\/assets\/css\/app.min.$NEW_UUID.css/g" dist/index.html
+sed -i "s/main.css/assets\/css\/app.min.$NEW_UUID.css/g" dist/index.html
 
 # remove other css imports
 sed -i '/bootstrap.min.css/d' dist/index.html
