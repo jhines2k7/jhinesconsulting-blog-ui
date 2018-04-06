@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.51.11
+VERSION=0.51.12
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
@@ -54,10 +54,15 @@ NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
 
 #concatenate minified css files
 cp assets/css/bootstrap.min.css assets/css/font-awesome.min.css .tmp
+
 cat .tmp/bootstrap.min.css .tmp/font-awesome.min.css > .tmp/lib.min.css
 
 #concatenate main, barfiller, and responsive
 cp main.css assets/css/responsive.css assets/css/bar-filler.css .tmp
+
+# change the file path because css will be served out of the assets/css directory
+sed -i "s/assets\/img\/home_page_bg.jpg/..\/img\/home_page_bg.jpg/g" .tmp/main.css
+
 cat .tmp/bar-filler.css .tmp/main.css .tmp/responsive.css > .tmp/main.tmp.css
 
 # minify main.tmp.css
