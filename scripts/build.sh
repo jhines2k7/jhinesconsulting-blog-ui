@@ -4,7 +4,7 @@ VERSION=0.52.12
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
 
-#cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
+cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
 npm install
 
