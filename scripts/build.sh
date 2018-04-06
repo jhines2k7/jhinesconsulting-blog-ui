@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.50.11
+VERSION=0.51.11
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
@@ -38,7 +38,11 @@ find .tmp -name "*.js" -type f | xargs sed -i '/console.log/d'
 sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
 
 #copy the assets to dist directory
-cp -r assets dist
+cp -r assets/ dist
+
+# "clearing" the css directory
+rm -rf dist/assets/css
+mkdir dist/assets/css
 
 #copy the data to dist directory
 cp -r data dist
@@ -63,7 +67,7 @@ node_modules/.bin/uglifycss .tmp/main.tmp.css --output .tmp/main.min.css
 cat .tmp/lib.min.css .tmp/main.min.css > dist/app.min.css
 
 # append hash to end of css file for cache busting
-mv dist/app.min.css dist/app.min.$NEW_UUID.css
+mv dist/app.min.css dist/assets/css/app.min.$NEW_UUID.css
 
 # append hash to end of js file for cache busting
 #mv dist/bundle.js dist/bundle.$NEW_UUID.js
@@ -76,10 +80,11 @@ node_modules/.bin/uglifyjs dist/bundle.js --compress --mangle -o dist/bundle.$NE
 sed -i "s/dist\/bundle.js/bundle.$NEW_UUID.min.js/g" dist/index.html
 
 # update file name of main.css
-sed -i "s/main.css/app.min.$NEW_UUID.css/g" dist/index.html
+sed -i "s/main.css/dist\/assets\/css\/app.min.$NEW_UUID.css/g" dist/index.html
 
 # remove other css imports
 sed -i '/bootstrap.min.css/d' dist/index.html
+sed -i '/font-awesome.min.css/d' dist/index.html
 sed -i '/bar-filler.css/d' dist/index.html
 sed -i '/responsive.css/d' dist/index.html
 
