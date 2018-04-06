@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.48.11
+VERSION=0.49.11
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
