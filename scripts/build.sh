@@ -40,9 +40,6 @@ sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_
 #copy the assets to dist directory
 cp -r assets/ dist
 
-# optimize images
-node_modules/.bin/imagemin dist/img/me_seated.jpg
-
 # minify jquery.barfiller
 cp assets/js/jquery.barfiller.js .tmp
 node_modules/.bin/uglifyjs .tmp/jquery.barfiller.js --compress --mangle -o .tmp/jquery.barfiller.min.js
@@ -88,10 +85,6 @@ cat .tmp/lib.min.css .tmp/main.min.css > dist/app.min.css
 # append hash to end of css file for cache busting
 mv dist/app.min.css dist/assets/css/app.min.$NEW_UUID.css
 
-# append hash to end of js file for cache busting
-#mv dist/bundle.js dist/bundle.$NEW_UUID.js
-#mv dist/bundle.js.map dist/bundle.$NEW_UUID.js.map
-
 #uglify bundle.js
 node_modules/.bin/uglifyjs dist/bundle.js --compress --mangle -o dist/bundle.$NEW_UUID.min.js
 
@@ -113,6 +106,9 @@ sed -i '/responsive.css/d' dist/index.html
 # remove other js imports
 sed -i '/waypoint.js/d' dist/index.html
 sed -i '/jquery.barfiller.js/d' dist/index.html
+
+# minify html
+./node_modules/.bin/html-minifier -o dist/index.html --remove-comments --collapse-whitespace dist/index.html
 
 rm -rf dist/assets/js
 
