@@ -4,7 +4,7 @@ VERSION=0.52.14
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
 
-cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
+#cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
 npm install
 
@@ -39,6 +39,9 @@ sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_
 
 #copy the assets to dist directory
 cp -r assets/ dist
+
+# optimize images
+node_modules/.bin/imagemin dist/img/me_seated.jpg
 
 # minify jquery.barfiller
 cp assets/js/jquery.barfiller.js .tmp
@@ -113,10 +116,10 @@ sed -i '/jquery.barfiller.js/d' dist/index.html
 
 rm -rf dist/assets/js
 
-docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
-
-docker build -t jhines2017/jhinesconsulting-blog-ui:$VERSION .
-
-docker push jhines2017/jhinesconsulting-blog-ui:$VERSION
-
-rm -rf node_modules .tmp dist
+#docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
+#
+#docker build -t jhines2017/jhinesconsulting-blog-ui:$VERSION .
+#
+#docker push jhines2017/jhinesconsulting-blog-ui:$VERSION
+#
+#rm -rf node_modules .tmp dist
