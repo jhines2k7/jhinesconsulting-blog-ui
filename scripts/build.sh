@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.61.14
+VERSION=0.61.15
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
@@ -73,6 +73,7 @@ cp main.css assets/css/responsive.css assets/css/bar-filler.css .tmp
 
 # change the file path because css will be served out of the assets/css directory
 sed -i "s/assets\/img\/home_page_bg.jpg/..\/img\/home_page_bg.jpg/g" .tmp/main.css
+sed -i "s/assets\/img\/color-2174043.png/..\/img\/color-2174043.png/g" .tmp/main.css
 
 cat .tmp/bar-filler.css .tmp/main.css .tmp/responsive.css > .tmp/main.tmp.css
 
