@@ -32,8 +32,8 @@
                             <p>
                                 There are a number of prepackaged business solutions that promise to deliver business
                                 intelligence from the data you possess, but who has time to learn how to properly use
-                                them? I'd like to take a different approach. One that starts with a question: What areas
-                                of your business would you like to improve?
+                                them? I'd like to take a different approach. One that starts with a question: <br>
+                                <span class="font-italic">What areas of your business would you like to improve?</span>
                             </p>
                         </div>
                     </div>
