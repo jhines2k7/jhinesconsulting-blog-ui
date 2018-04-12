@@ -132,6 +132,19 @@
         submit(e) {
             console.log(`EventSource.readyState: ${eventSource.readyState}`);
 
+            if(eventSource.readyState === 2) {
+                eventSource = new EventSource(`http://${config.contactFormServiceIP}/events/contactsaved/${clientID}`, {});
+
+                eventSource.removeEventListener(`contact-saved-${clientID}`);
+
+                eventSource.addEventListener(`contact-saved-${clientID}`, (e) => {
+                    eventStore.add(eventStore.events, [{
+                        channel: 'api-requests',
+                        topic: 'app.form.submission.success'
+                    }]);
+                }, false);
+            }
+
             e.preventDefault();
 
             this.viewModel.requestInProgress = true;
