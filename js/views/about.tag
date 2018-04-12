@@ -23,16 +23,17 @@
                             </p>
                             <p>
                                 I’ve worked as a software developer in some of the largest companies in the world, and
-                                noticed there were tools and techniques to aid in the decision making process available
-                                to Fortune 500 companies that smaller companies don’t have access to. Sometimes this is
-                                due to a lack of awareness of what's possible and sometimes it's just too costly in
-                                terms of money, but more importantly time.
+                                noticed Fortune 500 companies use data gathering and analysis tools to aid in the decision
+                                making process that small and mid-sized businesses aren't using. Sometimes this is
+                                due to a lack of awareness of what's possible and sometimes those data gathering and
+                                analysis tools are too costly in terms of money. Most likely though, the cost is too high
+                                in terms of time.
                             </p>
                             <p>
-                                There are a number of prepackaged business solutions available to help analyze business
-                                intelligence, but who has time to learn how to properly use them? I'd like to take a
-                                different approach. One that starts with a question: What areas of your business would
-                                you like to improve?
+                                There are a number of prepackaged business solutions that promise to deliver business
+                                intelligence from the data you possess, but who has time to learn how to properly use
+                                them? I'd like to take a different approach. One that starts with a question: What areas
+                                of your business would you like to improve?
                             </p>
                         </div>
                     </div>
