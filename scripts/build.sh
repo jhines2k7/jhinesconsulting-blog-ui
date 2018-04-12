@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.61.16
+VERSION=0.62.16
 
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
@@ -34,6 +34,7 @@ node_modules/.bin/riot js .tmp
 # remove all console.log occurrences
 find .tmp -name "*.js" -type f | xargs sed -i '/console.log/d'
 
+# generate bundle.js
 node_modules/.bin/webpack --config=webpack.config.js
 
 # modify the value of the contact form service ip object in the config file
