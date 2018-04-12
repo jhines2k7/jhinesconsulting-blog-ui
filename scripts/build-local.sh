@@ -2,8 +2,6 @@
 echo "Contact form submission service ip: "
 echo $CONTACT_FORM_SERVICE_IP
 
-npm install
-
 # clean the dist directory
 if [ -d dist ]; then
     rm -rf dist
