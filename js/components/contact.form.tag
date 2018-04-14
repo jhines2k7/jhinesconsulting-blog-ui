@@ -85,6 +85,13 @@
 
         let eventSource = new EventSource(`http://${config.contactFormServiceIP}/events/contactsaved/${clientID}`, {});
 
+        let handleContactSaved = (e) => {
+            eventStore.add(eventStore.events, [{
+                channel: 'api-requests',
+                topic: 'app.form.submission.success'
+            }]);
+        };
+
         this.on('mount', () => {
             eventStore = new EventStore();
 
@@ -95,12 +102,7 @@
                 $(this).addClass("active");
             });
 
-            eventSource.addEventListener(`contact-saved-${clientID}`, (e) => {
-                eventStore.add(eventStore.events, [{
-                    channel: 'api-requests',
-                    topic: 'app.form.submission.success'
-                }]);
-            }, false);
+            eventSource.addEventListener(`contact-saved-${clientID}`, handleContactSaved, false);
         });
 
         let subscribe = (channel, topic) => {
@@ -135,14 +137,9 @@
             if(eventSource.readyState === 2) {
                 eventSource = new EventSource(`http://${config.contactFormServiceIP}/events/contactsaved/${clientID}`, {});
 
-                eventSource.removeEventListener(`contact-saved-${clientID}`);
+                eventSource.removeEventListener(`contact-saved-${clientID}`, handleContactSaved, false);
 
-                eventSource.addEventListener(`contact-saved-${clientID}`, (e) => {
-                    eventStore.add(eventStore.events, [{
-                        channel: 'api-requests',
-                        topic: 'app.form.submission.success'
-                    }]);
-                }, false);
+                eventSource.addEventListener(`contact-saved-${clientID}`, handleContactSaved, false);
             }
 
             e.preventDefault();
