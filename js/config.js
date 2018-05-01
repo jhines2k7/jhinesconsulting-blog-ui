@@ -9,6 +9,6 @@ let createUUID = () => {
 };
 
 export default {
-    contactFormServiceIP: '',
+    contactFormServiceIP: 'https://contacts.jhinesconsulting.com',
     clientID: createUUID()
 }

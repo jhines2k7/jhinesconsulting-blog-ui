@@ -38,7 +38,7 @@ find .tmp -name "*.js" -type f | xargs sed -i '/console.log/d'
 node_modules/.bin/webpack --config=webpack.config.js
 
 # modify the value of the contact form service ip object in the config file
-sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
+#sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
 
 #copy the assets to dist directory
 cp -r assets/ dist
