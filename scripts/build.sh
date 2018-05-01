@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.65.19
-
-echo "Contact form submission service ip: "
-echo $CONTACT_FORM_SERVICE_IP
+VERSION=0.66.19
 
 cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
@@ -36,9 +33,6 @@ find .tmp -name "*.js" -type f | xargs sed -i '/console.log/d'
 
 # generate bundle.js
 node_modules/.bin/webpack --config=webpack.config.js
-
-# modify the value of the contact form service ip object in the config file
-#sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
 
 #copy the assets to dist directory
 cp -r assets/ dist
