@@ -1016,4 +1016,8 @@ wid device
     .home2_about_img .section_tittle {
         right: 75%;
     }
+
+    .call-to-action {
+        text-align: left;
+    }
 }
