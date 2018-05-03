@@ -2,7 +2,7 @@
     <div class="welcome_area">
         <div class="display_flex">
             <div class="container">
-                <div class="row">
+                <div class="row welcome-flex">
                     <div class="col-md-6 col-md-offset-1 col-sm-9 col-xs-6 text-center">
                         <div class="welcome_content">
                             <h1>
@@ -17,12 +17,11 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div class="call-to-action">
-
+                            <a href=#/contact class="custom_btn tall_btn">Contact me for a FREE consultation</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

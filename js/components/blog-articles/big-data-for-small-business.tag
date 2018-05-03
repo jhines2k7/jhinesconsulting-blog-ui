@@ -18,7 +18,7 @@
         field with a Fortune 500 company. Well, at least in terms of compute power. The best part about using these
         services is that you only pay for what you use. </p>
     <div class="important_content"><h3> Ultimately, you'll want to be able to ask questions in plain English, and get
-        answers that are easy to understand. That's were I believe I can help </h3></div>
+        answers that are easy to understand. That's were I believe I can help.</h3></div>
     <p> Now that you know it's possible for your small business to automate the process of aggregating customer data
         from various sources in an affordable way, what do you do with it? Ultimately, you'll want to be able to ask
         questions in plain English, and get answers that are easy to understand. That's were I believe I can help. I'll

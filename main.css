@@ -412,6 +412,12 @@ a.custom_btn>i,
     margin-top: 30px;
 }
 
+.custom_btn.tall_btn {
+    padding: 40px 30px;
+    font-size: large;
+    font-weight: bold;
+}
+
 a.custom_btn::after,
 .custom_btn::after {
     background: #c70039 none repeat scroll 0 0;
@@ -2729,4 +2735,14 @@ skill-ratings {
 
 .work_area {
     margin-top: 100px;
+}
+
+.call-to-action a {
+    display: inline-block;
+}
+
+.welcome-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
