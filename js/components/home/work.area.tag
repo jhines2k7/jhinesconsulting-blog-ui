@@ -23,7 +23,6 @@
                         <div class="hover_content">
                             <div>
                                 <h4>{ project.name }</h4>
-                                <span>{ project.date }</span>
                             </div>
                         </div>
                     </a>

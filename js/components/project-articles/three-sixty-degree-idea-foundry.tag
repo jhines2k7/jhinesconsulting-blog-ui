@@ -25,10 +25,6 @@
                     <span class="bold">Client</span>
                     <span>Idea Foundry</span>
                 </li>
-                <li>
-                    <span class="bold">Date</span>
-                    <span>January 2018</span>
-                </li>
             </ul>
         </div>
         <div class="col-md-12">
