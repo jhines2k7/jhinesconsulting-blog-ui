@@ -361,6 +361,7 @@ Mobile
     }
     .welcome_content {
         padding: 0;
+        margin-top: 60px;
     }
     .welcome_content>h1 {
         font-size: 36px;
@@ -960,6 +961,18 @@ Mobile
         font-size: 6px;
         position: relative;
         top: 32px;
+    }
+
+    .welcome-flex {
+        display: block;
+    }
+
+    .call-to-action {
+        text-align: center;
+    }
+
+    .tall_btn {
+        margin-top: 40px;
     }
 }
 

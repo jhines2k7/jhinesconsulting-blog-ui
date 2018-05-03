@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.73.21
+VERSION=0.74.21
 
 cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
