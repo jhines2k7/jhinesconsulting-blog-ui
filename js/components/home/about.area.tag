@@ -1,5 +1,5 @@
 <about-area>
-    <div class="about_area section_padding_bottom">
+    <div class="about_area section_padding_top">
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-sm-6">

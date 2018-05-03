@@ -11,13 +11,13 @@
     <work-area></work-area>
     <!--Work Area End -->
 
-    <!--Contact Area Start -->
-    <div data-is="contact-area" class="contact_area"></div>
-    <!--Contact Area End -->
-
     <!--About Area Start -->
     <about-area></about-area>
     <!--About Area End -->
+
+    <!--Contact Area Start -->
+    <div data-is="contact-area" class="contact_area"></div>
+    <!--Contact Area End -->
 
     <!--Testimonial Area Start -->
     <!--<testimonial-area></testimonial-area>-->
