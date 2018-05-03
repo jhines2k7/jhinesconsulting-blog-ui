@@ -998,3 +998,9 @@ wid device
         max-width: 20%;
     }
 }
+
+@media only screen and (min-width: 481px) and (max-width: 766px) {
+    .home2_about_img .section_tittle {
+        right: 75%;
+    }
+}
