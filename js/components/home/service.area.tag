@@ -2,6 +2,9 @@
     <div id="service" class="service_area section_padding background_gray">
         <div class="container">
             <div class="row">
+                <div class="section_tittle">
+                    <h1>Services</h1>
+                </div>
                 <div class="col-sm-4">
                     <div class="single_service">
                         <div class="service_icon">

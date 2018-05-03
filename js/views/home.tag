@@ -1,27 +1,27 @@
 <home>
-    <!--02.Welcome Area Start -->
+    <!--Welcome Area Start -->
     <welcome-area></welcome-area>
-    <!--02.Welcome Area End -->
+    <!--Welcome Area End -->
 
-    <!--03.About Area Start -->
-    <about-area></about-area>
-    <!--03.About Area End -->
-
-    <!--04.Service Area Start -->
+    <!--Service Area Start -->
     <service-area></service-area>
-    <!--04.Service Area End -->
+    <!--Service Area End -->
 
-    <!--05.Work Area Start -->
+    <!--Work Area Start -->
     <work-area></work-area>
-    <!--05.Work Area End -->
+    <!--Work Area End -->
 
-    <!--06.Testimonial Area Start -->
-    <!--<testimonial-area></testimonial-area>-->
-    <!--06.Testimonial Area End -->
-
-    <!--07.Contact Area Start -->
+    <!--Contact Area Start -->
     <div data-is="contact-area" class="contact_area"></div>
-    <!--07.Contact Area End -->
+    <!--Contact Area End -->
+
+    <!--About Area Start -->
+    <about-area></about-area>
+    <!--About Area End -->
+
+    <!--Testimonial Area Start -->
+    <!--<testimonial-area></testimonial-area>-->
+    <!--Testimonial Area End -->
 
     <script>
         import postal from 'postal/lib/postal.lodash'
