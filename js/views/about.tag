@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-4 col-sm-5">
                     <div class="home2_about_img effect7">
-                        <img src="assets/img/me_at_cjug-cropped.jpg" alt="">
+                        <img src="assets/img/me_seated.jpeg" alt="">
                         <div class="section_tittle">
                             <h1>A little about me</h1>
                         </div>

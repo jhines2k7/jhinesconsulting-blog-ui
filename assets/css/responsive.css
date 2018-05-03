@@ -106,7 +106,7 @@ tab
         padding-top: 20px;
     }
     .section_tittle h1 {
-        font-size: 36px;
+        font-size: 28px;
     }
     .about_area .section_tittle {
         margin-bottom: 10px;
@@ -183,7 +183,9 @@ tab
         padding: 15px 16px;
         -webkit-transform: translateX(40%);
         transform: translateX(40%);
-        width: 216px;
+        width: 180px;
+        position: absolute;
+        right: -25px;
     }
     .home2_service_heading {
         padding-right: 0;
@@ -542,7 +544,7 @@ Mobile
         padding-top: 85px;
     }
     .home2_about_img .section_tittle {
-        bottom: 0;
+        bottom: 60px;
         margin: 0;
         padding: 13px 7px;
         right: 50%;
@@ -551,7 +553,8 @@ Mobile
         width: 200px;
     }
     .home2_about_img {
-        margin-bottom: 70px;
+        height: 400px;
+        overflow: hidden;
     }
     .home2_service_heading {
         margin-bottom: 30px;
