@@ -150,7 +150,7 @@
 
             this.update(this.viewModel);
 
-            let url = `${config.contactFormDomain}/contact`;
+            let url = 'https://contacts.jhinesconsulting.com/contact';
 
             let businessAreas = [
                 this.refs.understandCustomers,
