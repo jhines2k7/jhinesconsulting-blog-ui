@@ -135,7 +135,7 @@
             console.log(`EventSource.readyState: ${eventSource.readyState}`);
 
             if(eventSource.readyState === 2) {
-                eventSource = new EventSource(`http://${config.contactFormServiceIP}/events/contactsaved/${clientID}`, {});
+                eventSource = new EventSource(`${config.contactFormDomain}/events/contactsaved/${clientID}`, {});
 
                 eventSource.removeEventListener(`contact-saved-${clientID}`, handleContactSaved, false);
 
@@ -150,7 +150,7 @@
 
             this.update(this.viewModel);
 
-            let url = `http://${config.contactFormServiceIP}/contact`;
+            let url = `${config.contactFormDomain}/contact`;
 
             let businessAreas = [
                 this.refs.understandCustomers,
