@@ -150,7 +150,7 @@
 
             this.update(this.viewModel);
 
-            let url = 'https://contacts.jhinesconsulting.com/contact';
+            //let url = `${config.contactFormDomain}/contact`;
 
             let businessAreas = [
                 this.refs.understandCustomers,
@@ -169,7 +169,7 @@
                 businessAreas: filteredBusinessAreas
             };
 
-            fetch(url, {
+            fetch(`${config.contactFormDomain}/contact`, {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: new Headers({
