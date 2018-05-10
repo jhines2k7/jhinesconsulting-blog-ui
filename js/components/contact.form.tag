@@ -83,7 +83,7 @@
 
         const clientID = config.clientID;
 
-        let eventSource = new EventSource(`http://${config.contactFormServiceIP}/events/contactsaved/${clientID}`, {});
+        let eventSource = new EventSource(`${config.contactFormDomain}/events/contactsaved/${clientID}`, {});
 
         let handleContactSaved = (e) => {
             eventStore.add(eventStore.events, [{
