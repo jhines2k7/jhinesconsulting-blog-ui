@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=0.78.25
+VERSION=0.79.25
 
 cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
@@ -45,6 +45,8 @@ cp assets/js/jquery.min.js .tmp
 cp assets/js/waypoint.js .tmp
 
 NEW_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)
+
+echo "NEW_UUID: $NEW_UUID"
 
 # concatenate jquery, barfiller, waypoint
 cat .tmp/jquery.min.js .tmp/jquery.barfiller.min.js .tmp/waypoint.js > .tmp/lib.min.js
