@@ -3,6 +3,8 @@ VERSION=0.79.25
 
 cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
+rm -rf node_modules .tmp dist
+
 npm install
 
 # clean the dist directory
@@ -116,5 +118,3 @@ docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASSWORD
 docker build -t jhines2017/jhinesconsulting-blog-ui:$VERSION .
 
 docker push jhines2017/jhinesconsulting-blog-ui:$VERSION
-
-rm -rf node_modules .tmp dist
