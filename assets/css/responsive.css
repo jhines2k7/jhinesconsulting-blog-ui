@@ -298,6 +298,10 @@ Mobile
         display: block;
         color: #571845;
     }
+    .mobile-nav .mobile-menu {
+        background-color: #00abea;
+        height: 200px;
+    }
     .header_area {
         padding-top: 20px;
     }

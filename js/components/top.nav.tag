@@ -11,6 +11,10 @@
         </ul>
     </nav>
 
+    <nav class="mobile-nav">
+        <ul class="mobile-menu row-full"></ul>
+    </nav>
+
     <script>
         import postal from 'postal/lib/postal.lodash'
         import reduce from '../reducer'
