@@ -11,8 +11,8 @@
         </ul>
     </nav>
 
-    <nav class="mobile-nav">
-        <ul class="mobile-menu row-full"></ul>
+    <nav if={ show_mobile_nav } class="mobile-nav">
+        <ul class="mobile-menu"></ul>
     </nav>
 
     <script>
@@ -25,6 +25,8 @@
 
         this.currentView = '';
 
+        this.show_mobile_nav = false;
+
         let eventStore = null;
 
         this.on('mount', () => {
@@ -32,19 +34,7 @@
         });
 
         toggleNav(e) {
-            document.getElementsByTagName('top-nav')[0].classList.add('responsive');
-
-            Array.from(document.getElementsByClassName("main_menu")[0].children)
-                .filter((item) => item.textContent !== 'home' && item.children[0].className !== 'icon')
-                .forEach((item) => {
-                    let anchorTag = item.childNodes[0];
-
-                    if(anchorTag.style.display === '' || anchorTag.style.display === 'none'){
-                        anchorTag.style.display = 'block';
-                    } else if(anchorTag.style.display === 'block'){
-                        anchorTag.style.display = 'none';
-                    }
-                })
+            this.show_mobile_nav = !this.show_mobile_nav;
         }
 
         scrollTo(e) {
