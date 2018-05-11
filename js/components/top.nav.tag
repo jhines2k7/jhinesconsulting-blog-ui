@@ -44,6 +44,12 @@
 
         toggleNav(e) {
             this.showMobileNav = !this.showMobileNav;
+
+            if(this.showMobileNav) {
+                document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+            } else {
+                document.getElementsByTagName('body')[0].style.overflow = '';
+            }
         }
 
         scrollTo(e) {
@@ -80,6 +86,8 @@
 
                     if(envelope.topic === 'app.update.hideMobileNav') {
                         this.showMobileNav = false;
+
+                        document.getElementsByTagName('body')[0].style.overflow = '';
 
                         this.update();
                     }
