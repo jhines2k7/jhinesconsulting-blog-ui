@@ -298,12 +298,26 @@ Mobile
         display: block;
         color: #571845;
     }
-    .mobile-nav .mobile-menu {
+    .mobile-nav {
+        display: flex;
         background-color: #571845;
         height: 100vh;
         position: absolute;
         width: 80vw;
         right: -14px;
+        justify-content: center;
+    }
+    .mobile-nav .mobile-menu {
+    }
+    .mobile-menu li {
+        text-align: center;
+        border-bottom: #837975 dotted 1px;
+        display: inline-block;
+        width: 100%;
+    }
+    .mobile-menu li a {
+        color: #e3e5e0;
+        font-size: xx-large;
     }
     .header_area {
         padding-top: 20px;

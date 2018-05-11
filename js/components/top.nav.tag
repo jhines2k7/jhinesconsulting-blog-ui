@@ -12,7 +12,13 @@
     </nav>
 
     <nav if={ show_mobile_nav } class="mobile-nav">
-        <ul class="mobile-menu"></ul>
+        <ul class="mobile-menu">
+            <li><a href="#/about">about</a></li>
+            <li><a onclick={ scrollTo } href="#services">services</a></li>
+            <li><a onclick={ scrollTo } href="#work">work</a></li>
+            <li><a href="#/blog">blog</a></li>
+            <li><a href="#/contact">contact</a></li>
+        </ul>
     </nav>
 
     <script>
@@ -25,7 +31,7 @@
 
         this.currentView = '';
 
-        this.show_mobile_nav = false;
+        this.show_mobile_nav = true;
 
         let eventStore = null;
 
