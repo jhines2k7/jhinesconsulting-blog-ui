@@ -11,7 +11,7 @@
         </ul>
     </nav>
 
-    <nav if={ show_mobile_nav } class="mobile-nav">
+    <nav if={ showMobileNav } class="mobile-nav">
         <ul class="mobile-menu">
             <li><a href="#/about">about</a></li>
             <li><a onclick={ scrollTo } href="#services">services</a></li>
@@ -31,7 +31,7 @@
 
         this.currentView = '';
 
-        this.show_mobile_nav = true;
+        this.showMobileNav = false;
 
         let eventStore = null;
 
@@ -40,7 +40,7 @@
         });
 
         toggleNav(e) {
-            this.show_mobile_nav = !this.show_mobile_nav;
+            this.showMobileNav = !this.showMobileNav;
         }
 
         scrollTo(e) {
