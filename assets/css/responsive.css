@@ -303,7 +303,7 @@ Mobile
         background-color: #571845;
         height: 100vh;
         position: absolute;
-        width: 80vw;
+        width: 100vw;
         right: -14px;
         justify-content: center;
     }
@@ -318,6 +318,7 @@ Mobile
     .mobile-menu li a {
         color: #e3e5e0;
         font-size: xx-large;
+        display: block;
     }
     .header_area {
         padding-top: 20px;

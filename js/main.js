@@ -260,9 +260,14 @@ let blogArticle = (slug) => {
     highlightActiveMenuItem('blog');
 };
 
-let renderHeaderAndFooter = () => {
+let before = () => {
     riot.mount('site-header');
     riot.mount('site-footer');
+
+    eventStore.add(eventStore.events, [{
+        channel: 'routing',
+        topic: 'app.update.hideMobileNav'
+    }]);
 };
 
 Storage.get().then( (events) => {
@@ -279,7 +284,7 @@ Storage.get().then( (events) => {
     });
 
     router.configure({
-        before: renderHeaderAndFooter
+        before: before
     });
 
     router.init(['/']);

@@ -31,7 +31,7 @@
 
         this.currentView = '';
 
-        this.showMobileNav = false;
+        this.showMobileNav = true;
 
         let eventStore = null;
 
@@ -74,10 +74,17 @@
                     let state = reduce(eventStore.events);
 
                     this.currentView = state.currentView;
+
+                    if(envelope.topic === 'app.update.hideMobileNav') {
+                        this.showMobileNav = false;
+
+                        this.update();
+                    }
                 }
             });
         };
 
         subscribe('routing', 'app.update.currentView');
+        subscribe('routing', 'app.update.hideMobileNav');
     </script>
 </top-nav>
