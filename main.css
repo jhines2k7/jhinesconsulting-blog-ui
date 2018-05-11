@@ -2748,9 +2748,7 @@ skill-ratings {
 }
 
 .row-full{
-    width: 100vw;
-    position: relative;
-    margin-left: -100vw;
-    height: 100px;
-    left: 175%;
+    width: 80vw;
+    position: absolute;
+    right: -14px;
 }
