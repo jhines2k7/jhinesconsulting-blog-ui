@@ -229,6 +229,10 @@ header area css
     display: none;
 }
 
+.main_menu li a.icon.saltire {
+    font-weight: bold;
+}
+
 @media only screen and (min-width:768px) {
     .main_menu > li {
         display: inline-block;

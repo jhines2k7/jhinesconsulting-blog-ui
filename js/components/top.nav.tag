@@ -3,7 +3,7 @@
         <ul class="main_menu">
             <li>
                 <a if={ !showMobileNav } onclick={ toggleNav } class="icon">&#9776;</a>
-                <a if={ showMobileNav } onclick={ toggleNav } class="icon">&#9747;</a>
+                <a if={ showMobileNav } onclick={ toggleNav } class="icon saltire">&#9747;</a>
             </li>
             <li><a href="#/">home</a></li>
             <li><a href="#/about">about</a></li>
