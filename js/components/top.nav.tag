@@ -1,7 +1,10 @@
 <top-nav>
     <nav class="menu_bar">
         <ul class="main_menu">
-            <li><a onclick={ toggleNav } class="icon">&#9776;</a></li>
+            <li>
+                <a if={ !showMobileNav } onclick={ toggleNav } class="icon">&#9776;</a>
+                <a if={ showMobileNav } onclick={ toggleNav } class="icon">&#9747;</a>
+            </li>
             <li><a href="#/">home</a></li>
             <li><a href="#/about">about</a></li>
             <li><a onclick={ scrollTo } href="#services">services</a></li>

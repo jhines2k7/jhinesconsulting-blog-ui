@@ -2542,6 +2542,7 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .map {
+    margin-top: 20px;
     border: none;
     height: 450px;
     width: 100%;
