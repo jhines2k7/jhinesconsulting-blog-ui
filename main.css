@@ -2757,3 +2757,7 @@ skill-ratings {
     position: absolute;
     right: -14px;
 }
+
+.mobile-nav {
+    display: none;
+}
