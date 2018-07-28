@@ -9,6 +9,7 @@ let createUUID = () => {
 };
 
 export default {
-    contactFormDomain: 'https://contacts.jhinesconsulting.com',
+//    contactFormDomain: 'https://contacts.jhinesconsulting.com',
+    contactFormDomain: 'http://18.219.148.66',
     clientID: createUUID()
 }
