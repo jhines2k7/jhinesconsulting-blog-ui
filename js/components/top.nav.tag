@@ -47,8 +47,18 @@
 
             if(this.showMobileNav) {
                 document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+
+                // Disable scrolling on ios
+                document.ontouchmove =  (e) => {
+                  e.preventDefault();
+                }
             } else {
                 document.getElementsByTagName('body')[0].style.overflow = '';
+
+                // Enable scrolling on ios
+                document.ontouchmove = (e) => {
+                    return true;
+                }
             }
         }
 
