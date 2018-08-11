@@ -285,7 +285,6 @@ tab
 Mobile
 ================+/+/+/+/+/+/+/+/+/=================
 */
-
 @media only screen and (min-width: 0px) and (max-width: 767px) {
     body {
         font-size: 13px;
@@ -997,8 +996,17 @@ Mobile
         margin-top: 40px;
     }
 }
-
-
+@media only screen and (min-width: 413px) and (max-width: 600px) {
+    .mobile-nav {
+        display: flex;
+        background-color: #571845;
+        height: 100vh;
+        position: absolute;
+        width: 100vw;
+        right: -92px;
+        justify-content: center;
+    }
+}
 /*
 ================+/+/+/+/+/+/+/+/+/=================
 wid device

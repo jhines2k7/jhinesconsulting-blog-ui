@@ -213,7 +213,6 @@ header area css
 
 .header_area {
     left: 0;
-    padding-top: 40px;
     position: absolute;
     top: 0;
     width: 100%;
@@ -598,7 +597,6 @@ Service area css
     position: absolute;
     top: 0;
     width: 21.5%;
-    z-index: 1;
 }
 
 .service_icon > span {
@@ -2760,4 +2758,11 @@ skill-ratings {
 
 .mobile-nav {
     display: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
 }
