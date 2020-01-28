@@ -3,7 +3,7 @@
 
     <h3>Setting Up A Highly Available Apache Kafka Cluster Using Docker Swarm: Part 1 of 2</h3>
 
-    <span class="blog_meta">James Hines / March 16, 2018</span>
+    <span class="blog_meta">James Hines / January 27, 2020</span>
 
     <p>
         As businesses get more and more comfortable with the idea of microservice architectures, one of the most
@@ -18,7 +18,7 @@
     <p>
         Apache Kafka is a distributed streaming platform. For my purposes, this means that Kafka makes it easier to
         build and scale distributed applications that transfer data between systems and applications in real time.
-        It's a very mature project and among its many functionalities can be used as an async messaging system.
+        It's a very mature project and among its many features, can be used as an async messaging system.
     </p>
 
     <p>
