@@ -1,5 +1,5 @@
 export default function initialize() {
-    let myCenter = new google.maps.LatLng(29.4241, 98.4936);
+    let myCenter = new google.maps.LatLng(29.424349, -98.491142);
 
     let mapProp = {
         center: myCenter,
