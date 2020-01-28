@@ -3,7 +3,7 @@
 
     <h3>Big Data For Small Business</h3>
 
-    <span class="blog_meta">James Hines / December 3, 2019</span>
+    <span class="blog_meta">James Hines / December 5, 2019</span>
 
     <p> One of the most compelling use cases for \"Big Data\" is to create what is called a 360 degree view of a
         customer. This is the idea that a company can get a more complete view of their customers by aggregating data

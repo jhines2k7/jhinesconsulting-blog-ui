@@ -185,7 +185,7 @@ let projectDetail = (slug) => {
 let blog = () => {
     'use strict';
 
-    fetch('data/articles.json')
+    fetch('data/articles-2.json')
         .then(function(response) {
             return response.json();
         })
