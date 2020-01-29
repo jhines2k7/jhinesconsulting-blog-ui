@@ -4,7 +4,7 @@ import './views/contact'
 import './views/blog'
 import './views/blog.article'
 import './components/blog-articles/setting-up-a-kafka-cluster-using-docker-swarm-1'
-import './components/blog-articles/big-data-for-small-business_v2'
+import './components/blog-articles/big-data-for-small-business_v3'
 import './components/project-articles/three-sixty-degree-idea-foundry'
 import './views/project.detail'
 import './components/home/about.area'
@@ -185,7 +185,7 @@ let projectDetail = (slug) => {
 let blog = () => {
     'use strict';
 
-    fetch('data/articles_v3.json')
+    fetch('data/articles_v4.json')
         .then(function(response) {
             return response.json();
         })
@@ -223,7 +223,7 @@ let blogArticle = (slug) => {
 
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-    fetch('data/articles_v3.json')
+    fetch('data/articles_v4.json')
         .then(function(response) {
             return response.json();
         })

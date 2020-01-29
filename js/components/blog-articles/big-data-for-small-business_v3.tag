@@ -7,8 +7,8 @@
 
     <p> One of the most compelling use cases for Big Data is to create what is called a 360&#176; view of a
         customer. This is the idea that a company can get a more complete view of their customers by aggregating data
-        from the various touch points customers may use to contact a company to purchase products or to receive service
-        and support. </p>
+        from the various touch points customers may use to interact with a company to purchase products or to receive
+        service and support. </p>
     <p> This 360&#176; view can help businesses determine what kinds of products or services their customers might buy
         next, or do a better job of targeting messages to specific groups of customers. </p>
     <p>In days past, aggregating data from various sources has been so resource intensive in terms of compute power
