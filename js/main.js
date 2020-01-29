@@ -223,7 +223,7 @@ let blogArticle = (slug) => {
 
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-    fetch('data/articles.json')
+    fetch('data/articles-2.json')
         .then(function(response) {
             return response.json();
         })
