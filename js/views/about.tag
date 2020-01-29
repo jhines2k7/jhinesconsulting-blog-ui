@@ -19,13 +19,13 @@
                         <div class="about_content">
                             <skill-ratings></skill-ratings>
                             <p>
-                                I'm a Data Solutions Architect out of Columbus, OH and I’m going to help you grow your business.
+                                I'm a Data Solutions Architect out of San Antonio, TX and I’m going to help you grow your business.
                             </p>
                             <p>
                                 I’ve worked as a software developer in some of the largest companies in the world, and
                                 noticed Fortune 500 companies use data gathering and analysis tools to aid in the decision
                                 making process that small and mid-sized businesses aren't using. Sometimes this is
-                                due to a lack of awareness of what's possible and sometimes those data gathering and
+                                due to a lack of awareness of what's possible, and sometimes those data gathering and
                                 analysis tools are too costly in terms of money. Most likely though, the cost is too high
                                 in terms of time.
                             </p>
