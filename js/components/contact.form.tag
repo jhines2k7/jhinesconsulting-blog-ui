@@ -69,7 +69,6 @@
     <script>
         import postal from 'postal/lib/postal.lodash'
         import EventStore from '../eventStore'
-        import initialize from '../initializeMap'
         import config from '../config'
 
         this.viewModel = {
@@ -80,17 +79,7 @@
         };
 
         let eventStore = null;
-
-        const clientID = config.clientID;
-
-        let eventSource = new EventSource(`${config.contactFormDomain}/events/contactsaved/${clientID}`, {});
-
-        let handleContactSaved = (e) => {
-            eventStore.add(eventStore.events, [{
-                channel: 'api-requests',
-                topic: 'app.form.submission.success'
-            }]);
-        };
+        let apiDomain = config.apiDomain;
 
         this.on('mount', () => {
             eventStore = new EventStore();
@@ -101,8 +90,6 @@
                 forminput.removeClass("active");
                 $(this).addClass("active");
             });
-
-            eventSource.addEventListener(`contact-saved-${clientID}`, handleContactSaved, false);
         });
 
         let subscribe = (channel, topic) => {
@@ -132,16 +119,6 @@
         subscribe('api-requests', 'app.connection.error');
 
         submit(e) {
-            console.log(`EventSource.readyState: ${eventSource.readyState}`);
-
-            if(eventSource.readyState === 2) {
-                eventSource = new EventSource(`${config.contactFormDomain}/events/contactsaved/${clientID}`, {});
-
-                eventSource.removeEventListener(`contact-saved-${clientID}`, handleContactSaved, false);
-
-                eventSource.addEventListener(`contact-saved-${clientID}`, handleContactSaved, false);
-            }
-
             e.preventDefault();
 
             this.viewModel.requestInProgress = true;
@@ -161,21 +138,25 @@
             let filteredBusinessAreas = businessAreas.filter(area => area.checked).map(area => area.value);
 
             let data = {
-                clientID: clientID,
                 name: this.refs.name.value,
                 email: this.refs.email.value,
                 businessAreas: filteredBusinessAreas
             };
 
-            fetch(`${config.contactFormDomain}/contact`, {
+            fetch(`http://${apiDomain}/apis/v1/contact`, {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: new Headers({
                     'Content-Type': 'application/json'
                 })
             }).then(response => {
-                if(!response.ok) {
-                    throw new Error('The request to the server was not successful');
+                if(response.ok) {
+                  eventStore.add(eventStore.events, [{
+                    channel: 'api-requests',
+                    topic: 'app.form.submission.success'
+                  }]);
+                } else {
+                    throw new Error('There was en error processing your request to provide contact information');
                 }
             }).catch(error => {
                 if(error.message === 'Failed to fetch') {
@@ -188,6 +169,7 @@
                         channel: 'api-requests',
                         topic: 'app.form.submission.failure'
                     }]);
+
                 }
             })
         }

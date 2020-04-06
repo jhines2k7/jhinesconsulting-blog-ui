@@ -22,4 +22,5 @@ cp js/*.js .tmp
 # js compile and transform
 node_modules/.bin/riot js .tmp && node_modules/.bin/webpack --config=webpack.config.js
 
-sed -i "s/contactFormServiceIP: ''/contactFormServiceIP: '$CONTACT_FORM_SERVICE_IP'/g" dist/bundle.js
+sed -i "s/apiDomain: ''/apiDomain: '$API_DOMAIN'/g" dist/bundle.js
+

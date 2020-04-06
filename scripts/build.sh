@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-VERSION=1.3.2
+VERSION=1.5.2
 
 cd /home/james/projects/jhinesconsulting/jhinesconsulting-blog-ui
 
@@ -35,6 +35,8 @@ find .tmp -name "*.js" -type f | xargs sed -i '/console.log/d'
 
 # generate bundle.js
 node_modules/.bin/webpack --config=webpack.config.js
+
+sed -i "s/apiDomain: ''/apiDomain: '$API_DOMAIN'/g" dist/bundle.js
 
 #copy the assets to dist directory
 cp -r assets/ dist
